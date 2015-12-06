@@ -62,7 +62,7 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 
     /* /////////////////////////////////////////////////////////////////////////////// */
 
-    SDL_Surface* pTempSurface = SDL_LoadBMP("Resources/rider.bmp");
+    SDL_Surface* pTempSurface = SDL_LoadBMP("Resources/penguin_sprite.bmp");
 
     m_pTexture = SDL_CreateTextureFromSurface(m_pRenderer, pTempSurface);
 
@@ -71,16 +71,16 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
     SDL_QueryTexture(m_pTexture, NULL, NULL, &m_sourceRectangle.w, &m_sourceRectangle.h);
 
     //position
-    m_destinationRectangle.x = 100;
-    m_destinationRectangle.y = 100;
+    m_destinationRectangle.x = 0;
+    m_destinationRectangle.y = 0;
     m_sourceRectangle.x = 0;
     m_sourceRectangle.y = 0;
 
     //rectangle size
-    m_destinationRectangle.w = 50;
-    m_destinationRectangle.h = 50;
-    m_sourceRectangle.w = 50;
-    m_sourceRectangle.h = 50;
+    m_destinationRectangle.w = 64;
+    m_destinationRectangle.h = 65;
+    m_sourceRectangle.w = 64;
+    m_sourceRectangle.h = 65;
 
     /* /////////////////////////////////////////////////////////////////////////////// */
 
