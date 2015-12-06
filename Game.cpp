@@ -1,4 +1,5 @@
 #include "Game.h"
+#include <SDL_image.h>
 #include <iostream>
 
 Game::Game(){}
@@ -38,7 +39,7 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 
                 std::cout << "renderer creation success\n";
                 //render a blue image on the screen
-                SDL_SetRenderDrawColor(m_pRenderer, 0,0,0,255);
+                SDL_SetRenderDrawColor(m_pRenderer, 255,255,255,255);
 
             }else{ // renderer init fail
 
@@ -62,7 +63,7 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 
     /* /////////////////////////////////////////////////////////////////////////////// */
 
-    SDL_Surface* pTempSurface = SDL_LoadBMP("Resources/animate.bmp");
+    SDL_Surface* pTempSurface = IMG_Load("Resources/animate-alpha.png");
 
     m_pTexture = SDL_CreateTextureFromSurface(m_pRenderer, pTempSurface);
 
