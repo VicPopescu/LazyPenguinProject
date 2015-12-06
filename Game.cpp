@@ -40,20 +40,20 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
                 //render a blue image on the screen
                 SDL_SetRenderDrawColor(m_pRenderer, 0,0,255,0);
 
-            }else{
+            }else{ // renderer init fail
 
                 std::cout << "renderer init fail\n";
-                return false; // renderer init fail
+                return false;
                 }
-        }else{
+        }else{ // window init fail
 
             std::cout << "window init fail\n";
-            return false; // window init fail
+            return false;
             }
-    }else{
+    }else{ // SDL init fail
 
         std::cout << "SDL init fail\n";
-        return false; // SDL init fail
+        return false;
         }
 
     std::cout << "init success\n";
@@ -67,9 +67,11 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 /* RENDER */
 void Game::render(){
 
-    SDL_RenderClear(m_pRenderer); // clear the renderer to the draw color
+    // clear the renderer to the draw color
+    SDL_RenderClear(m_pRenderer);
 
-    SDL_RenderPresent(m_pRenderer); // draw to the screen
+    // draw to the screen
+    SDL_RenderPresent(m_pRenderer);
 }
 
 
