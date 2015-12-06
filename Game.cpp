@@ -1,16 +1,8 @@
 #include "Game.h"
 #include <iostream>
 
-Game::Game()
-{
-    //ctor
-}
-
-Game::~Game()
-{
-
-}
-
+Game::Game(){}
+Game::~Game(){}
 
 /* INIT */
 bool Game::init(const char* title, int xpos, int ypos, int width, int height, bool fullscreen){
@@ -29,29 +21,35 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
     if(SDL_Init(SDL_INIT_EVERYTHING) == 0){
 
         std::cout << "SDL init success\n";
-    // init the window
-    m_pWindow = SDL_CreateWindow(title, xpos, ypos, width, height, flags);
+        // init the window
+        m_pWindow = SDL_CreateWindow(title, xpos, ypos, width, height, flags);
 
 
-    if(m_pWindow != 0){ // window init success
+        if(m_pWindow != 0){ // window init success
 
-        std::cout << "window creation success\n";
-        m_pRenderer = SDL_CreateRenderer(m_pWindow, -1, 0);
-        if(m_pRenderer != 0){ // renderer init success
+            std::cout << "window creation success\n";
+            //set the pointer to our renderer
+            //parameters: 1: window we want to render
+            //            2: index of the rendering driver to initialize (-1: first capable driver)
+            //            3: SDL_RendererFlag (0: default, no flag)
+            m_pRenderer = SDL_CreateRenderer(m_pWindow, -1, 0);
 
-            std::cout << "renderer creation success\n";
-            SDL_SetRenderDrawColor(m_pRenderer, 0,0,255,0);
+            if(m_pRenderer != 0){ // renderer init success
 
+                std::cout << "renderer creation success\n";
+                //render a blue image on the screen
+                SDL_SetRenderDrawColor(m_pRenderer, 0,0,255,0);
+
+            }else{
+
+                std::cout << "renderer init fail\n";
+                return false; // renderer init fail
+                }
         }else{
 
-            std::cout << "renderer init fail\n";
-            return false; // renderer init fail
+            std::cout << "window init fail\n";
+            return false; // window init fail
             }
-    }else{
-
-        std::cout << "window init fail\n";
-        return false; // window init fail
-        }
     }else{
 
         std::cout << "SDL init fail\n";
@@ -59,7 +57,7 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
         }
 
     std::cout << "init success\n";
-    m_bRunning = true; // everything inited successfully, start the main loop
+    m_bRunning = true; // everything initialized successfully, start the main loop
 
     return true;
 }
