@@ -20,5 +20,6 @@ https://www.libsdl.org/projects/SDL_image/
 SDL_Mixer 2.0:   
 https://www.libsdl.org/projects/SDL_mixer/   
 
-TinyXml http://www.grinninglizard.com/tinyxml/   
+TinyXml   
+http://www.grinninglizard.com/tinyxml/   
 
