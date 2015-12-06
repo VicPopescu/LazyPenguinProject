@@ -14,9 +14,10 @@ class Game
         bool init(const char* title, int xpos, int ypos, int width, int height, bool fullscreen);
         //render
         void render();
-        //update
+        //update the sprite sheet frame position, by moving the location of the source rectangle
+        //and copy it to the renderer
         void update();
-        ////allow us to close the application the regular way
+        //allow us to close the application the regular way
         void handleEvents();
         //clean the memory and close everything
         void clean();

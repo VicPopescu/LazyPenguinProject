@@ -38,7 +38,7 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 
                 std::cout << "renderer creation success\n";
                 //render a blue image on the screen
-                SDL_SetRenderDrawColor(m_pRenderer, 0,0,255,0);
+                SDL_SetRenderDrawColor(m_pRenderer, 0,0,0,255);
 
             }else{ // renderer init fail
 
@@ -62,13 +62,11 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 
     /* /////////////////////////////////////////////////////////////////////////////// */
 
-    SDL_Surface* pTempSurface = SDL_LoadBMP("Resources/penguin_sprite.bmp");
+    SDL_Surface* pTempSurface = SDL_LoadBMP("Resources/animate.bmp");
 
     m_pTexture = SDL_CreateTextureFromSurface(m_pRenderer, pTempSurface);
 
     SDL_FreeSurface(pTempSurface);
-
-    SDL_QueryTexture(m_pTexture, NULL, NULL, &m_sourceRectangle.w, &m_sourceRectangle.h);
 
     //position
     m_destinationRectangle.x = 0;
@@ -77,10 +75,10 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
     m_sourceRectangle.y = 0;
 
     //rectangle size
-    m_destinationRectangle.w = 64;
-    m_destinationRectangle.h = 65;
-    m_sourceRectangle.w = 64;
-    m_sourceRectangle.h = 65;
+    m_destinationRectangle.w = 128;
+    m_destinationRectangle.h = 82;
+    m_sourceRectangle.w = 128;
+    m_sourceRectangle.h = 82;
 
     /* /////////////////////////////////////////////////////////////////////////////// */
 
@@ -105,6 +103,19 @@ void Game::render(){
     SDL_RenderPresent(m_pRenderer);
 }
 
+
+/* UPDATE */
+void Game::update(){
+    //every 100 milliseconds shift the x value of our source rectangle by
+    //128 pixels (the width of a frame), multiplied by the current frame we want,
+    //giving us the correct position
+
+    //SDL_GetTicks return the amount of milliseconds since SDL was initialized
+    //then we divide it by the amount of time(ms) we want between frames
+    //then use modulo operator to keep it in range of the amount of frames we have in our animation
+    m_sourceRectangle.x = 128 * int(((SDL_GetTicks() / 100) % 6));
+
+}
 
 
 /* HANDLE EVENTS */

@@ -18,7 +18,7 @@ int main(int argc, char* argv[]){
     while(g_game->running()){
     //call these functions
     g_game->handleEvents();
-    //g_game->update();
+    g_game->update();
     g_game->render();
     }
     //when running() return "false"
