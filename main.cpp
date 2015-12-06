@@ -46,7 +46,7 @@ void render(){
 /* MAIN FUNCTION */
 int main(int argc, char* args[]){
 
-    if(init("Chapter 1: Setting up SDL",
+    if(init("Lazy Penguin",
     SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 640,
     480, SDL_WINDOW_SHOWN)){
 
