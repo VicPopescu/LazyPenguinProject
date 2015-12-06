@@ -13,7 +13,17 @@ Game::~Game()
 
 
 /* INIT */
-bool Game::init(const char* title, int xpos, int ypos, int width, int height, int flags){
+bool Game::init(const char* title, int xpos, int ypos, int width, int height, bool fullscreen){
+
+    //handling fullscreen mode
+    int flags = 0;
+
+    if(fullscreen){
+
+        flags = SDL_WINDOW_FULLSCREEN;
+    }
+
+
 
     //attempt to initialize SDL
     if(SDL_Init(SDL_INIT_EVERYTHING) == 0){

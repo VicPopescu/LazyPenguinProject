@@ -9,8 +9,9 @@ Game* g_game = 0;
 /* MAIN FUNCTION */
 int main(int argc, char* argv[]){
 
+    //create a new instance of the game
     g_game = new Game();
-    g_game->init("Lazy Penguin", 100, 100, 640, 480, 0);
+    g_game->init("Lazy Penguin", 100, 100, 640, 480, true);
 
     while(g_game->running()){
 
