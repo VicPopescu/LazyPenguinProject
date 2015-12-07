@@ -1,11 +1,10 @@
 # LazyPenguinProject
 2D Game    
-
 This is a personal project!    
 
 #What I used for this project:    
 
-Tutorials from:
+Tutorials from:   
 http://lazyfoo.net/tutorials/SDL/index.php
 
 Books:   
@@ -20,6 +19,10 @@ https://www.libsdl.org/projects/SDL_image/
 SDL_Mixer 2.0:   
 https://www.libsdl.org/projects/SDL_mixer/   
 
-TinyXml   
+TinyXml:   
 http://www.grinninglizard.com/tinyxml/   
+
+File Sources:   
+http://thepikuseru.deviantart.com/art/Penguin-Sprites-39302798
+
 
