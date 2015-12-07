@@ -1,6 +1,5 @@
 # LazyPenguinProject
 2D Game    
-
 This is a personal project!    
 
 #What I used for this project:    
