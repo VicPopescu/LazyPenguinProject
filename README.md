@@ -4,7 +4,7 @@ This is a personal project!
 
 #What I used for this project:    
 
-Tutorials from:
+Tutorials from:   
 http://lazyfoo.net/tutorials/SDL/index.php
 
 Books:   
