@@ -20,6 +20,9 @@ https://www.libsdl.org/projects/SDL_image/
 SDL_Mixer 2.0:   
 https://www.libsdl.org/projects/SDL_mixer/   
 
-TinyXml   
+TinyXml:   
 http://www.grinninglizard.com/tinyxml/   
+
+File Sources:   
+http://thepikuseru.deviantart.com/art/Penguin-Sprites-39302798
 
