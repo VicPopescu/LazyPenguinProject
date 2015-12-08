@@ -61,10 +61,9 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
     m_bRunning = true; // everything initialized successfully, start the main loop
 
 
-    /* /////////////////////////////////////////////////////////////////////////////// */
 
-    m_textureManager.load("Resources/animate-alpha.png", "animate", m_pRenderer);
 
+    m_textureManager.load("Resources/baby_penguin_alpha2.png", "animate", m_pRenderer);
 
 
 
@@ -81,11 +80,11 @@ void Game::render(){
     SDL_RenderClear(m_pRenderer);
 
     /* /////////////////////////////////////////////////////////////////////////////// */
+
     //draw non-animated picture
     m_textureManager.draw("animate", 0,0, 128, 82, m_pRenderer);
     //draw animated picture
     m_textureManager.drawFrame("animate", 100,100, 128, 82, 1, m_currentFrame, m_pRenderer);
-
 
     /* /////////////////////////////////////////////////////////////////////////////// */
 
