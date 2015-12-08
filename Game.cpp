@@ -61,8 +61,12 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
     m_bRunning = true; // everything initialized successfully, start the main loop
 
 
-    //load the source of the sprite
-    m_textureManager.load("Resources/baby_penguin_alpha2.png", "animate", m_pRenderer);
+    // to load
+    if(!TheTextureManager::Instance()->load("Resources/animate-alpha.png", "animate", m_pRenderer)){
+
+
+        return false;
+    }
 
 
     return true;
@@ -79,6 +83,15 @@ void Game::render(){
 
     /* /////////////////////////////////////////////////////////////////////////////// */
 
+
+    // to draw
+    TheTextureManager::Instance()->draw("animate", 0,0, 128, 82, m_pRenderer);
+
+
+
+
+
+    /*
     //draw non-animated picture
     //(id, x, y, height, width, renderer)
     //Picture 1
@@ -96,6 +109,7 @@ void Game::render(){
     //Picture 6
     m_textureManager.drawFrame("animate", 455,250, 64, 64, 5, m_currentFrame6, m_pRenderer);
 
+    */
     /* /////////////////////////////////////////////////////////////////////////////// */
 
     // draw to the screen

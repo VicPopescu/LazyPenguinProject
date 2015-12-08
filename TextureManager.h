@@ -3,16 +3,26 @@
 
 #include <iostream>
 #include <map>
+#include <string>
 #include "SDL.h"
-#include <SDL_image.h>
 
 
 
 class TextureManager
 {
     public:
-        TextureManager();
-        ~TextureManager();
+
+        static TextureManager* Instance(){
+
+        if(s_pInstance == 0){
+
+            s_pInstance = new TextureManager();
+            return s_pInstance;
+        }
+        return s_pInstance;
+
+        }
+
 
         bool load(std::string fileName,std::string id, SDL_Renderer* pRenderer);
 
@@ -29,6 +39,16 @@ class TextureManager
 
     protected:
     private:
+        //private constructor, because we want this class to be used as a singleton
+        TextureManager();
+        ~TextureManager();
+
+        static TextureManager* s_pInstance;
+
+
+
 };
+
+typedef TextureManager TheTextureManager;
 
 #endif // TEXTUREMANAGER_H

@@ -36,7 +36,6 @@ class Game
         //adding 6 frames for the last picture
         int m_currentFrame6;
 
-        TextureManager m_textureManager;
 
         //this variable will decide if the game is running or not
         bool m_bRunning;
