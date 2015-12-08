@@ -83,10 +83,10 @@ void Game::render(){
 
     //draw non-animated picture
     //(id, x, y, height, width, renderer)
-    m_textureManager.draw("animate", 0,0, 128, 82, m_pRenderer);
+    m_textureManager.draw("animate", 240,250, 64, 64, m_pRenderer);
     //draw animated picture
     //(id, x, y, height, width, row, current frame, renderer)
-    m_textureManager.drawFrame("animate", 100,100, 128, 82, 1, m_currentFrame, m_pRenderer);
+    m_textureManager.drawFrame("animate", 300,250, 64, 64, 1, m_currentFrame, m_pRenderer);
 
     /* /////////////////////////////////////////////////////////////////////////////// */
 
