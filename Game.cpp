@@ -81,8 +81,9 @@ void Game::render(){
     SDL_RenderClear(m_pRenderer);
 
     /* /////////////////////////////////////////////////////////////////////////////// */
+    //draw non-animated picture
     m_textureManager.draw("animate", 0,0, 128, 82, m_pRenderer);
-
+    //draw animated picture
     m_textureManager.drawFrame("animate", 100,100, 128, 82, 1, m_currentFrame, m_pRenderer);
 
 
