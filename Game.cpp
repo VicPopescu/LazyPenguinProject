@@ -82,19 +82,19 @@ void Game::render(){
     //draw non-animated picture
     //(id, x, y, height, width, renderer)
     //Picture 1
-    m_textureManager.draw("animate", 150,250, 64, 64, m_pRenderer);
+    m_textureManager.draw("animate", 130,250, 64, 64, m_pRenderer);
     //draw animated picture
     //(id, x, y, height, width, row, current frame, renderer)
     //Picture 2
-    m_textureManager.drawFrame("animate", 215,250, 64, 64, 1, m_currentFrame, m_pRenderer);
+    m_textureManager.drawFrame("animate", 195,250, 64, 64, 1, m_currentFrame, m_pRenderer);
     //Picture 3
-    m_textureManager.drawFrame("animate", 280,250, 64, 64, 2, m_currentFrame, m_pRenderer);
+    m_textureManager.drawFrame("animate", 260,250, 64, 64, 2, m_currentFrame, m_pRenderer);
     //Picture 4
-    m_textureManager.drawFrame("animate", 345,250, 64, 64, 3, m_currentFrame, m_pRenderer);
+    m_textureManager.drawFrame("animate", 325,250, 64, 64, 3, m_currentFrame, m_pRenderer);
     //Picture 5
-    m_textureManager.drawFrame("animate", 410,250, 64, 64, 4, m_currentFrame, m_pRenderer);
+    m_textureManager.drawFrame("animate", 390,250, 64, 64, 4, m_currentFrame, m_pRenderer);
     //Picture 6
-    m_textureManager.drawFrame("animate", 475,250, 64, 64, 5, m_currentFrame6, m_pRenderer);
+    m_textureManager.drawFrame("animate", 455,250, 64, 64, 5, m_currentFrame6, m_pRenderer);
 
     /* /////////////////////////////////////////////////////////////////////////////// */
 
@@ -105,7 +105,7 @@ void Game::render(){
 
 /* UPDATE */
 void Game::update(){
-    //every 100 milliseconds shift the x value of our source rectangle by
+    //every 200 milliseconds shift the x value of our source rectangle by
     //128 pixels (the width of a frame), multiplied by the current frame we want,
     //giving us the correct position
 
