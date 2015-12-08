@@ -1,7 +1,11 @@
 #include "TextureManager.h"
+#include "SDL_image.h"
+#include "SDL.h"
 
 TextureManager::TextureManager(){}
 TextureManager::~TextureManager(){}
+
+TextureManager* TextureManager::s_pInstance = 0;
 
 
 /* LOAD */

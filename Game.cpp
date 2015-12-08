@@ -61,9 +61,11 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
     m_bRunning = true; // everything initialized successfully, start the main loop
 
 
-    //load the source of the sprite
-    m_textureManager.load("Resources/baby_penguin_alpha2.png", "animate", m_pRenderer);
+    // Load file source
+    if(!TheTextureManager::Instance()->load("Resources/baby_penguin_alpha2.png", "animate", m_pRenderer)){
 
+        return false;
+    }
 
     return true;
 
@@ -79,22 +81,25 @@ void Game::render(){
 
     /* /////////////////////////////////////////////////////////////////////////////// */
 
-    //draw non-animated picture
-    //(id, x, y, height, width, renderer)
+    // draw specific frames   //(id, x, y, height, width, row, current frame, renderer)
+
     //Picture 1
-    m_textureManager.draw("animate", 130,250, 64, 64, m_pRenderer);
-    //draw animated picture
-    //(id, x, y, height, width, row, current frame, renderer)
-    //Picture 2
-    m_textureManager.drawFrame("animate", 195,250, 64, 64, 1, m_currentFrame, m_pRenderer);
+    TheTextureManager::Instance()->drawFrame("animate", 130,250, 64, 64, 5, m_currentFrame1, m_pRenderer);
     //Picture 3
-    m_textureManager.drawFrame("animate", 260,250, 64, 64, 2, m_currentFrame, m_pRenderer);
+    TheTextureManager::Instance()->drawFrame("animate", 260,250, 64, 64, 2, m_currentFrame3, m_pRenderer);
     //Picture 4
-    m_textureManager.drawFrame("animate", 325,250, 64, 64, 3, m_currentFrame, m_pRenderer);
+    TheTextureManager::Instance()->drawFrame("animate", 325,250, 64, 64, 3, m_currentFrame4, m_pRenderer);
     //Picture 5
-    m_textureManager.drawFrame("animate", 390,250, 64, 64, 4, m_currentFrame, m_pRenderer);
+    TheTextureManager::Instance()->drawFrame("animate", 390,250, 64, 64, 4, m_currentFrame5, m_pRenderer);
     //Picture 6
-    m_textureManager.drawFrame("animate", 455,250, 64, 64, 5, m_currentFrame6, m_pRenderer);
+    TheTextureManager::Instance()->drawFrame("animate", 455,250, 64, 64, 1, m_currentFrame6, m_pRenderer);
+
+    // Draw
+    // Draw non-animated picture //(id, x, y, height, width, renderer)
+    //Picture 2
+    TheTextureManager::Instance()->draw("animate", 195,250, 64, 64, m_pRenderer);
+
+
 
     /* /////////////////////////////////////////////////////////////////////////////// */
 
@@ -105,16 +110,22 @@ void Game::render(){
 
 /* UPDATE */
 void Game::update(){
-    //every 200 milliseconds shift the x value of our source rectangle by
-    //128 pixels (the width of a frame), multiplied by the current frame we want,
+    //every 200 (or whatever I put there) milliseconds shift the x value of our source rectangle by
+    //64 pixels (the width of a frame), multiplied by the current frame we want,
     //giving us the correct position
 
     //SDL_GetTicks return the amount of milliseconds since SDL was initialized
     //then we divide it by the amount of time(ms) we want between frames
     //then use modulo operator to keep it in range of the amount of frames we have in our animation
      m_currentFrame = int(((SDL_GetTicks() / 200) % 2));
-     //adding 6 frames for last picture, instead of 2
-     m_currentFrame6 = int(((SDL_GetTicks() / 200) % 6));
+     //using different frames from the sprite
+     //adding 1,2,etc we set the starting frame
+     m_currentFrame1 = int(((SDL_GetTicks() / 400) % 6));
+     m_currentFrame3 = int(((SDL_GetTicks() / 150) % 3));
+     m_currentFrame4 = int(((SDL_GetTicks() / 200) % 2));
+     m_currentFrame5 = int((2 +(SDL_GetTicks() / 200) % 2));
+     m_currentFrame6 = int((1 +(SDL_GetTicks() / 200) % 2));
+
 
 }
 
