@@ -2,6 +2,7 @@
 #define GAME_H
 
 #include "SDL.h"
+#include "TextureManager.h"
 
 
 class Game
@@ -31,15 +32,14 @@ class Game
         //pointer to an SDL_Renderer object; set using the SDL_CreateRenderer function
         SDL_Renderer* m_pRenderer;
 
-        //SDL Texture pointers:
-        SDL_Texture* m_pTexture; //new SDL Texture variable
-        //the area we want to copy from a texture onto the window
-        SDL_Rect m_sourceRectangle;
-        //the window area where the sourceRectangle will be draw
-        SDL_Rect m_destinationRectangle;
+        int m_currentFrame;
+        //adding 6 frames for the last picture
+        int m_currentFrame6;
+
+        TextureManager m_textureManager;
 
         //this variable will decide if the game is running or not
         bool m_bRunning;
 };
 
-#endif /* defined(Game) */
+#endif
