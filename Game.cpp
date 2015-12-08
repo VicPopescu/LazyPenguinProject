@@ -61,10 +61,8 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
     m_bRunning = true; // everything initialized successfully, start the main loop
 
 
-
-
+    //load the source of the sprite
     m_textureManager.load("Resources/baby_penguin_alpha2.png", "animate", m_pRenderer);
-
 
 
     return true;
@@ -83,10 +81,20 @@ void Game::render(){
 
     //draw non-animated picture
     //(id, x, y, height, width, renderer)
-    m_textureManager.draw("animate", 240,250, 64, 64, m_pRenderer);
+    //Picture 1
+    m_textureManager.draw("animate", 150,250, 64, 64, m_pRenderer);
     //draw animated picture
     //(id, x, y, height, width, row, current frame, renderer)
-    m_textureManager.drawFrame("animate", 300,250, 64, 64, 1, m_currentFrame, m_pRenderer);
+    //Picture 2
+    m_textureManager.drawFrame("animate", 215,250, 64, 64, 1, m_currentFrame, m_pRenderer);
+    //Picture 3
+    m_textureManager.drawFrame("animate", 280,250, 64, 64, 2, m_currentFrame, m_pRenderer);
+    //Picture 4
+    m_textureManager.drawFrame("animate", 345,250, 64, 64, 3, m_currentFrame, m_pRenderer);
+    //Picture 5
+    m_textureManager.drawFrame("animate", 410,250, 64, 64, 4, m_currentFrame, m_pRenderer);
+    //Picture 6
+    m_textureManager.drawFrame("animate", 475,250, 64, 64, 5, m_currentFrame6, m_pRenderer);
 
     /* /////////////////////////////////////////////////////////////////////////////// */
 
@@ -104,7 +112,8 @@ void Game::update(){
     //SDL_GetTicks return the amount of milliseconds since SDL was initialized
     //then we divide it by the amount of time(ms) we want between frames
     //then use modulo operator to keep it in range of the amount of frames we have in our animation
-     m_currentFrame = int(((SDL_GetTicks() / 100) % 6));
+     m_currentFrame = int(((SDL_GetTicks() / 200) % 2));
+     m_currentFrame6 = int(((SDL_GetTicks() / 200) % 6));
 
 }
 

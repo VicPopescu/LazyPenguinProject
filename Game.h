@@ -33,6 +33,8 @@ class Game
         SDL_Renderer* m_pRenderer;
 
         int m_currentFrame;
+        int m_currentFrame6;
+
         TextureManager m_textureManager;
 
         //this variable will decide if the game is running or not
