@@ -1,7 +1,6 @@
 #include "TextureManager.h"
 
-TextureManager::TextureManager(){}
-TextureManager::~TextureManager(){}
+
 
 
 bool TextureManager::load(std::string fileName, std::string
