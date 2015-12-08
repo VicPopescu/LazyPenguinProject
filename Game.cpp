@@ -63,7 +63,7 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 
     /* /////////////////////////////////////////////////////////////////////////////// */
 
-    m_textureManager.load("assets/animate-alpha.png", "animate", m_pRenderer);
+    m_textureManager.load("Resources/animate-alpha.png", "animate", m_pRenderer);
 
 
 
