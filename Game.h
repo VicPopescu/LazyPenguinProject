@@ -33,8 +33,12 @@ class Game
         SDL_Renderer* m_pRenderer;
 
         int m_currentFrame;
-        //adding 6 frames for the last picture
-        int m_currentFrame6;
+        //different frames
+        int m_currentFrame1;
+        int m_currentFrame2;
+        int m_currentFrame3;
+        int m_currentFrame4;
+        int m_currentFrame5;
 
 
         //this variable will decide if the game is running or not

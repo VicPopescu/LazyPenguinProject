@@ -88,15 +88,15 @@ void Game::render(){
     TheTextureManager::Instance()->draw("animate", 130,250, 64, 64, m_pRenderer);
     //draw animated picture    //(id, x, y, height, width, row, current frame, renderer)
     //Picture 2
-    TheTextureManager::Instance()->drawFrame("animate", 195,250, 64, 64, 1, m_currentFrame, m_pRenderer);
+    TheTextureManager::Instance()->drawFrame("animate", 195,250, 64, 64, 1, m_currentFrame1, m_pRenderer);
     //Picture 3
-    TheTextureManager::Instance()->drawFrame("animate", 260,250, 64, 64, 2, m_currentFrame, m_pRenderer);
+    TheTextureManager::Instance()->drawFrame("animate", 260,250, 64, 64, 2, m_currentFrame2, m_pRenderer);
     //Picture 4
-    TheTextureManager::Instance()->drawFrame("animate", 325,250, 64, 64, 3, m_currentFrame, m_pRenderer);
+    TheTextureManager::Instance()->drawFrame("animate", 325,250, 64, 64, 3, m_currentFrame3, m_pRenderer);
     //Picture 5
     TheTextureManager::Instance()->drawFrame("animate", 390,250, 64, 64, 4, m_currentFrame, m_pRenderer);
     //Picture 6
-    TheTextureManager::Instance()->drawFrame("animate", 455,250, 64, 64, 5, m_currentFrame, m_pRenderer);
+    TheTextureManager::Instance()->drawFrame("animate", 455,250, 64, 64, 5, m_currentFrame5, m_pRenderer);
 
 
 
@@ -118,7 +118,11 @@ void Game::update(){
     //then use modulo operator to keep it in range of the amount of frames we have in our animation
      m_currentFrame = int(((SDL_GetTicks() / 200) % 2));
      //adding 6 frames for last picture, instead of 2
-     m_currentFrame6 = int(((SDL_GetTicks() / 200) % 6));
+     m_currentFrame1 = int((1 +(SDL_GetTicks() / 200) % 2));
+     m_currentFrame2 = int(((SDL_GetTicks() / 200) % 2));
+     m_currentFrame3 = int(((SDL_GetTicks() / 200) % 3));
+     m_currentFrame4 = int((1 +(SDL_GetTicks() / 200) % 2));
+     m_currentFrame5 = int(((SDL_GetTicks() / 200) % 6));
 
 }
 
