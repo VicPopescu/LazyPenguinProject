@@ -33,6 +33,7 @@ class Game
         SDL_Renderer* m_pRenderer;
 
         int m_currentFrame;
+        //adding 6 frames for the last picture
         int m_currentFrame6;
 
         TextureManager m_textureManager;

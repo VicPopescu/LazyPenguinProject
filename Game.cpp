@@ -113,6 +113,7 @@ void Game::update(){
     //then we divide it by the amount of time(ms) we want between frames
     //then use modulo operator to keep it in range of the amount of frames we have in our animation
      m_currentFrame = int(((SDL_GetTicks() / 200) % 2));
+     //adding 6 frames for last picture, instead of 2
      m_currentFrame6 = int(((SDL_GetTicks() / 200) % 6));
 
 }
