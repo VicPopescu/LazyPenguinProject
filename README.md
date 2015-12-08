@@ -22,7 +22,7 @@ https://www.libsdl.org/projects/SDL_mixer/
 TinyXml:   
 http://www.grinninglizard.com/tinyxml/   
 
-File Sources:   
+Sprites:   
 http://thepikuseru.deviantart.com/art/Penguin-Sprites-39302798
 
 
