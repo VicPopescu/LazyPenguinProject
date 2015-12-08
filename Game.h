@@ -42,4 +42,4 @@ class Game
         bool m_bRunning;
 };
 
-#endif /* defined(Game) */
+#endif
