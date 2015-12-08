@@ -1,13 +1,20 @@
 # depslib dependency file v1.0
-1449440090 source:c:\users\greedy\documents\github\lazypenguinproject\main.cpp
+1449534770 source:c:\users\greedy\documents\github\lazypenguinproject\main.cpp
 	"Game.h"
 	"Windows.h"
 
-1449440090 c:\users\greedy\documents\github\lazypenguinproject\game.h
+1449538468 c:\users\greedy\documents\github\lazypenguinproject\game.h
 	"SDL.h"
+	"TextureManager.h"
 
-1449460538 source:c:\users\greedy\documents\github\lazypenguinproject\game.cpp
+1449538485 source:c:\users\greedy\documents\github\lazypenguinproject\game.cpp
 	"Game.h"
 	<SDL_image.h>
 	<iostream>
+
+1449538562 c:\users\greedy\documents\github\lazypenguinproject\texturemanager.h
+	<iostream>
+	<map>
+	"SDL.h"
+	<SDL_image.h>
 

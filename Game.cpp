@@ -63,25 +63,10 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 
     /* /////////////////////////////////////////////////////////////////////////////// */
 
-    SDL_Surface* pTempSurface = IMG_Load("Resources/baby_penguin_alpha2.png");
+    m_textureManager.load("assets/animate-alpha.png", "animate", m_pRenderer);
 
-    m_pTexture = SDL_CreateTextureFromSurface(m_pRenderer, pTempSurface);
 
-    SDL_FreeSurface(pTempSurface);
 
-    //position
-    m_destinationRectangle.x = 290;
-    m_destinationRectangle.y = 290;
-    m_sourceRectangle.x = 0;
-    m_sourceRectangle.y = 256;
-
-    //rectangle size
-    m_destinationRectangle.w = 64;
-    m_destinationRectangle.h = 64;
-    m_sourceRectangle.w = 64;
-    m_sourceRectangle.h = 64;
-
-    /* /////////////////////////////////////////////////////////////////////////////// */
 
     return true;
 
@@ -96,7 +81,10 @@ void Game::render(){
     SDL_RenderClear(m_pRenderer);
 
     /* /////////////////////////////////////////////////////////////////////////////// */
-    SDL_RenderCopy(m_pRenderer, m_pTexture, &m_sourceRectangle, &m_destinationRectangle);
+    m_textureManager.draw("animate", 0,0, 128, 82, m_pRenderer);
+
+    m_textureManager.drawFrame("animate", 100,100, 128, 82, 1, m_currentFrame, m_pRenderer);
+
 
     /* /////////////////////////////////////////////////////////////////////////////// */
 
@@ -114,7 +102,7 @@ void Game::update(){
     //SDL_GetTicks return the amount of milliseconds since SDL was initialized
     //then we divide it by the amount of time(ms) we want between frames
     //then use modulo operator to keep it in range of the amount of frames we have in our animation
-    m_sourceRectangle.x = 64 * int(((SDL_GetTicks() / 300) % 6));
+     m_currentFrame = int(((SDL_GetTicks() / 100) % 6));
 
 }
 
