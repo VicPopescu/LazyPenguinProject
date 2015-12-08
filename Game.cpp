@@ -61,13 +61,11 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
     m_bRunning = true; // everything initialized successfully, start the main loop
 
 
-    // to load
-    if(!TheTextureManager::Instance()->load("Resources/animate-alpha.png", "animate", m_pRenderer)){
-
+    // Load file source
+    if(!TheTextureManager::Instance()->load("Resources/baby_penguin_alpha2.png", "animate", m_pRenderer)){
 
         return false;
     }
-
 
     return true;
 
@@ -84,32 +82,24 @@ void Game::render(){
     /* /////////////////////////////////////////////////////////////////////////////// */
 
 
-    // to draw
-    TheTextureManager::Instance()->draw("animate", 0,0, 128, 82, m_pRenderer);
-
-
-
-
-
-    /*
-    //draw non-animated picture
-    //(id, x, y, height, width, renderer)
+    // Draw
+    // Draw non-animated picture //(id, x, y, height, width, renderer)
     //Picture 1
-    m_textureManager.draw("animate", 130,250, 64, 64, m_pRenderer);
-    //draw animated picture
-    //(id, x, y, height, width, row, current frame, renderer)
+    TheTextureManager::Instance()->draw("animate", 130,250, 64, 64, m_pRenderer);
+    //draw animated picture    //(id, x, y, height, width, row, current frame, renderer)
     //Picture 2
-    m_textureManager.drawFrame("animate", 195,250, 64, 64, 1, m_currentFrame, m_pRenderer);
+    TheTextureManager::Instance()->drawFrame("animate", 195,250, 64, 64, 1, m_currentFrame, m_pRenderer);
     //Picture 3
-    m_textureManager.drawFrame("animate", 260,250, 64, 64, 2, m_currentFrame, m_pRenderer);
+    TheTextureManager::Instance()->drawFrame("animate", 260,250, 64, 64, 2, m_currentFrame, m_pRenderer);
     //Picture 4
-    m_textureManager.drawFrame("animate", 325,250, 64, 64, 3, m_currentFrame, m_pRenderer);
+    TheTextureManager::Instance()->drawFrame("animate", 325,250, 64, 64, 3, m_currentFrame, m_pRenderer);
     //Picture 5
-    m_textureManager.drawFrame("animate", 390,250, 64, 64, 4, m_currentFrame, m_pRenderer);
+    TheTextureManager::Instance()->drawFrame("animate", 390,250, 64, 64, 4, m_currentFrame, m_pRenderer);
     //Picture 6
-    m_textureManager.drawFrame("animate", 455,250, 64, 64, 5, m_currentFrame6, m_pRenderer);
+    TheTextureManager::Instance()->drawFrame("animate", 455,250, 64, 64, 5, m_currentFrame, m_pRenderer);
 
-    */
+
+
     /* /////////////////////////////////////////////////////////////////////////////// */
 
     // draw to the screen

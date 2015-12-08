@@ -10,7 +10,7 @@
 
 class TextureManager
 {
-    public:
+public:
 
         static TextureManager* Instance(){
 
@@ -35,10 +35,8 @@ class TextureManager
         std::map<std::string, SDL_Texture*> m_textureMap;
 
 
-
-
-    protected:
-    private:
+protected:
+private:
         //private constructor, because we want this class to be used as a singleton
         TextureManager();
         ~TextureManager();
