@@ -35,10 +35,10 @@ class Game
         int m_currentFrame;
         //different frames
         int m_currentFrame1;
-        int m_currentFrame2;
-        int m_currentFrame3;
+        int m_currentFrame3;//yes, 1 missing here, I know
         int m_currentFrame4;
         int m_currentFrame5;
+        int m_currentFrame6;
 
 
         //this variable will decide if the game is running or not
