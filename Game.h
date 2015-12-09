@@ -1,12 +1,14 @@
 #ifndef GAME_H
 #define GAME_H
-
+//////////////////
 #include "SDL.h"
+#include <vector>
+/////////////////
+
+
 #include "TextureManager.h"
 #include "GameObject.h"
 #include "Player.h"
-#include <iostream>
-#include <vector>
 #include "Enemy.h"
 
 
