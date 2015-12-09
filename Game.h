@@ -3,11 +3,15 @@
 
 #include "SDL.h"
 #include "TextureManager.h"
+#include "GameObject.h"
+#include "Player.h"
+
 
 
 class Game
 {
     public:
+
 
         Game();
         ~Game();
@@ -24,6 +28,10 @@ class Game
         void clean();
         // a function to access the private running variable
         bool running() { return m_bRunning;};
+
+
+
+
 
     private:
 
@@ -43,6 +51,12 @@ class Game
 
         //this variable will decide if the game is running or not
         bool m_bRunning;
+
+         ///////////////////////
+        GameObject m_go;
+        Player m_player;
+        ///////////////////////
+
 };
 
 #endif

@@ -3,8 +3,8 @@
 GameObject::GameObject(){}
 GameObject::~GameObject(){}
 
-void GameObject::load(int x, int y, int width, int height, std::string
-textureID)
+void GameObject::load(int x, int y, int width, int height, std::string textureID)
+
 {
 m_x = x;
 m_y = y;
