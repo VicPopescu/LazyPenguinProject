@@ -79,8 +79,10 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 
     //Pushing 2 objects to the m_gameObjects array
     m_gameObjects.push_back(new Player(new LoaderParams(100, 100, 64, 64, "animate")));
+    m_gameObjects.push_back(new Player(new LoaderParams(200, 100, 64, 64, "animate")));
 
     m_gameObjects.push_back(new Enemy(new LoaderParams(300, 300, 64, 64, "animate")));
+    m_gameObjects.push_back(new Enemy(new LoaderParams(400, 300, 64, 64, "animate")));
 
 
     /* ====================================== */

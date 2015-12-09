@@ -12,11 +12,15 @@ SDLGameObject::draw(); // we now use SDLGameObject
 
 void Player::update(){
 
-    //this will increment x on the window, not on the sprite!!!
-    //need to corect this in the SDLGameObjectCLass
-    m_x += 2;//need to correct this! same for enemy class
-    //this works, take the correct number of frames out of the sprite row
+    //this will increment x on the window vector!!!
+//    m_x += 2;
+
+    //set up the starting frame and how many frames
+    //start: frame 1, continue 3 more frames:
     m_currentFrame = int(((SDL_GetTicks() / 100) % 3));
+
+    //start: from frame 2, continue 2 more frames
+//    m_currentFrame = int((1 + (SDL_GetTicks() / 100) % 2));
 }
 void Player::clean(){}
 

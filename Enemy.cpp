@@ -17,7 +17,9 @@ void Enemy::draw(){
 
 void Enemy::update(){
 
+    //this will increment x on the window vector!!!
     m_x -= 1;
+
     m_currentFrame = int((3 +(SDL_GetTicks() / 100) % 3));
 }
 
