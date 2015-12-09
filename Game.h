@@ -68,8 +68,6 @@ private:
         //pointer to an SDL_Renderer object; set using the SDL_CreateRenderer function
         SDL_Renderer* m_pRenderer;
 
-        int m_currentFrame;
-
 
         //this variable will decide if the game is running or not
         bool m_bRunning;

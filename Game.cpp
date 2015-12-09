@@ -12,7 +12,7 @@ Game* Game::s_pInstance = 0;
 
 
 
-/* INIT */
+/* ****************INIT BEGIN**************** */
 bool Game::init(const char* title, int xpos, int ypos, int width, int height, bool fullscreen){
 
     //handling fullscreen mode
@@ -65,33 +65,34 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
         }
 
     std::cout << "init success\n";
+
     m_bRunning = true; // everything initialized successfully, start the main loop
 
 
-       // Load file source
+    /* ====================================== */
+
+    // Load file source
     if(!TheTextureManager::Instance()->load("Resources/baby_penguin_alpha2.png", "animate", m_pRenderer)){
 
         return false;
     }
 
-
-
-    /////////////////////
+    //Pushing 2 objects to the m_gameObjects array
     m_gameObjects.push_back(new Player(new LoaderParams(100, 100, 64, 64, "animate")));
 
     m_gameObjects.push_back(new Enemy(new LoaderParams(300, 300, 64, 64, "animate")));
 
-    /////////////////////
 
+    /* ====================================== */
 
 
     return true;
 
 }
+/* ****************INIT END**************** */
 
 
-
-/* RENDER */
+/* ****************RENDER BEGIN**************** */
 void Game::render(){
 
     // clear the renderer to the draw color
@@ -109,9 +110,10 @@ void Game::render(){
     // draw to the screen
     SDL_RenderPresent(m_pRenderer);
 }
+/* ****************RENDER END**************** */
 
 
-/* UPDATE */
+/* ****************UPDATE BEGIN**************** */
 void Game::update(){
 
         // loop through and update our objects
@@ -122,13 +124,11 @@ void Game::update(){
         m_gameObjects[i]->update();
         }
 
-
-
-
 }
+/* ****************UPDATE END**************** */
 
 
-/* HANDLE EVENTS */
+/* ****************HANDLE EVENTS BEGIN**************** */
 void Game::handleEvents(){
 
     SDL_Event event;
@@ -143,10 +143,10 @@ void Game::handleEvents(){
         }
     }
 }
+/* ****************HANDLE EVENTS END**************** */
 
 
-
-/* CLEAN */
+/* ****************CLEAN BEGIN**************** */
 void Game::clean(){
 
     std::cout << "cleaning game\n";
@@ -154,4 +154,4 @@ void Game::clean(){
     SDL_DestroyRenderer(m_pRenderer);
     SDL_Quit();
 }
-
+/* ****************CLEAN END**************** */
