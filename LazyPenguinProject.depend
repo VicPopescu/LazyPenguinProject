@@ -30,10 +30,11 @@
 1449627196 source:c:\users\greedy\documents\github\lazypenguinproject\gameobject.cpp
 	"GameObject.h"
 
-1449627963 c:\users\greedy\documents\github\lazypenguinproject\gameobject.h
+1449630980 c:\users\greedy\documents\github\lazypenguinproject\gameobject.h
 	"TextureManager.h"
 	<iostream>
 	"SDL.h"
+	"LoaderParams.h"
 
 1449627592 source:c:\users\greedy\documents\github\lazypenguinproject\player.cpp
 	"Player.h"
@@ -41,11 +42,15 @@
 1449627227 c:\users\greedy\documents\github\lazypenguinproject\player.h
 	"GameObject.h"
 
-1449626440 source:c:\users\greedy\documents\github\lazypenguinproject\enemy.cpp
+1449631004 source:c:\users\greedy\documents\github\lazypenguinproject\enemy.cpp
 	"Enemy.h"
 
-1449627227 c:\users\greedy\documents\github\lazypenguinproject\enemy.h
-	<iostream>
-	"SDL.h"
+1449630980 c:\users\greedy\documents\github\lazypenguinproject\enemy.h
+	"SDLGameObject.h"
+
+1449630124 c:\users\greedy\documents\github\lazypenguinproject\loaderparams.h
+	<string>
+
+1449630980 c:\users\greedy\documents\github\lazypenguinproject\sdlgameobject.h
 	"GameObject.h"
 

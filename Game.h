@@ -7,7 +7,7 @@
 
 
 #include "TextureManager.h"
-#include "GameObject.h"
+#include "SDLGameObject.h"
 #include "Player.h"
 #include "Enemy.h"
 
@@ -17,9 +17,21 @@ class Game
 {
     public:
 
+        // create the public instance function
+static Game* Instance()
+{
+if(s_pInstance == 0)
+{
+s_pInstance = new Game();
+return s_pInstance;
+}
+return s_pInstance;
+}
+        //will return our SDL_Renderer object:
+        SDL_Renderer* getRenderer() const { return m_pRenderer; }
 
-        Game();
-        ~Game();
+
+
         //initialize SDL
         bool init(const char* title, int xpos, int ypos, int width, int height, bool fullscreen);
         //render
@@ -39,32 +51,32 @@ class Game
 
 
     private:
+        Game();
+        ~Game();
+ ///////////////////////////
+        // create the s_pInstance member variable
+static Game* s_pInstance;
 
+
+//////////////////////////
         //pointer to an SDL_Window function, which will be set using the SDL_CreateWindow function
         SDL_Window* m_pWindow;
         //pointer to an SDL_Renderer object; set using the SDL_CreateRenderer function
         SDL_Renderer* m_pRenderer;
 
         int m_currentFrame;
-        //different frames
-        int m_currentFrame1;
-        int m_currentFrame3;//yes, 1 missing here, I know
-        int m_currentFrame4;
-        int m_currentFrame5;
-        int m_currentFrame6;
 
 
         //this variable will decide if the game is running or not
         bool m_bRunning;
 
-         ///////////////////////
-        GameObject* m_go;
-        GameObject* m_player;
-        GameObject* m_enemy;
+
 
         std::vector<GameObject*> m_gameObjects;
         ///////////////////////
 
 };
+// create the typedef
+typedef Game TheGame;
 
 #endif

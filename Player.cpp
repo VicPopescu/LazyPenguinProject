@@ -1,35 +1,25 @@
 #include "Player.h"
 
-Player::Player(){}
-Player::~Player(){}
+Player::Player(const LoaderParams* pParams) : SDLGameObject(pParams){}
 
 
-
-void Player::load(int x, int y, int width, int height, std::string textureID)
-
+void Player::draw()
 {
-GameObject::load(x, y, width, height, textureID);
+SDLGameObject::draw(); // we now use SDLGameObject
 }
 
 
 
-
-void Player::draw(SDL_Renderer* pRenderer)
-{
-GameObject::draw(pRenderer);
-}
-
-
-
-
-//animate and move opposite direction
 void Player::update()
 {
 m_x -= 1;
-m_currentFrame = int(((SDL_GetTicks() / 100) % 3));
+m_currentFrame = int(((SDL_GetTicks() / 100) % 6));
+}
+void Player::clean()
+{
 }
 
 
 
 
-
+Player::~Player(){}
