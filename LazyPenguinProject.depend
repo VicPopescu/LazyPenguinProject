@@ -3,7 +3,7 @@
 	"Game.h"
 	"Windows.h"
 
-1449632910 c:\users\greedy\documents\github\lazypenguinproject\game.h
+1449635309 c:\users\greedy\documents\github\lazypenguinproject\game.h
 	"SDL.h"
 	<vector>
 	"TextureManager.h"
@@ -57,7 +57,7 @@
 1449629059 source:c:\users\greedy\documents\github\lazypenguinproject\loaderparams.cpp
 	"LoaderParams.h"
 
-1449635042 source:c:\users\greedy\documents\github\lazypenguinproject\sdlgameobject.cpp
+1449635270 source:c:\users\greedy\documents\github\lazypenguinproject\sdlgameobject.cpp
 	"SDLGameObject.h"
 	"Game.h"
 
