@@ -15,18 +15,22 @@
 
 class Game
 {
-    public:
+
+public:
 
         // create the public instance function
-static Game* Instance()
-{
-if(s_pInstance == 0)
-{
-s_pInstance = new Game();
-return s_pInstance;
-}
-return s_pInstance;
-}
+        static Game* Instance(){
+
+        if(s_pInstance == 0){
+
+            s_pInstance = new Game();
+            return s_pInstance;
+        }
+
+        return s_pInstance;
+        }
+
+
         //will return our SDL_Renderer object:
         SDL_Renderer* getRenderer() const { return m_pRenderer; }
 
@@ -50,15 +54,15 @@ return s_pInstance;
 
 
 
-    private:
+private:
         Game();
         ~Game();
- ///////////////////////////
+
         // create the s_pInstance member variable
-static Game* s_pInstance;
+        static Game* s_pInstance;
 
 
-//////////////////////////
+
         //pointer to an SDL_Window function, which will be set using the SDL_CreateWindow function
         SDL_Window* m_pWindow;
         //pointer to an SDL_Renderer object; set using the SDL_CreateRenderer function

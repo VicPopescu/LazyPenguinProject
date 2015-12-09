@@ -1,12 +1,5 @@
-
-
-
 #include "SDLGameObject.h"
-
-
-
-
-
+#include "Game.h"
 
 
 SDLGameObject::SDLGameObject(const LoaderParams* pParams) : GameObject(pParams){
@@ -16,7 +9,7 @@ SDLGameObject::SDLGameObject(const LoaderParams* pParams) : GameObject(pParams){
     m_width = pParams->getWidth();
     m_height = pParams->getHeight();
     m_textureID = pParams->getTextureID();
-    m_currentRow = 1;
+    m_currentRow = 2;
     m_currentFrame = 1;
 }
 
@@ -28,4 +21,7 @@ void SDLGameObject::draw(){
 }
 
 
-SDLGameObject::~SDLGameObject(){}
+
+void SDLGameObject::update(){}
+
+void SDLGameObject::clean(){}

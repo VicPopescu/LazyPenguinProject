@@ -1,17 +1,17 @@
 # depslib dependency file v1.0
-1449625302 source:c:\users\greedy\documents\github\lazypenguinproject\main.cpp
+1449634009 source:c:\users\greedy\documents\github\lazypenguinproject\main.cpp
 	"Game.h"
 	"Windows.h"
 
-1449627537 c:\users\greedy\documents\github\lazypenguinproject\game.h
+1449632910 c:\users\greedy\documents\github\lazypenguinproject\game.h
 	"SDL.h"
 	<vector>
 	"TextureManager.h"
-	"GameObject.h"
+	"SDLGameObject.h"
 	"Player.h"
 	"Enemy.h"
 
-1449627658 source:c:\users\greedy\documents\github\lazypenguinproject\game.cpp
+1449633084 source:c:\users\greedy\documents\github\lazypenguinproject\game.cpp
 	"Game.h"
 	<SDL_image.h>
 	<iostream>
@@ -27,30 +27,37 @@
 	"SDL_image.h"
 	"SDL.h"
 
-1449627196 source:c:\users\greedy\documents\github\lazypenguinproject\gameobject.cpp
+1449633224 source:c:\users\greedy\documents\github\lazypenguinproject\gameobject.cpp
 	"GameObject.h"
 
-1449630980 c:\users\greedy\documents\github\lazypenguinproject\gameobject.h
+1449631717 c:\users\greedy\documents\github\lazypenguinproject\gameobject.h
 	"TextureManager.h"
 	<iostream>
 	"SDL.h"
 	"LoaderParams.h"
 
-1449627592 source:c:\users\greedy\documents\github\lazypenguinproject\player.cpp
+1449635031 source:c:\users\greedy\documents\github\lazypenguinproject\player.cpp
 	"Player.h"
 
-1449627227 c:\users\greedy\documents\github\lazypenguinproject\player.h
-	"GameObject.h"
+1449634855 c:\users\greedy\documents\github\lazypenguinproject\player.h
+	"SDLGameObject.h"
 
-1449631004 source:c:\users\greedy\documents\github\lazypenguinproject\enemy.cpp
+1449631558 source:c:\users\greedy\documents\github\lazypenguinproject\enemy.cpp
 	"Enemy.h"
 
-1449630980 c:\users\greedy\documents\github\lazypenguinproject\enemy.h
+1449633644 c:\users\greedy\documents\github\lazypenguinproject\enemy.h
 	"SDLGameObject.h"
 
 1449630124 c:\users\greedy\documents\github\lazypenguinproject\loaderparams.h
 	<string>
 
-1449630980 c:\users\greedy\documents\github\lazypenguinproject\sdlgameobject.h
+1449634855 c:\users\greedy\documents\github\lazypenguinproject\sdlgameobject.h
 	"GameObject.h"
+
+1449629059 source:c:\users\greedy\documents\github\lazypenguinproject\loaderparams.cpp
+	"LoaderParams.h"
+
+1449635042 source:c:\users\greedy\documents\github\lazypenguinproject\sdlgameobject.cpp
+	"SDLGameObject.h"
+	"Game.h"
 
