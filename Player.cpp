@@ -21,6 +21,8 @@ void Player::update(){
 
     //start: from frame 2, continue 2 more frames
 //    m_currentFrame = int((1 + (SDL_GetTicks() / 100) % 2));
+
+    m_currentRow = 1;
 }
 void Player::clean(){}
 
