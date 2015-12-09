@@ -26,6 +26,14 @@
 1449620058 source:c:\users\greedy\documents\github\lazypenguinproject\gameobject.cpp
 	"GameObject.h"
 
-1449620147 c:\users\greedy\documents\github\lazypenguinproject\gameobject.h
+1449620637 c:\users\greedy\documents\github\lazypenguinproject\gameobject.h
+	"TextureManager.h"
 	<iostream>
+	"SDL.h"
+
+1449620107 source:c:\users\greedy\documents\github\lazypenguinproject\player.cpp
+	"Player.h"
+
+1449620603 c:\users\greedy\documents\github\lazypenguinproject\player.h
+	"GameObject.h"
 

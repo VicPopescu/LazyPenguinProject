@@ -10,24 +10,12 @@ public:
         Player();
         ~Player();
 
-        void draw(){
 
-            GameObject::draw();
-            std::cout << "draw player";
-        }
+        void load(int x, int y, int width, int height, std::string textureID);
+        void draw(SDL_Renderer* pRenderer);
+        void update();
+        void clean();
 
-        void update(){
-
-            std::cout << "update player";
-            m_x = 10;
-            m_y = 20;
-        }
-
-        void clean(){
-
-            GameObject::clean();
-            std::cout << "clean player";
-        }
 
 
 

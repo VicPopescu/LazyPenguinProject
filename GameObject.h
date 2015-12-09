@@ -1,7 +1,10 @@
 #ifndef GAMEOBJECT_H
 #define GAMEOBJECT_H
 
+
+#include "TextureManager.h"
 #include <iostream>
+#include "SDL.h"
 
 
 class GameObject
@@ -11,16 +14,21 @@ public:
         GameObject();
         ~GameObject();
 
-        void draw() { std::cout << "draw game object"; }
-        void update() { std::cout << "update game object"; }
-        void clean() { std::cout << "clean game object"; }
-
+        void load(int x, int y, int width, int height, std::string textureID);
+        void draw(SDL_Renderer* pRenderer);
+        void update();
+        void clean();
 
 
 protected:
 
+        std::string m_textureID;
+        int m_currentFrame;
+        int m_currentRow;
         int m_x;
         int m_y;
+        int m_width;
+        int m_height;
 
 private:
 };
