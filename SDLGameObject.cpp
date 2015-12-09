@@ -2,9 +2,10 @@
 #include "Game.h"
 
 
+
 SDLGameObject::SDLGameObject(const LoaderParams* pParams) : GameObject(pParams){
 
-    m_x = pParams->getX();
+    m_x = pParams->getX();//need to correct this, x from sprite, not x from window
     m_y = pParams->getY();
     m_width = pParams->getWidth();
     m_height = pParams->getHeight();

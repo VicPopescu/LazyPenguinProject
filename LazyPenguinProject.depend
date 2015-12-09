@@ -51,13 +51,13 @@
 1449635676 c:\users\greedy\documents\github\lazypenguinproject\loaderparams.h
 	<string>
 
-1449635676 c:\users\greedy\documents\github\lazypenguinproject\sdlgameobject.h
+1449637224 c:\users\greedy\documents\github\lazypenguinproject\sdlgameobject.h
 	"GameObject.h"
 
 1449635676 source:c:\users\greedy\documents\github\lazypenguinproject\loaderparams.cpp
 	"LoaderParams.h"
 
-1449636620 source:c:\users\greedy\documents\github\lazypenguinproject\sdlgameobject.cpp
+1449637214 source:c:\users\greedy\documents\github\lazypenguinproject\sdlgameobject.cpp
 	"SDLGameObject.h"
 	"Game.h"
 
