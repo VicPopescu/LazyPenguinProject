@@ -70,8 +70,8 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 
 
     //////////////////////////////////////
-    m_go.load(100, 100, 128, 82, "animate");
-    m_player.load(300, 300, 128, 82, "animate");
+    m_go.load(100, 100, 64, 64,  "animate");
+    m_player.load(300, 300, 64, 64, "animate");
     //////////////////////////////////////
 
 
@@ -121,7 +121,7 @@ void Game::render(){
     TheTextureManager::Instance()->draw("animate", 195,250, 64, 64, m_pRenderer);
 
 
-*/
+    */
     /* /////////////////////////////////////////////////////////////////////////////// */
 
     // draw to the screen
@@ -134,18 +134,11 @@ void Game::update(){
     //every 200 (or whatever I put there) milliseconds shift the x value of our source rectangle by
     //64 pixels (the width of a frame), multiplied by the current frame we want,
     //giving us the correct position
-
     //SDL_GetTicks return the amount of milliseconds since SDL was initialized
     //then we divide it by the amount of time(ms) we want between frames
     //then use modulo operator to keep it in range of the amount of frames we have in our animation
-     //m_currentFrame = int(((SDL_GetTicks() / 200) % 2));
-     //using different frames from the sprite
-     //adding 1,2,etc we set the starting frame
-     //m_currentFrame1 = int(((SDL_GetTicks() / 400) % 6));
-     //m_currentFrame3 = int(((SDL_GetTicks() / 150) % 3));
-    // m_currentFrame4 = int(((SDL_GetTicks() / 200) % 2));
-    // m_currentFrame5 = int((2 +(SDL_GetTicks() / 200) % 2));
-    // m_currentFrame6 = int((1 +(SDL_GetTicks() / 200) % 2));
+                //m_currentFrame = int(((SDL_GetTicks() / 200) % 2));
+
         m_go.update();
         m_player.update();
 
