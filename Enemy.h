@@ -1,15 +1,15 @@
-#ifndef PLAYER_H
-#define PLAYER_H
+#ifndef ENEMY_H
+#define ENEMY_H
 
+#include <iostream>
+#include "SDL.h"
 #include "GameObject.h"
 
+class Enemy : public GameObject{
 
-class Player: public GameObject{ //inherit GameObject;
-
-public:
-        Player();
-        ~Player();
-
+    public:
+        Enemy();
+        ~Enemy();
 
         void load(int x, int y, int width, int height, std::string textureID);
         void draw(SDL_Renderer* pRenderer);
@@ -18,9 +18,8 @@ public:
 
 
 
-
     protected:
     private:
 };
 
-#endif // PLAYER_H
+#endif // ENEMY_H

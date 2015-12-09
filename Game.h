@@ -5,6 +5,9 @@
 #include "TextureManager.h"
 #include "GameObject.h"
 #include "Player.h"
+#include <iostream>
+#include <vector>
+#include "Enemy.h"
 
 
 
@@ -53,8 +56,11 @@ class Game
         bool m_bRunning;
 
          ///////////////////////
-        GameObject m_go;
-        Player m_player;
+        GameObject* m_go;
+        GameObject* m_player;
+        GameObject* m_enemy;
+
+        std::vector<GameObject*> m_gameObjects;
         ///////////////////////
 
 };

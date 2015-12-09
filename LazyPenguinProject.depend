@@ -3,13 +3,16 @@
 	"Game.h"
 	"Windows.h"
 
-1449622040 c:\users\greedy\documents\github\lazypenguinproject\game.h
+1449627348 c:\users\greedy\documents\github\lazypenguinproject\game.h
 	"SDL.h"
 	"TextureManager.h"
 	"GameObject.h"
 	"Player.h"
+	<iostream>
+	<vector>
+	"Enemy.h"
 
-1449622639 source:c:\users\greedy\documents\github\lazypenguinproject\game.cpp
+1449627136 source:c:\users\greedy\documents\github\lazypenguinproject\game.cpp
 	"Game.h"
 	<SDL_image.h>
 	<iostream>
@@ -25,10 +28,10 @@
 	"SDL_image.h"
 	"SDL.h"
 
-1449625161 source:c:\users\greedy\documents\github\lazypenguinproject\gameobject.cpp
+1449627196 source:c:\users\greedy\documents\github\lazypenguinproject\gameobject.cpp
 	"GameObject.h"
 
-1449621621 c:\users\greedy\documents\github\lazypenguinproject\gameobject.h
+1449627243 c:\users\greedy\documents\github\lazypenguinproject\gameobject.h
 	"TextureManager.h"
 	<iostream>
 	"SDL.h"
@@ -36,6 +39,14 @@
 1449622463 source:c:\users\greedy\documents\github\lazypenguinproject\player.cpp
 	"Player.h"
 
-1449622124 c:\users\greedy\documents\github\lazypenguinproject\player.h
+1449627227 c:\users\greedy\documents\github\lazypenguinproject\player.h
+	"GameObject.h"
+
+1449626440 source:c:\users\greedy\documents\github\lazypenguinproject\enemy.cpp
+	"Enemy.h"
+
+1449627227 c:\users\greedy\documents\github\lazypenguinproject\enemy.h
+	<iostream>
+	"SDL.h"
 	"GameObject.h"
 

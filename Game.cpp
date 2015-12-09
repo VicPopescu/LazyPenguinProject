@@ -69,23 +69,24 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
     }
 
 
-    //////////////////////////////////////
-    m_go.load(100, 100, 64, 64,  "animate");
-    m_player.load(300, 300, 64, 64, "animate");
-    //////////////////////////////////////
+
+    /////////////////////
+    m_go = new GameObject();
+    m_player = new Player();
+    m_enemy = new Enemy();
+    m_go->load(100, 100, 128, 82, "animate");
+    m_player->load(300, 300, 128, 82, "animate");
+    m_enemy->load(0, 0, 128, 82, "animate");
+    m_gameObjects.push_back(m_go);
+    m_gameObjects.push_back(m_player);
+    m_gameObjects.push_back(m_enemy);
+     /////////////////////
 
 
 
     return true;
 
 }
-
-
-
-
-
-
-
 
 
 
@@ -96,33 +97,13 @@ void Game::render(){
     SDL_RenderClear(m_pRenderer);
 
     //////////////////////////////////
-    m_go.draw(m_pRenderer);
-    m_player.draw(m_pRenderer);
+    // loop through our objects and draw them
+    for(std::vector<GameObject*>::size_type i = 0; i != m_gameObjects.size(); i++)
+
+    {
+    m_gameObjects[i]->draw(m_pRenderer);
+    }
     //////////////////////////////////
-
-    /* ///////////////////////////////////////////////////////////////////////////////
-
-    // draw specific frames   //(id, x, y, height, width, row, current frame, renderer)
-
-    //Picture 1
-    TheTextureManager::Instance()->drawFrame("animate", 130,250, 64, 64, 5, m_currentFrame1, m_pRenderer);
-    //Picture 3
-    TheTextureManager::Instance()->drawFrame("animate", 260,250, 64, 64, 2, m_currentFrame3, m_pRenderer);
-    //Picture 4
-    TheTextureManager::Instance()->drawFrame("animate", 325,250, 64, 64, 3, m_currentFrame4, m_pRenderer);
-    //Picture 5
-    TheTextureManager::Instance()->drawFrame("animate", 390,250, 64, 64, 4, m_currentFrame5, m_pRenderer);
-    //Picture 6
-    TheTextureManager::Instance()->drawFrame("animate", 455,250, 64, 64, 1, m_currentFrame6, m_pRenderer);
-
-    // Draw
-    // Draw non-animated picture //(id, x, y, height, width, renderer)
-    //Picture 2
-    TheTextureManager::Instance()->draw("animate", 195,250, 64, 64, m_pRenderer);
-
-
-    */
-    /* /////////////////////////////////////////////////////////////////////////////// */
 
     // draw to the screen
     SDL_RenderPresent(m_pRenderer);
@@ -139,8 +120,17 @@ void Game::update(){
     //then use modulo operator to keep it in range of the amount of frames we have in our animation
                 //m_currentFrame = int(((SDL_GetTicks() / 200) % 2));
 
-        m_go.update();
-        m_player.update();
+
+
+        // loop through and update our objects
+
+        for(std::vector<GameObject*>::size_type i = 0; i != m_gameObjects.size(); i++)
+
+        {
+        m_gameObjects[i]->update();
+        }
+
+
 
 
 }
