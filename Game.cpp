@@ -2,10 +2,17 @@
 #include <SDL_image.h>
 #include <iostream>
 
+
 Game::Game(){}
 Game::~Game(){}
 
-/* INIT */
+
+//define our static instance:
+Game* Game::s_pInstance = 0;
+
+
+
+/* ****************INIT BEGIN**************** */
 bool Game::init(const char* title, int xpos, int ypos, int width, int height, bool fullscreen){
 
     //handling fullscreen mode
@@ -58,8 +65,11 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
         }
 
     std::cout << "init success\n";
+
     m_bRunning = true; // everything initialized successfully, start the main loop
 
+
+    /* ====================================== */
 
     // Load file source
     if(!TheTextureManager::Instance()->load("Resources/baby_penguin_alpha2.png", "animate", m_pRenderer)){
@@ -67,70 +77,58 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
         return false;
     }
 
+    //Pushing 2 objects to the m_gameObjects array
+    m_gameObjects.push_back(new Player(new LoaderParams(100, 100, 64, 64, "animate")));
+
+    m_gameObjects.push_back(new Enemy(new LoaderParams(300, 300, 64, 64, "animate")));
+
+
+    /* ====================================== */
+
+
     return true;
 
 }
+/* ****************INIT END**************** */
 
 
-
-/* RENDER */
+/* ****************RENDER BEGIN**************** */
 void Game::render(){
 
     // clear the renderer to the draw color
     SDL_RenderClear(m_pRenderer);
 
-    /* /////////////////////////////////////////////////////////////////////////////// */
+    //////////////////////////////////
+    // loop through our objects and draw them
+    for(std::vector<GameObject*>::size_type i = 0; i != m_gameObjects.size(); i++)
 
-    // draw specific frames   //(id, x, y, height, width, row, current frame, renderer)
-
-    //Picture 1
-    TheTextureManager::Instance()->drawFrame("animate", 130,250, 64, 64, 5, m_currentFrame1, m_pRenderer);
-    //Picture 3
-    TheTextureManager::Instance()->drawFrame("animate", 260,250, 64, 64, 2, m_currentFrame3, m_pRenderer);
-    //Picture 4
-    TheTextureManager::Instance()->drawFrame("animate", 325,250, 64, 64, 3, m_currentFrame4, m_pRenderer);
-    //Picture 5
-    TheTextureManager::Instance()->drawFrame("animate", 390,250, 64, 64, 4, m_currentFrame5, m_pRenderer);
-    //Picture 6
-    TheTextureManager::Instance()->drawFrame("animate", 455,250, 64, 64, 1, m_currentFrame6, m_pRenderer);
-
-    // Draw
-    // Draw non-animated picture //(id, x, y, height, width, renderer)
-    //Picture 2
-    TheTextureManager::Instance()->draw("animate", 195,250, 64, 64, m_pRenderer);
-
-
-
-    /* /////////////////////////////////////////////////////////////////////////////// */
+    {
+    m_gameObjects[i]->draw();
+    }
+    //////////////////////////////////
 
     // draw to the screen
     SDL_RenderPresent(m_pRenderer);
 }
+/* ****************RENDER END**************** */
 
 
-/* UPDATE */
+/* ****************UPDATE BEGIN**************** */
 void Game::update(){
-    //every 200 (or whatever I put there) milliseconds shift the x value of our source rectangle by
-    //64 pixels (the width of a frame), multiplied by the current frame we want,
-    //giving us the correct position
 
-    //SDL_GetTicks return the amount of milliseconds since SDL was initialized
-    //then we divide it by the amount of time(ms) we want between frames
-    //then use modulo operator to keep it in range of the amount of frames we have in our animation
-     m_currentFrame = int(((SDL_GetTicks() / 200) % 2));
-     //using different frames from the sprite
-     //adding 1,2,etc we set the starting frame
-     m_currentFrame1 = int(((SDL_GetTicks() / 400) % 6));
-     m_currentFrame3 = int(((SDL_GetTicks() / 150) % 3));
-     m_currentFrame4 = int(((SDL_GetTicks() / 200) % 2));
-     m_currentFrame5 = int((2 +(SDL_GetTicks() / 200) % 2));
-     m_currentFrame6 = int((1 +(SDL_GetTicks() / 200) % 2));
+        // loop through and update our objects
 
+        for(std::vector<GameObject*>::size_type i = 0; i != m_gameObjects.size(); i++)
+
+        {
+        m_gameObjects[i]->update();
+        }
 
 }
+/* ****************UPDATE END**************** */
 
 
-/* HANDLE EVENTS */
+/* ****************HANDLE EVENTS BEGIN**************** */
 void Game::handleEvents(){
 
     SDL_Event event;
@@ -145,10 +143,10 @@ void Game::handleEvents(){
         }
     }
 }
+/* ****************HANDLE EVENTS END**************** */
 
 
-
-/* CLEAN */
+/* ****************CLEAN BEGIN**************** */
 void Game::clean(){
 
     std::cout << "cleaning game\n";
@@ -156,4 +154,4 @@ void Game::clean(){
     SDL_DestroyRenderer(m_pRenderer);
     SDL_Quit();
 }
-
+/* ****************CLEAN END**************** */
