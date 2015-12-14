@@ -1,9 +1,15 @@
 #include "InputHandler.h"
+#include "Game.h"
 
 InputHandler::InputHandler(){}
 InputHandler::~InputHandler(){}
 
 
+
+InputHandler* InputHandler::s_pInstance = 0;
+
+
+/* ****************INIT BEGIN**************** */
 void InputHandler::initialiseJoysticks()
 {
     //check if the controller subsystem has been initialized
@@ -41,7 +47,7 @@ void InputHandler::initialiseJoysticks()
         //set initialized member variable to true if everything is ok
         m_bJoysticksInitialised = true;
 
-        std::cout << "Initialized" << m_joysticks.size() << " controller(s)" ;
+        std::cout << "Initialized " << m_joysticks.size() << " controller(s)" ;
     }
     else
     {
@@ -49,28 +55,10 @@ void InputHandler::initialiseJoysticks()
         m_bJoysticksInitialised = false;
     }
 }
+/* ****************INIT END**************** */
 
 
-
-
-void InputHandler::update()
-{
-    SDL_Event event;
-
-    while(SDL_PollEvent(&event))
-    {
-        if(event.type == SDL_QUIT)
-        {
-            TheGame::Instance()->clean();
-        }
-    }
-
-}
-
-
-
-
-
+/* ****************CLEAN BEGIN**************** */
 void InputHandler::clean()
 {
     if(m_bJoysticksInitialised)
@@ -81,3 +69,21 @@ void InputHandler::clean()
         }
     }
 }
+/* ****************CLEAN END**************** */
+
+
+/* ****************UPDATE BEGIN**************** */
+void InputHandler::update()
+{
+    SDL_Event event;
+
+    while(SDL_PollEvent(&event))
+    {
+        if(event.type == SDL_QUIT)
+        {
+
+            TheGame::Instance()->clean();
+        }
+    }
+}
+/* ****************UPDATE END**************** */

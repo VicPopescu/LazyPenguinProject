@@ -69,6 +69,10 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
     m_bRunning = true; // everything initialized successfully, start the main loop
 
 
+    //Initialize controllers
+    TheInputHandler::Instance()->initialiseJoysticks();
+
+
     /* ====================================== */
 
     // Load file source
@@ -86,12 +90,6 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 
 
     /* ====================================== */
-
-    //Initialize controllers
-    TheInputHandler::Instance()->initialiseJoysticks();
-
-
-
 
     return true;
 

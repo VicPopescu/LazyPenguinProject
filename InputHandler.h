@@ -5,7 +5,7 @@
 #include <string>
 #include <vector>
 #include <iostream>
-#include "Game.h"
+
 
 /*
 *   Singleton InputHandler
@@ -23,7 +23,6 @@ public:
             if(s_pInstance == 0)
             {
                 s_pInstance = new InputHandler();
-                return s_pInstance;
             }
 
             return s_pInstance;
@@ -45,13 +44,16 @@ private:
         InputHandler();
         ~InputHandler();
 
+        //define singleton
+        static InputHandler* s_pInstance;
+
         //pointer to initialized controllers
         std::vector<SDL_Joystick*> m_joysticks;
         //controller status variable
         bool m_bJoysticksInitialised;
 
 
-        static InputHandler* s_pInstance;
+
 };
 
 typedef InputHandler TheInputHandler;
