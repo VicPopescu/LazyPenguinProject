@@ -1,6 +1,6 @@
 # LazyPenguinProject
 2D Platformer. 
-This is a personal project! 
+This is a personal project!   
 Started on Dec 6, 2015.
 
 #What I used for this project:    
