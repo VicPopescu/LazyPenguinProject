@@ -54,7 +54,7 @@ public:
         }
 
 
-        /* SUBSTRACTION OF TWO VECTORS */
+        /* SUBTRACTION OF TWO VECTORS */
         //similar to addition
         Vector2D operator-(const Vector2D& v2) const
         {
@@ -68,6 +68,22 @@ public:
 
             return v1;
 
+        }
+
+
+        /* DIVIDE BY A SCALAR NUMBER */
+        //overloading "/" operator
+        Vector2D operator/(float scalar)
+        {
+            return Vector2D(m_x / scalar, m_y / scalar);
+        }
+
+        Vector2D& operator/=(float scalar)
+        {
+            m_x /= scalar;
+            m_y /= scalar;
+
+            return *this;
         }
 
 
