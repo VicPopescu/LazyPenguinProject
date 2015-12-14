@@ -33,7 +33,7 @@ public:
 
         //poll for events and update InputHandler
         void update();
-        //clear any devices we have initialized
+        //loop through SDL_Joystick* array and call SDL_JoystickClose on each iteration
         void clean();
 
 
