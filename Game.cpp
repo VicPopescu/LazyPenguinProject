@@ -69,6 +69,10 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
     m_bRunning = true; // everything initialized successfully, start the main loop
 
 
+    //Initialize controllers
+    TheInputHandler::Instance()->initialiseJoysticks();
+
+
     /* ====================================== */
 
     // Load file source
@@ -86,7 +90,6 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 
 
     /* ====================================== */
-
 
     return true;
 
@@ -131,19 +134,10 @@ void Game::update(){
 
 
 /* ****************HANDLE EVENTS BEGIN**************** */
-void Game::handleEvents(){
+void Game::handleEvents()
+{
+    TheInputHandler::Instance()->update();
 
-    SDL_Event event;
-
-    if(SDL_PollEvent(&event)){
-
-        switch (event.type){
-
-            case SDL_QUIT: m_bRunning = false;
-            break;
-            default: break;
-        }
-    }
 }
 /* ****************HANDLE EVENTS END**************** */
 
@@ -152,8 +146,12 @@ void Game::handleEvents(){
 void Game::clean(){
 
     std::cout << "cleaning game\n";
+    //Clean controllers array
+    TheInputHandler::Instance()->clean();
+    //Destroy SDL objects
     SDL_DestroyWindow(m_pWindow);
     SDL_DestroyRenderer(m_pRenderer);
+    //Quit SDL
     SDL_Quit();
 }
 /* ****************CLEAN END**************** */
