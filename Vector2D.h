@@ -1,6 +1,17 @@
 #ifndef VECTOR2D_H
 #define VECTOR2D_H
 
+/*
+*   This class store all operations on vectors, that will be used.
+*
+*   -Length ->return vectors length
+*   -Addition
+*   -Subtraction
+*   -Multiply by a scalar number
+*   -Divide by a scalar number
+*   -Normalizing a vector
+*/
+
 
 #include <math.h>//using math operations
 
