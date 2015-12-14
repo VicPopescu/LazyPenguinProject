@@ -2,6 +2,8 @@
 #define INPUTHANDLER_H
 
 #include "SDL.h"
+#include <string>
+#include <vector>
 
 /*
 *   Singleton InputHandler
@@ -23,6 +25,10 @@ public:
 
             return s_pInstance;
         }
+        //initialize controllers
+        void initialiseJoysticks();
+        //return controller status (initialized or not)
+        bool joysticksInitialised(){return m_bJoysticksInitialised;}
 
         //poll for events and update InputHandler
         void update();
@@ -34,6 +40,12 @@ private:
 
         InputHandler();
         ~InputHandler();
+
+        //pointer to initialized controllers
+        std::vector<SDL_Joystick*> m_joysticks;
+        //controller status variable
+        bool m_bJoysticksInitialised;
+
 
         static InputHandler* s_pInstance;
 };

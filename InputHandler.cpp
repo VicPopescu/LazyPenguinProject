@@ -1,11 +1,7 @@
 #include "InputHandler.h"
 
-InputHandler::InputHandler()
-{
-    //ctor
-}
+InputHandler::InputHandler(){}
+InputHandler::~InputHandler(){}
 
-InputHandler::~InputHandler()
-{
-    //dtor
-}
+
+
