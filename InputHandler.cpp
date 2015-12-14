@@ -35,6 +35,8 @@ void InputHandler::initialiseJoysticks()
             {
                 //push available controllers into our array for closing later
                 m_joysticks.push_back(joy);
+                //create a pair of Vector2D*
+                m_joystickValues.push_back(std::make_pair(new Vector2D(0,0),new Vector2D(0,0))); // add our pair
             }
             else
             {
@@ -81,9 +83,131 @@ void InputHandler::update()
     {
         if(event.type == SDL_QUIT)
         {
-
             TheGame::Instance()->clean();
+        }
+
+
+
+        //check for SDL_JOYAXISMOTION event
+        if(event.type == SDL_JOYAXISMOTION)
+        {
+            //find out which controller the event came from
+            int whichOne = event.jaxis.which;
+
+            /* left stick move left or right */
+            //check the axis the event came from
+            if(event.jaxis.axis == 0)
+            {
+                if (event.jaxis.value > m_joystickDeadZone)
+                {
+                    m_joystickValues[whichOne].first->setX(1);
+                }
+                else if(event.jaxis.value < -m_joystickDeadZone)
+                {
+                    m_joystickValues[whichOne].first->setX(-1);
+                }
+                else
+                {
+                    m_joystickValues[whichOne].first->setX(0);
+                }
+            }
+
+            /* left stick move up or down */
+            //check the axis the event came from
+            if(event.jaxis.axis == 1)
+            {
+                if (event.jaxis.value > m_joystickDeadZone)
+                {
+                    m_joystickValues[whichOne].first->setY(1);
+                }
+                else if(event.jaxis.value < -m_joystickDeadZone)
+                {
+                    m_joystickValues[whichOne].first->setY(-1);
+                }
+                else
+                {
+                    m_joystickValues[whichOne].first->setY(0);
+                }
+            }
+
+            /* right stick move left or right */
+            //check the axis the event came from
+            if(event.jaxis.axis == 3)
+            {
+                if (event.jaxis.value > m_joystickDeadZone)
+                {
+                   m_joystickValues[whichOne].second->setX(1);
+                }
+                else if(event.jaxis.value < -m_joystickDeadZone)
+                {
+                    m_joystickValues[whichOne].second->setX(-1);
+                }
+                else
+                {
+                    m_joystickValues[whichOne].second->setX(0);
+                }
+            }
+
+            /* right stick move up or down */
+            //check the axis the event came from
+            if(event.jaxis.axis == 4)
+            {
+                if (event.jaxis.value > m_joystickDeadZone)
+                {
+                    m_joystickValues[whichOne].second->setY(1);
+                }
+                else if(event.jaxis.value < -m_joystickDeadZone)
+                {
+                    m_joystickValues[whichOne].second->setY(-1);
+                }
+                else
+                {
+                    m_joystickValues[whichOne].second->setY(0);
+                }
+            }
         }
     }
 }
 /* ****************UPDATE END**************** */
+
+
+
+int InputHandler::xvalue(int joy, int stick)
+{
+    if(m_joystickValues.size() > 0)
+    {
+        if(stick == 1)
+        {
+            return m_joystickValues[joy].first->getX();
+        }
+        else if(stick == 2)
+        {
+            return m_joystickValues[joy].second->getX();
+        }
+    }
+
+    return 0;
+}
+
+
+int InputHandler::yvalue(int joy, int stick)
+{
+    if(m_joystickValues.size() > 0)
+    {
+        if(stick == 1)
+        {
+            return m_joystickValues[joy].first->getY();
+        }
+        else if(stick == 2)
+        {
+            return m_joystickValues[joy].second->getY();
+        }
+    }
+
+    return 0;
+}
+
+
+
+
+

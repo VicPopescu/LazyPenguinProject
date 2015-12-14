@@ -2,9 +2,11 @@
 #define INPUTHANDLER_H
 
 #include "SDL.h"
-#include <string>
 #include <vector>
 #include <iostream>
+
+
+#include "Vector2D.h"
 
 
 /*
@@ -39,6 +41,13 @@ public:
         void clean();
 
 
+        ////////////////////////////
+        //joy = ID of the controller we want to use
+        //stick = 1 for left stick, 2 for the right stick
+        int xvalue(int joy, int stick);
+        int yvalue(int joy, int stick);
+
+
 private:
 
         InputHandler();
@@ -47,10 +56,14 @@ private:
         //define singleton
         static InputHandler* s_pInstance;
 
-        //pointer to initialized controllers
+        //Controller specific
+        std::vector<std::pair<Vector2D*, Vector2D*>> m_joystickValues;
         std::vector<SDL_Joystick*> m_joysticks;
         //controller status variable
         bool m_bJoysticksInitialised;
+
+        //account for the sensitivity of a controller
+        const int m_joystickDeadZone = 10000;
 
 
 

@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1450096641 source:c:\users\greedy\documents\github\lazypenguinproject\main.cpp
+1450106787 source:c:\users\greedy\documents\github\lazypenguinproject\main.cpp
 	"Game.h"
 	"Windows.h"
 
@@ -37,10 +37,10 @@
 	"SDL.h"
 	"LoaderParams.h"
 
-1450096641 source:c:\users\greedy\documents\github\lazypenguinproject\player.cpp
+1450107024 source:c:\users\greedy\documents\github\lazypenguinproject\player.cpp
 	"Player.h"
 
-1449638043 c:\users\greedy\documents\github\lazypenguinproject\player.h
+1450107024 c:\users\greedy\documents\github\lazypenguinproject\player.h
 	"SDLGameObject.h"
 
 1450096641 source:c:\users\greedy\documents\github\lazypenguinproject\enemy.cpp
@@ -52,9 +52,10 @@
 1449638043 c:\users\greedy\documents\github\lazypenguinproject\loaderparams.h
 	<string>
 
-1450096641 c:\users\greedy\documents\github\lazypenguinproject\sdlgameobject.h
+1450107132 c:\users\greedy\documents\github\lazypenguinproject\sdlgameobject.h
 	"GameObject.h"
 	"Vector2D.h"
+	"InputHandler.h"
 
 1449638043 source:c:\users\greedy\documents\github\lazypenguinproject\loaderparams.cpp
 	"LoaderParams.h"
@@ -69,13 +70,13 @@
 1450088487 c:\users\greedy\documents\github\lazypenguinproject\vector2d.h
 	<math.h>
 
-1450104134 source:c:\users\greedy\documents\github\lazypenguinproject\inputhandler.cpp
+1450106787 source:c:\users\greedy\documents\github\lazypenguinproject\inputhandler.cpp
 	"InputHandler.h"
 	"Game.h"
 
-1450104885 c:\users\greedy\documents\github\lazypenguinproject\inputhandler.h
+1450107086 c:\users\greedy\documents\github\lazypenguinproject\inputhandler.h
 	"SDL.h"
-	<string>
 	<vector>
 	<iostream>
+	"Vector2D.h"
 
