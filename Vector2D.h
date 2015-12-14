@@ -8,9 +8,10 @@
 class Vector2D
 {
 public:
-
+        //passing x,y from constructor to m_x,m_y
         Vector2D(float x, float y): m_x(x), m_y(y){}
 
+        //returning values
         float getX() {return m_x;}
         float getY() {return m_y;}
 
