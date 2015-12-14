@@ -13,7 +13,7 @@ int main(int argc, char* argv[]){
 
     std::cout << "game init attempt...\n";
 
-    if(TheGame::Instance()->init("Chapter 1", 100, 100, 640, 480, false)){
+    if(TheGame::Instance()->init("Main window", 100, 100, 640, 480, false)){
 
         std::cout << "game init success!\n";
 
@@ -22,7 +22,7 @@ int main(int argc, char* argv[]){
             TheGame::Instance()->handleEvents();
             TheGame::Instance()->update();
             TheGame::Instance()->render();
-            SDL_Delay(10);
+            SDL_Delay(20);
         }
     }else{
 

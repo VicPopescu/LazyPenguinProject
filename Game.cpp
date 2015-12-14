@@ -77,7 +77,7 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
         return false;
     }
 
-    //Pushing 2 objects to the m_gameObjects array
+    //Pushing 4 objects to the m_gameObjects array, 2 players , 2 enemies
     m_gameObjects.push_back(new Player(new LoaderParams(100, 100, 64, 64, "animate")));
     m_gameObjects.push_back(new Player(new LoaderParams(200, 100, 64, 64, "animate")));
 
