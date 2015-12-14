@@ -23,10 +23,12 @@ public:
             if(s_pInstance == 0)
             {
                 s_pInstance = new InputHandler();
+                return s_pInstance;
             }
 
             return s_pInstance;
         }
+
         //initialize controllers
         void initialiseJoysticks();
         //return controller status (initialized or not)
