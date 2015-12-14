@@ -21,8 +21,9 @@ public:
         /* VECTOR LENGTH */
         float length() {return sqrt(m_x * m_x + m_y * m_y);}
 
+
         /* VECTOR ADDITION */
-        //overloading operator "+" to make easy to add two vectors together
+        //overloading "+" operator to make easy to add two vectors together
         Vector2D operator+(const Vector2D& v2) const
         {
             return Vector2D(m_x + v2.m_x, m_y + v2.m_y);
@@ -36,7 +37,21 @@ public:
             return v1;
         }
 
+
         /* VECTOR MULTIPLIER BY A SCALAR NR */
+        //overloading "*" operator
+        Vector2D operator*(float scalar)
+        {
+            return Vector2D(m_x * scalar, m_y * scalar);
+        }
+
+        Vector2D& operator*=(float scalar)
+        {
+            m_x *= scalar;
+            m_y *= scalar;
+
+            return *this;
+        }
 
 
 
