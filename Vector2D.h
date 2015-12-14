@@ -38,7 +38,7 @@ public:
         }
 
 
-        /* VECTOR MULTIPLIER BY A SCALAR NR */
+        /* VECTOR MULTIPLY BY A SCALAR NR */
         //overloading "*" operator
         Vector2D operator*(float scalar)
         {
@@ -52,6 +52,24 @@ public:
 
             return *this;
         }
+
+
+        /* SUBSTRACTION OF TWO VECTORS */
+        //similar to addition
+        Vector2D operator-(const Vector2D& v2) const
+        {
+            return Vector2D(m_x - v2.m_x, m_y - v2.m_y);
+        }
+
+        friend Vector2D& operator-=(Vector2D& v1, const Vector2D v2)
+        {
+            v1.m_x -= v2.m_x;
+            v1.m_y -= v2.m_y;
+
+            return v1;
+
+        }
+
 
 
 
