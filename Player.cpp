@@ -40,7 +40,7 @@ void Player::update(){
     m_currentRow = 1;
 
     //set up velocity
-    //add 1 to our m_position x value each time  the update function is called
+
     m_velocity.setX(0);
     m_velocity.setY(0);
 
