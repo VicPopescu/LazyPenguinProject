@@ -47,6 +47,8 @@
 		<Unit filename="SDLGameObject.h" />
 		<Unit filename="TextureManager.cpp" />
 		<Unit filename="TextureManager.h" />
+		<Unit filename="Vector2D.cpp" />
+		<Unit filename="Vector2D.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />
