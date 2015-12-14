@@ -87,6 +87,20 @@ public:
         }
 
 
+        /* NORMALIZING A VECTOR */
+        //this will set the vector.length = 1 to make them unit vectors
+        //these vectors will be used to represent facing direction of an object
+        //to normalize a vector we multiply it by the inverse of its length
+        void normalize()
+        {
+            float l = length();
+            if (l > 0) //make sure we don't divide by 0
+            {
+                (*this) *= l / l;
+            }
+        }
+
+
 
 
 private:
