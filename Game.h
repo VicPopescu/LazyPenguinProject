@@ -8,8 +8,10 @@
 
 #include "TextureManager.h"
 #include "SDLGameObject.h"
+#include "InputHandler.h"
 #include "Player.h"
 #include "Enemy.h"
+
 
 
 
@@ -43,7 +45,7 @@ public:
         //update the sprite sheet frame position, by moving the location of the source rectangle
         //and copy it to the renderer
         void update();
-        //allow us to close the application the regular way
+        //update InputHandler, for now
         void handleEvents();
         //clean the memory and close everything
         void clean();

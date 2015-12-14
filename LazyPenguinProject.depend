@@ -3,15 +3,16 @@
 	"Game.h"
 	"Windows.h"
 
-1449638043 c:\users\greedy\documents\github\lazypenguinproject\game.h
+1450101394 c:\users\greedy\documents\github\lazypenguinproject\game.h
 	"SDL.h"
 	<vector>
 	"TextureManager.h"
 	"SDLGameObject.h"
+	"InputHandler.h"
 	"Player.h"
 	"Enemy.h"
 
-1450096641 source:c:\users\greedy\documents\github\lazypenguinproject\game.cpp
+1450101254 source:c:\users\greedy\documents\github\lazypenguinproject\game.cpp
 	"Game.h"
 	<SDL_image.h>
 	<iostream>
@@ -71,8 +72,10 @@
 1450098160 source:c:\users\greedy\documents\github\lazypenguinproject\inputhandler.cpp
 	"InputHandler.h"
 
-1450098264 c:\users\greedy\documents\github\lazypenguinproject\inputhandler.h
+1450100614 c:\users\greedy\documents\github\lazypenguinproject\inputhandler.h
 	"SDL.h"
 	<string>
 	<vector>
+	<iostream>
+	"Game.h"
 

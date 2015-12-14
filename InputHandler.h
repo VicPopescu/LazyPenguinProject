@@ -5,6 +5,7 @@
 #include <string>
 #include <vector>
 #include <iostream>
+#include "Game.h"
 
 /*
 *   Singleton InputHandler
@@ -31,7 +32,7 @@ public:
         //return controller status (initialized or not)
         bool joysticksInitialised(){return m_bJoysticksInitialised;}
 
-        //poll for events and update InputHandler
+        //this will be called in each frame in the main game loop to update the event state
         void update();
         //loop through SDL_Joystick* array and call SDL_JoystickClose on each iteration
         void clean();
