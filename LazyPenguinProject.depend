@@ -51,13 +51,20 @@
 1449638043 c:\users\greedy\documents\github\lazypenguinproject\loaderparams.h
 	<string>
 
-1449638043 c:\users\greedy\documents\github\lazypenguinproject\sdlgameobject.h
+1450086167 c:\users\greedy\documents\github\lazypenguinproject\sdlgameobject.h
 	"GameObject.h"
+	"Vector2D.h"
 
 1449638043 source:c:\users\greedy\documents\github\lazypenguinproject\loaderparams.cpp
 	"LoaderParams.h"
 
-1449666176 source:c:\users\greedy\documents\github\lazypenguinproject\sdlgameobject.cpp
+1450086577 source:c:\users\greedy\documents\github\lazypenguinproject\sdlgameobject.cpp
 	"SDLGameObject.h"
 	"Game.h"
+
+1450085536 source:c:\users\greedy\documents\github\lazypenguinproject\vector2d.cpp
+	"Vector2D.h"
+
+1450085979 c:\users\greedy\documents\github\lazypenguinproject\vector2d.h
+	<math.h>
 
