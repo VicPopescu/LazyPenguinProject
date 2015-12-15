@@ -1,12 +1,37 @@
 #include "InputHandler.h"
 #include "Game.h"
 
-InputHandler::InputHandler(){}
-InputHandler::~InputHandler(){}
-
-
-
+//singleton
 InputHandler* InputHandler::s_pInstance = 0;
+
+
+
+//constructor
+//push our three mouse button states(default to false) into the array
+InputHandler::InputHandler()
+{
+    for(int i = 0; i < 3; i++)
+    {
+        m_mouseButtonStates.push_back(false);
+    }
+}
+
+/* ****************MOUSE BEGIN**************** */
+//Buttons
+bool InputHandler::getMouseButtonState(int buttonNumber) const
+        {
+            return m_mouseButtonStates[buttonNumber];
+        }
+
+//Motion(not working)
+/*
+Vector2D* InputHandler::getMousePosition() const
+{
+    return m_mousePosition;
+}
+*/
+/* ****************MOUSE END**************** */
+
 
 
 /* ****************INIT BEGIN**************** */
@@ -37,6 +62,15 @@ void InputHandler::initialiseJoysticks()
                 m_joysticks.push_back(joy);
                 //create a pair of Vector2D*
                 m_joystickValues.push_back(std::make_pair(new Vector2D(0,0),new Vector2D(0,0))); // add our pair
+
+                std::vector<bool> tempButtons;
+
+                for(int j = 0; j < SDL_JoystickNumButtons(joy); j++)
+                {
+                    tempButtons.push_back(false);
+                }
+
+                m_buttonStates.push_back(tempButtons);
             }
             else
             {
@@ -83,11 +117,12 @@ void InputHandler::update()
     {
         if(event.type == SDL_QUIT)
         {
-            TheGame::Instance()->clean();
+            TheGame::Instance()->quit();
         }
 
+        /* ----------------------------------- */
 
-
+        /* CONTROLLER */
         //check for SDL_JOYAXISMOTION event
         if(event.type == SDL_JOYAXISMOTION)
         {
@@ -166,6 +201,73 @@ void InputHandler::update()
                 }
             }
         }
+
+        /* ----------------------------------- */
+
+        //listen for button events
+        if(event.type == SDL_JOYBUTTONDOWN)
+        {
+            int whichOne = event.jaxis.which;
+
+            m_buttonStates[whichOne][event.jbutton.button] = true;
+        }
+
+        if(event.type == SDL_JOYBUTTONUP)
+        {
+            int whichOne = event.jaxis.which;
+
+            m_buttonStates[whichOne][event.jbutton.button] = false;
+        }
+
+        /* ----------------------------------- */
+
+
+        /* MOUSE */
+        //Mouse buttons
+        if(event.type == SDL_MOUSEBUTTONDOWN)
+        {
+            if(event.button.button == SDL_BUTTON_LEFT)
+            {
+                m_mouseButtonStates[LEFT] = true;
+            }
+            if(event.button.button == SDL_BUTTON_MIDDLE)
+            {
+                m_mouseButtonStates[MIDDLE] = true;
+            }
+            if(event.button.button == SDL_BUTTON_RIGHT)
+            {
+                m_mouseButtonStates[RIGHT] = true;
+            }
+        }
+
+        if(event.type == SDL_MOUSEBUTTONUP)
+        {
+            if(event.button.button == SDL_BUTTON_LEFT)
+            {
+                m_mouseButtonStates[LEFT] = false;
+            }
+            if(event.button.button == SDL_BUTTON_MIDDLE)
+            {
+                m_mouseButtonStates[MIDDLE] = false;
+            }
+            if(event.button.button == SDL_BUTTON_RIGHT)
+            {
+                m_mouseButtonStates[RIGHT] = false;
+            }
+        }
+
+        /* ----------------------------------- */
+
+        //Mouse motion(not working)
+/*        if(event.type == SDL_MOUSEMOTION)
+        {
+            m_mousePosition->setX(event.motion.x);
+            m_mousePosition->setY(event.motion.y);
+        }
+*/
+
+
+
     }
 }
 /* ****************UPDATE END**************** */
@@ -210,4 +312,5 @@ int InputHandler::yvalue(int joy, int stick)
 
 
 
+InputHandler::~InputHandler(){}
 

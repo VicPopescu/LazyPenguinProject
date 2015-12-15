@@ -51,6 +51,7 @@ public:
         void clean();
         // a function to access the private running variable
         bool running() { return m_bRunning;};
+        void quit() { m_bRunning = false; }
 
 
 
