@@ -1,6 +1,11 @@
 #include "InputHandler.h"
 #include "Game.h"
 
+//singleton
+InputHandler* InputHandler::s_pInstance = 0;
+
+
+
 //constructor
 //push our three mouse button states(default to false) into the array
 InputHandler::InputHandler()
@@ -11,7 +16,7 @@ InputHandler::InputHandler()
     }
 }
 
-/* MOUSE */
+/* ****************MOUSE BEGIN**************** */
 //Buttons
 bool InputHandler::getMouseButtonState(int buttonNumber) const
         {
@@ -23,8 +28,8 @@ Vector2D* InputHandler::getMousePosition() const
 {
     return m_mousePosition;
 }
+/* ****************MOUSE END**************** */
 
-InputHandler* InputHandler::s_pInstance = 0;
 
 
 /* ****************INIT BEGIN**************** */
