@@ -11,7 +11,18 @@ InputHandler::InputHandler()
     }
 }
 
+/* MOUSE */
+//Buttons
+bool InputHandler::getMouseButtonState(int buttonNumber) const
+        {
+            return m_mouseButtonStates[buttonNumber];
+        }
 
+//Motion
+Vector2D* InputHandler::getMousePosition() const
+{
+    return m_mousePosition;
+}
 
 InputHandler* InputHandler::s_pInstance = 0;
 
@@ -104,6 +115,7 @@ void InputHandler::update()
 
         /* ----------------------------------- */
 
+        /* CONTROLLER */
         //check for SDL_JOYAXISMOTION event
         if(event.type == SDL_JOYAXISMOTION)
         {
@@ -185,7 +197,6 @@ void InputHandler::update()
 
         /* ----------------------------------- */
 
-
         //listen for button events
         if(event.type == SDL_JOYBUTTONDOWN)
         {
@@ -203,7 +214,9 @@ void InputHandler::update()
 
         /* ----------------------------------- */
 
-        //Mouse buttons events
+
+        /* MOUSE */
+        //Mouse buttons
         if(event.type == SDL_MOUSEBUTTONDOWN)
         {
             if(event.button.button == SDL_BUTTON_LEFT)
@@ -237,6 +250,14 @@ void InputHandler::update()
         }
 
         /* ----------------------------------- */
+
+        //Mouse motion
+ /*       if(event.type == SDL_MOUSEMOTION)
+        {
+            m_mousePosition->setX(event.motion.x);
+            m_mousePosition->setY(event.motion.y);
+        }
+ */
     }
 }
 /* ****************UPDATE END**************** */
@@ -277,6 +298,7 @@ int InputHandler::yvalue(int joy, int stick)
 
     return 0;
 }
+
 
 
 

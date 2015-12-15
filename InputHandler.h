@@ -64,15 +64,9 @@ public:
 
         /* MOUSE */
         //buttons
-        bool getMouseButtonState(int buttonNumber)
-        {
-            return m_mouseButtonStates[buttonNumber];
-        }
+        bool getMouseButtonState(int buttonNumber) const;
         //motion
-        Vector2D* getMousePosition()
-        {
-            return m_mousePosition;
-        }
+        Vector2D* getMousePosition() const;
 
 
 private:
