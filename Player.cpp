@@ -33,7 +33,7 @@ void Player::handleInput()
 
         /* ----------------------------------- */
 
-        //testing button input
+        //testing button input, not working tho...
         if(TheInputHandler::Instance()->getButtonState(0, 1))
         {
             m_velocity.setX(1);

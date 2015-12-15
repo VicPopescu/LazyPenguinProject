@@ -37,7 +37,7 @@
 	"SDL.h"
 	"LoaderParams.h"
 
-1450194591 source:c:\users\greedy\documents\github\lazypenguinproject\player.cpp
+1450195463 source:c:\users\greedy\documents\github\lazypenguinproject\player.cpp
 	"Player.h"
 
 1450108075 c:\users\greedy\documents\github\lazypenguinproject\player.h
@@ -60,7 +60,7 @@
 1449638043 source:c:\users\greedy\documents\github\lazypenguinproject\loaderparams.cpp
 	"LoaderParams.h"
 
-1450108207 source:c:\users\greedy\documents\github\lazypenguinproject\sdlgameobject.cpp
+1450195628 source:c:\users\greedy\documents\github\lazypenguinproject\sdlgameobject.cpp
 	"SDLGameObject.h"
 	"Game.h"
 
