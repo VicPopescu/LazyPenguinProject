@@ -29,26 +29,20 @@ void Player::handleInput()
         {
             m_velocity.setY(1 * TheInputHandler::Instance()->yvalue(0,2));
         }
-    }
 
 
+        /* ----------------------------------- */
 
-    /* ----------------------------------- */
-
-    //testing button input, not working tho...
-    if(TheInputHandler::Instance()->getButtonState(0, 1))
-    {
-        m_velocity.setX(1);
-    }
-
-    /* ----------------------------------- */
-    //mouse input, if left button is pressed, increment X
-    if(TheInputHandler::Instance()->getMouseButtonState(LEFT))
+        //testing button input, not working tho...
+        if(TheInputHandler::Instance()->getButtonState(0, 1))
         {
             m_velocity.setX(1);
+            m_velocity.setY(1);
         }
 
-    /* ----------------------------------- */
+        /* ----------------------------------- */
+
+    }
 }
 
 

@@ -104,7 +104,24 @@ void InputHandler::update()
 
         /* ----------------------------------- */
 
-        //listen for controller sticks events (not working correctly)
+        //listen for button events
+        if(event.type == SDL_JOYBUTTONDOWN)
+        {
+            int whichOne = event.jaxis.which;
+
+            m_buttonStates[whichOne][event.jbutton.button] = true;
+        }
+
+        if(event.type == SDL_JOYBUTTONUP)
+        {
+            int whichOne = event.jaxis.which;
+
+            m_buttonStates[whichOne][event.jbutton.button] = false;
+        }
+
+        /* ----------------------------------- */
+
+        //check for SDL_JOYAXISMOTION event
         if(event.type == SDL_JOYAXISMOTION)
         {
             //find out which controller the event came from
@@ -180,67 +197,6 @@ void InputHandler::update()
                 {
                     m_joystickValues[whichOne].second->setY(0);
                 }
-            }
-        }
-
-        /* ----------------------------------- */
-
-
-        //listen for button events(not working)
-        if(event.type == SDL_JOYBUTTONDOWN)
-        {
-            int whichOne = event.jaxis.which;
-
-            m_buttonStates[whichOne][event.jbutton.button] = true;
-        }
-
-        if(event.type == SDL_JOYBUTTONUP)
-        {
-            int whichOne = event.jaxis.which;
-
-            m_buttonStates[whichOne][event.jbutton.button] = false;
-        }
-
-        /* ----------------------------------- */
-
-
-        //Mouse events
-        //Button down
-        if(event.type == SDL_MOUSEBUTTONDOWN)
-        {
-            if(event.button.button == SDL_BUTTON_LEFT)
-            {
-                m_mouseButtonStates[LEFT] = true;
-            }
-
-            if(event.button.button == SDL_BUTTON_MIDDLE)
-            {
-                m_mouseButtonStates[MIDDLE] = true;
-            }
-
-            if(event.button.button == SDL_BUTTON_RIGHT)
-            {
-                m_mouseButtonStates[RIGHT] = true;
-            }
-        }
-
-
-        //Button up
-        if(event.type == SDL_MOUSEBUTTONUP)
-        {
-            if(event.button.button == SDL_BUTTON_LEFT)
-            {
-                m_mouseButtonStates[LEFT] = false;
-            }
-
-            if(event.button.button == SDL_BUTTON_MIDDLE)
-            {
-                m_mouseButtonStates[MIDDLE] = false;
-            }
-
-            if(event.button.button == SDL_BUTTON_RIGHT)
-            {
-                m_mouseButtonStates[RIGHT] = false;
             }
         }
 
