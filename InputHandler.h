@@ -68,6 +68,11 @@ public:
         {
             return m_mouseButtonStates[buttonNumber];
         }
+        //motion
+        Vector2D* getMousePosition()
+        {
+            return m_mousePosition;
+        }
 
 
 private:
@@ -92,7 +97,10 @@ private:
 
 
         /* MOUSE */
+        //buttons
         std::vector<bool> m_mouseButtonStates;
+        //motion
+        Vector2D* m_mousePosition;
 
 
 
