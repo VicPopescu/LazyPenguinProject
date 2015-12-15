@@ -92,10 +92,27 @@ void InputHandler::update()
     {
         if(event.type == SDL_QUIT)
         {
-            TheGame::Instance()->clean();
+            TheGame::Instance()->quit();
         }
 
+        /* ----------------------------------- */
 
+        //listen for button events
+        if(event.type == SDL_JOYBUTTONDOWN)
+        {
+            int whichOne = event.jaxis.which;
+
+            m_buttonStates[whichOne][event.jbutton.button] = true;
+        }
+
+        if(event.type == SDL_JOYBUTTONUP)
+        {
+            int whichOne = event.jaxis.which;
+
+            m_buttonStates[whichOne][event.jbutton.button] = false;
+        }
+
+        /* ----------------------------------- */
 
         //check for SDL_JOYAXISMOTION event
         if(event.type == SDL_JOYAXISMOTION)
@@ -175,6 +192,13 @@ void InputHandler::update()
                 }
             }
         }
+
+        /* ----------------------------------- */
+
+
+
+
+
     }
 }
 /* ****************UPDATE END**************** */
