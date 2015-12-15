@@ -23,11 +23,13 @@ bool InputHandler::getMouseButtonState(int buttonNumber) const
             return m_mouseButtonStates[buttonNumber];
         }
 
-//Motion
+//Motion(not working)
+/*
 Vector2D* InputHandler::getMousePosition() const
 {
     return m_mousePosition;
 }
+*/
 /* ****************MOUSE END**************** */
 
 
@@ -256,13 +258,16 @@ void InputHandler::update()
 
         /* ----------------------------------- */
 
-        //Mouse motion
- /*       if(event.type == SDL_MOUSEMOTION)
+        //Mouse motion(not working)
+/*        if(event.type == SDL_MOUSEMOTION)
         {
             m_mousePosition->setX(event.motion.x);
             m_mousePosition->setY(event.motion.y);
         }
- */
+*/
+
+
+
     }
 }
 /* ****************UPDATE END**************** */

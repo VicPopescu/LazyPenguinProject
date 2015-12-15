@@ -3,6 +3,8 @@
 Player::Player(const LoaderParams* pParams) : SDLGameObject(pParams){}
 
 
+
+
 void Player::draw()
 {
 SDLGameObject::draw(); // we now use SDLGameObject
@@ -59,6 +61,7 @@ void Player::handleInput()
 
     /* ----------------------------------- */
 
+
 }
 
 
@@ -71,6 +74,8 @@ void Player::update(){
     //set up velocity
     m_velocity.setX(0);
     m_velocity.setY(0);
+
+
 
     handleInput(); // add our function
 
