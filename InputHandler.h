@@ -47,6 +47,12 @@ public:
         int xvalue(int joy, int stick);
         int yvalue(int joy, int stick);
 
+        //button state
+        bool getButtonState(int joy, int buttonNumber)
+        {
+            return m_buttonStates[joy][buttonNumber];
+        }
+
 
 private:
 
@@ -59,6 +65,8 @@ private:
         //Controller specific
         std::vector<std::pair<Vector2D*, Vector2D*>> m_joystickValues;
         std::vector<SDL_Joystick*> m_joysticks;
+        //array of boolean values to handle button events
+        std::vector<std::vector<bool>> m_buttonStates;
         //controller status variable
         bool m_bJoysticksInitialised;
 

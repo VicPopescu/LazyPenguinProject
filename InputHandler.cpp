@@ -37,6 +37,15 @@ void InputHandler::initialiseJoysticks()
                 m_joysticks.push_back(joy);
                 //create a pair of Vector2D*
                 m_joystickValues.push_back(std::make_pair(new Vector2D(0,0),new Vector2D(0,0))); // add our pair
+
+                std::vector<bool> tempButtons;
+
+                for(int j = 0; j < SDL_JoystickNumButtons(joy); j++)
+                {
+                    tempButtons.push_back(false);
+                }
+
+                m_buttonStates.push_back(tempButtons);
             }
             else
             {
