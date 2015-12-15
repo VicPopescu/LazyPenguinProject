@@ -27,7 +27,7 @@ void Enemy::update(){
     m_position.setY(m_position.getY() );  */
 
     //using acceleration instead of velocity
-    m_acceleration.setX(-0.1);
+//    m_acceleration.setX(-0.1);
 
     //update
     SDLGameObject::update();
