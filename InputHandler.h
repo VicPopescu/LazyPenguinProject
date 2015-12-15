@@ -15,6 +15,15 @@
 *   Handle all device input, no matter its origin (mouse, keyboard or controller)
 */
 
+enum mouse_buttons
+{
+    LEFT = 0,
+    MIDDLE = 1,
+    RIGHT = 2
+};
+
+
+
 
 class InputHandler
 {
@@ -41,7 +50,7 @@ public:
         void clean();
 
 
-        ////////////////////////////
+        /* CONTROLLER */
         //joy = ID of the controller we want to use
         //stick = 1 for left stick, 2 for the right stick
         int xvalue(int joy, int stick);
@@ -53,6 +62,13 @@ public:
             return m_buttonStates[joy][buttonNumber];
         }
 
+        /* MOUSE */
+        //buttons
+        bool getMouseButtonState(int buttonNumber)
+        {
+            return m_mouseButtonStates[buttonNumber];
+        }
+
 
 private:
 
@@ -62,7 +78,8 @@ private:
         //define singleton
         static InputHandler* s_pInstance;
 
-        /* Controller */
+
+        /* CONTROLLER */
         std::vector<std::pair<Vector2D*, Vector2D*>> m_joystickValues;
         std::vector<SDL_Joystick*> m_joysticks;
         //array of boolean values to handle button events
@@ -74,7 +91,7 @@ private:
         const int m_joystickDeadZone = 10000;
 
 
-        /* Mouse */
+        /* MOUSE */
         std::vector<bool> m_mouseButtonStates;
 
 
