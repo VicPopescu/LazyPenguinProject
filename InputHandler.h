@@ -62,7 +62,7 @@ private:
         //define singleton
         static InputHandler* s_pInstance;
 
-        //Controller specific
+        /* Controller */
         std::vector<std::pair<Vector2D*, Vector2D*>> m_joystickValues;
         std::vector<SDL_Joystick*> m_joysticks;
         //array of boolean values to handle button events
@@ -72,6 +72,10 @@ private:
 
         //account for the sensitivity of a controller
         const int m_joystickDeadZone = 10000;
+
+
+        /* Mouse */
+        std::vector<bool> m_mouseButtonStates;
 
 
 

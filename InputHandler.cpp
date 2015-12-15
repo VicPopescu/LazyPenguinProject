@@ -1,8 +1,15 @@
 #include "InputHandler.h"
 #include "Game.h"
 
-InputHandler::InputHandler(){}
-InputHandler::~InputHandler(){}
+//constructor
+//push our three mouse button states(default to false) into the array
+InputHandler::InputHandler()
+{
+    for(int i = 0; i < 3; i++)
+    {
+        m_mouseButtonStates.push_back(false);
+    }
+}
 
 
 
@@ -242,5 +249,5 @@ int InputHandler::yvalue(int joy, int stick)
 
 
 
-
+InputHandler::~InputHandler(){}
 
