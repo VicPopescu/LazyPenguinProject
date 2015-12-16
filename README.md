@@ -3,6 +3,17 @@
 This is a personal project!   
 Started on Dec 6, 2015.
 
+#Project phases:
+1. Set up SDL (I use CodeBlocks)
+2. SDL drawing
+3. Game Objects
+4. Movement and Input Handling
+
+Next:    
+5. Game States
+
+
+
 #What I used for this project:    
 
 Tutorials from:   
@@ -29,6 +40,9 @@ http://thepikuseru.deviantart.com/art/Penguin-Sprites-39302798
 Tools:   
 GIMP 2 - GNU Image Manipulation Program:   
 https://www.gimp.org/
+
+Code::Blocks IDE
+http://www.codeblocks.org/
 
 
 
