@@ -81,12 +81,18 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
         return false;
     }
 
-    //Pushing 4 objects to the m_gameObjects array, 2 players , 2 enemies
-    m_gameObjects.push_back(new Player(new LoaderParams(10, 100, 64, 64, "animate")));
-    m_gameObjects.push_back(new Player(new LoaderParams(80, 100, 64, 64, "animate")));
+     if(!TheTextureManager::Instance()->load("Resources/baby_penguin_alpha3.png", "animate2", m_pRenderer)){
 
-    m_gameObjects.push_back(new Enemy(new LoaderParams(530, 300, 64, 64, "animate")));
-    m_gameObjects.push_back(new Enemy(new LoaderParams(600, 300, 64, 64, "animate")));
+        return false;
+    }
+
+    /* Pushing objects to the m_gameObjects array */
+    //players
+    m_gameObjects.push_back(new Player(new LoaderParams(10, 100, 64, 64, "animate")));
+
+    //enemies
+    m_gameObjects.push_back(new Enemy(new LoaderParams(530, 300, 64, 64, "animate2")));
+
 
 
     /* ====================================== */
