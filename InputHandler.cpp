@@ -6,35 +6,102 @@ InputHandler* InputHandler::s_pInstance = 0;
 
 
 
-//constructor
+
+/* ****************CONSTRUCTOR BEGIN**************** */
 //push our three mouse button states(default to false) into the array
-InputHandler::InputHandler()
+InputHandler::InputHandler() : m_keystate(0), m_bJoysticksInitialised(false), m_mousePosition(new Vector2D(0,0))
 {
+    //mouse button states
     for(int i = 0; i < 3; i++)
     {
         m_mouseButtonStates.push_back(false);
     }
 }
+/* ****************CONSTRUCTOR END**************** */
 
-/* ****************MOUSE BEGIN**************** */
-//Buttons
-bool InputHandler::getMouseButtonState(int buttonNumber) const
-        {
-            return m_mouseButtonStates[buttonNumber];
-        }
 
-//Motion(not working)
-/*
-Vector2D* InputHandler::getMousePosition() const
+
+
+
+/* ****************DESTRUCTOR BEGIN**************** */
+InputHandler::~InputHandler()
 {
-    return m_mousePosition;
+    //delete everything here
+    //need to implement soon
 }
-*/
-/* ****************MOUSE END**************** */
+/* ****************DESTRUCTOR END**************** */
 
 
 
-/* ****************INIT BEGIN**************** */
+
+
+
+/* ****************UPDATE BEGIN**************** */
+void InputHandler::update()
+{
+    SDL_Event event;
+
+    while(SDL_PollEvent(&event))
+    {
+        switch (event.type)
+        {
+            //EXIT GAME EVENT
+            case SDL_QUIT:
+                TheGame::Instance()->quit();
+                break;
+
+            //CONTROLLER EVENTS
+            case SDL_JOYAXISMOTION:
+                onJoystickAxisMove(event);
+                break;
+
+            case SDL_JOYBUTTONDOWN:
+                onJoystickButtonDown(event);
+                break;
+
+            case SDL_JOYBUTTONUP:
+                onJoystickButtonUp(event);
+                break;
+
+            //MOUSE EVENTS
+            case SDL_MOUSEMOTION:
+                onMouseMove(event);
+                break;
+
+            case SDL_MOUSEBUTTONDOWN:
+                onMouseButtonDown(event);
+                break;
+
+            case SDL_MOUSEBUTTONUP:
+                onMouseButtonUp(event);
+                break;
+
+            //KEYBOARD EVENTS
+            case SDL_KEYDOWN:
+                onKeyDown();
+                break;
+
+            case SDL_KEYUP:
+                onKeyUp();
+                break;
+
+            //DEFAULT
+            default:
+                break;
+        }
+    }
+
+
+}
+/* ****************UPDATE END**************** */
+
+
+
+
+
+/* ****************CONTROLLER BEGIN**************** */
+
+/* INITIALISE BEGIN*/
 void InputHandler::initialiseJoysticks()
 {
     //check if the controller subsystem has been initialized
@@ -62,18 +129,19 @@ void InputHandler::initialiseJoysticks()
                 m_joysticks.push_back(joy);
                 //create a pair of Vector2D*
                 m_joystickValues.push_back(std::make_pair(new Vector2D(0,0),new Vector2D(0,0))); // add our pair
-
+                //array to hold buttons values
                 std::vector<bool> tempButtons;
-
+                //fill array with false values
                 for(int j = 0; j < SDL_JoystickNumButtons(joy); j++)
                 {
                     tempButtons.push_back(false);
                 }
-
+                //push button array into button state array
                 m_buttonStates.push_back(tempButtons);
             }
             else
             {
+                //in case of an error
                 std::cout << SDL_GetError();
             }
         }
@@ -91,10 +159,9 @@ void InputHandler::initialiseJoysticks()
         m_bJoysticksInitialised = false;
     }
 }
-/* ****************INIT END**************** */
+/* END*/
 
-
-/* ****************CLEAN BEGIN**************** */
+/*  CLEAN BEGIN */
 void InputHandler::clean()
 {
     if(m_bJoysticksInitialised)
@@ -105,172 +172,226 @@ void InputHandler::clean()
         }
     }
 }
-/* ****************CLEAN END**************** */
+/* END */
 
 
-/* ****************UPDATE BEGIN**************** */
-void InputHandler::update()
+/* BUTTON STATE START */
+bool InputHandler::getButtonState(int joy, int buttonNumber)
 {
-    SDL_Event event;
+    return m_buttonStates[joy][buttonNumber];
+}
+/* END */
 
-    while(SDL_PollEvent(&event))
+
+/* EVENTS */
+
+//sticks
+void InputHandler::onJoystickAxisMove(SDL_Event &event)
+{
+     int whichOne = event.jaxis.which;
+
+     //left stick move left or right
+     if(event.jaxis.axis == 0)
+     {
+         if (event.jaxis.value > m_joystickDeadZone)
+        {
+            m_joystickValues[whichOne].first->setX(1);
+        }
+        else if(event.jaxis.value < -m_joystickDeadZone)
+        {
+            m_joystickValues[whichOne].first->setX(-1);
+        }
+        else
+        {
+            m_joystickValues[whichOne].first->setX(0);
+        }
+     }
+
+     //left stick move up or down
+     if(event.jaxis.axis == 1)
     {
-        if(event.type == SDL_QUIT)
+        if (event.jaxis.value > m_joystickDeadZone)
         {
-            TheGame::Instance()->quit();
+            m_joystickValues[whichOne].first->setY(1);
         }
-
-        /* ----------------------------------- */
-
-        /* CONTROLLER */
-        //check for SDL_JOYAXISMOTION event
-        if(event.type == SDL_JOYAXISMOTION)
+        else if(event.jaxis.value < -m_joystickDeadZone)
         {
-            //find out which controller the event came from
-            int whichOne = event.jaxis.which;
-
-            /* left stick move left or right */
-            //check the axis the event came from
-            if(event.jaxis.axis == 0)
-            {
-                if (event.jaxis.value > m_joystickDeadZone)
-                {
-                    m_joystickValues[whichOne].first->setX(1);
-                }
-                else if(event.jaxis.value < -m_joystickDeadZone)
-                {
-                    m_joystickValues[whichOne].first->setX(-1);
-                }
-                else
-                {
-                    m_joystickValues[whichOne].first->setX(0);
-                }
-            }
-
-            /* left stick move up or down */
-            //check the axis the event came from
-            if(event.jaxis.axis == 1)
-            {
-                if (event.jaxis.value > m_joystickDeadZone)
-                {
-                    m_joystickValues[whichOne].first->setY(1);
-                }
-                else if(event.jaxis.value < -m_joystickDeadZone)
-                {
-                    m_joystickValues[whichOne].first->setY(-1);
-                }
-                else
-                {
-                    m_joystickValues[whichOne].first->setY(0);
-                }
-            }
-
-            /* right stick move left or right */
-            //check the axis the event came from
-            if(event.jaxis.axis == 3)
-            {
-                if (event.jaxis.value > m_joystickDeadZone)
-                {
-                   m_joystickValues[whichOne].second->setX(1);
-                }
-                else if(event.jaxis.value < -m_joystickDeadZone)
-                {
-                    m_joystickValues[whichOne].second->setX(-1);
-                }
-                else
-                {
-                    m_joystickValues[whichOne].second->setX(0);
-                }
-            }
-
-            /* right stick move up or down */
-            //check the axis the event came from
-            if(event.jaxis.axis == 4)
-            {
-                if (event.jaxis.value > m_joystickDeadZone)
-                {
-                    m_joystickValues[whichOne].second->setY(1);
-                }
-                else if(event.jaxis.value < -m_joystickDeadZone)
-                {
-                    m_joystickValues[whichOne].second->setY(-1);
-                }
-                else
-                {
-                    m_joystickValues[whichOne].second->setY(0);
-                }
-            }
+            m_joystickValues[whichOne].first->setY(-1);
         }
-
-        /* ----------------------------------- */
-
-        //listen for button events
-        if(event.type == SDL_JOYBUTTONDOWN)
+        else
         {
-            int whichOne = event.jaxis.which;
-
-            m_buttonStates[whichOne][event.jbutton.button] = true;
+            m_joystickValues[whichOne].first->setY(0);
         }
+    }
 
-        if(event.type == SDL_JOYBUTTONUP)
+    //right stick move up or down
+    if(event.jaxis.axis == 4)
+    {
+        if (event.jaxis.value > m_joystickDeadZone)
         {
-            int whichOne = event.jaxis.which;
-
-            m_buttonStates[whichOne][event.jbutton.button] = false;
+            m_joystickValues[whichOne].second->setY(1);
         }
-
-        /* ----------------------------------- */
-
-
-        /* MOUSE */
-        //Mouse buttons
-        if(event.type == SDL_MOUSEBUTTONDOWN)
+        else if(event.jaxis.value < -m_joystickDeadZone)
         {
-            if(event.button.button == SDL_BUTTON_LEFT)
-            {
-                m_mouseButtonStates[LEFT] = true;
-            }
-            if(event.button.button == SDL_BUTTON_MIDDLE)
-            {
-                m_mouseButtonStates[MIDDLE] = true;
-            }
-            if(event.button.button == SDL_BUTTON_RIGHT)
-            {
-                m_mouseButtonStates[RIGHT] = true;
-            }
+            m_joystickValues[whichOne].second->setY(-1);
         }
-
-        if(event.type == SDL_MOUSEBUTTONUP)
+        else
         {
-            if(event.button.button == SDL_BUTTON_LEFT)
-            {
-                m_mouseButtonStates[LEFT] = false;
-            }
-            if(event.button.button == SDL_BUTTON_MIDDLE)
-            {
-                m_mouseButtonStates[MIDDLE] = false;
-            }
-            if(event.button.button == SDL_BUTTON_RIGHT)
-            {
-                m_mouseButtonStates[RIGHT] = false;
-            }
+            m_joystickValues[whichOne].second->setY(0);
         }
+    }
 
-        /* ----------------------------------- */
-
-        //Mouse motion(not working)
-/*        if(event.type == SDL_MOUSEMOTION)
+    //right stick move left or right
+    if(event.jaxis.axis == 3)
+    {
+        if (event.jaxis.value > m_joystickDeadZone)
         {
-            m_mousePosition->setX(event.motion.x);
-            m_mousePosition->setY(event.motion.y);
+            m_joystickValues[whichOne].second->setX(1);
         }
-*/
-
-
-
+        else if(event.jaxis.value < -m_joystickDeadZone)
+        {
+            m_joystickValues[whichOne].second->setX(-1);
+        }
+        else
+        {
+            m_joystickValues[whichOne].second->setX(0);
+        }
     }
 }
-/* ****************UPDATE END**************** */
+
+//buttons
+//press
+void InputHandler::onJoystickButtonDown(SDL_Event &event)
+{
+    int whichOne = event.jaxis.which;
+
+    m_buttonStates[whichOne][event.jbutton.button] = true;
+}
+//release
+void InputHandler::onJoystickButtonUp(SDL_Event &event)
+{
+    int whichOne = event.jaxis.which;
+
+    m_buttonStates[whichOne][event.jbutton.button] = false;
+}
+
+
+/* ****************CONSTROLLER END**************** */
+
+
+
+
+
+
+/* ****************MOUSE BEGIN**************** */
+//Buttons
+bool InputHandler::getMouseButtonState(int buttonNumber) const
+        {
+            return m_mouseButtonStates[buttonNumber];
+        }
+
+//Motion(not working)
+Vector2D* InputHandler::getMousePosition() const
+{
+    return m_mousePosition;
+}
+
+void InputHandler::onMouseMove(SDL_Event &event)
+{
+    m_mousePosition->setX(event.motion.x);
+    m_mousePosition->setY(event.motion.y);
+}
+
+//Reset
+void InputHandler::reset()
+{
+    m_mouseButtonStates[LEFT] = false;
+    m_mouseButtonStates[RIGHT] = false;
+    m_mouseButtonStates[MIDDLE] = false;
+}
+//EVENTS
+void InputHandler::onMouseButtonDown(SDL_Event &event)
+{
+    if(event.button.button == SDL_BUTTON_LEFT)
+    {
+        m_mouseButtonStates[LEFT] = true;
+    }
+
+    if(event.button.button == SDL_BUTTON_MIDDLE)
+    {
+         m_mouseButtonStates[MIDDLE] = true;
+    }
+
+    if(event.button.button == SDL_BUTTON_RIGHT)
+    {
+        m_mouseButtonStates[RIGHT] = true;
+    }
+}
+
+void InputHandler::onMouseButtonUp(SDL_Event &event)
+{
+    if(event.button.button == SDL_BUTTON_LEFT)
+    {
+        m_mouseButtonStates[LEFT] = false;
+    }
+
+    if(event.button.button == SDL_BUTTON_MIDDLE)
+    {
+        m_mouseButtonStates[MIDDLE] = false;
+    }
+
+    if(event.button.button == SDL_BUTTON_RIGHT)
+    {
+        m_mouseButtonStates[RIGHT] = false;
+    }
+}
+
+/* ****************MOUSE END**************** */
+
+
+
+
+
+
+
+
+/* ****************KEYBOARD START**************** */
+//Is key down
+bool InputHandler::isKeyDown(SDL_Scancode key) const
+{
+    if(m_keystate != 0)
+    {
+        if(m_keystate[key] == 1)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    return false;
+}
+//On key press
+void InputHandler::onKeyDown()
+{
+    m_keystate = SDL_GetKeyboardState(0);
+}
+//On key release
+void InputHandler::onKeyUp()
+{
+    m_keystate = SDL_GetKeyboardState(0);
+}
+
+/* ****************KEYBOARD END**************** */
+
+
+
+
+
+
+
 
 
 
@@ -312,5 +433,5 @@ int InputHandler::yvalue(int joy, int stick)
 
 
 
-InputHandler::~InputHandler(){}
+
 
