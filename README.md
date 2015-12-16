@@ -26,8 +26,8 @@ http://www.grinninglizard.com/tinyxml/
 Sprites:   
 http://thepikuseru.deviantart.com/art/Penguin-Sprites-39302798
 
-Tools:
-GIMP 2 - GNU Image Manipulation Program:
+Tools:   
+GIMP 2 - GNU Image Manipulation Program:   
 https://www.gimp.org/
 
 
