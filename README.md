@@ -41,7 +41,7 @@ Tools:
 GIMP 2 - GNU Image Manipulation Program:   
 https://www.gimp.org/
 
-Code::Blocks IDE
+Code::Blocks IDE   
 http://www.codeblocks.org/
 
 
