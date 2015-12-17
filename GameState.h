@@ -2,7 +2,7 @@
 #define GAMESTATE_H_INCLUDED
 
 #include <string>
-
+#include <iostream> //need for derived classes
 
 /*
 *   Handling game states.
