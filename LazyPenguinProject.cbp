@@ -44,6 +44,8 @@
 		<Unit filename="InputHandler.h" />
 		<Unit filename="LoaderParams.cpp" />
 		<Unit filename="LoaderParams.h" />
+		<Unit filename="MenuState.cpp" />
+		<Unit filename="MenuState.h" />
 		<Unit filename="Player.cpp" />
 		<Unit filename="Player.h" />
 		<Unit filename="SDLGameObject.cpp" />
