@@ -23,23 +23,10 @@ public:
         virtual void update() = 0;
         virtual void render() = 0;
 
+        //each state will need to define this function and return its own static const ID
+        //the ID is used to ensure that states don't get repeated
         virtual std::string getStateID() const = 0;
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
