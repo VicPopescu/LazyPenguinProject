@@ -10,8 +10,8 @@ class MenuState : public GameState
 {
 public:
 
-        virtual void onEnter();
-        virtual void onExit();
+        virtual bool onEnter();
+        virtual bool onExit();
 
         virtual void update();
         virtual void render();
