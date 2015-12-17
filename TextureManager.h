@@ -41,6 +41,7 @@ private:
         TextureManager();
         ~TextureManager();
 
+        //singleton
         static TextureManager* s_pInstance;
 
 
