@@ -66,11 +66,14 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 
     std::cout << "init success\n";
 
-    m_bRunning = true; // everything initialized successfully, start the main loop
 
-
-    //Initialize controllers
+    /* Initialize controllers */
     TheInputHandler::Instance()->initialiseJoysticks();
+
+    /* Create Game State Machine and add first state */
+    m_pGameStateMachine = new FSM();
+    m_pGameStateMachine->changeState(new MenuState());
+
 
 
     /* ====================================== */
@@ -97,6 +100,7 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 
     /* ====================================== */
 
+    m_bRunning = true; // everything initialized successfully, start the main loop
     return true;
 
 }
@@ -142,8 +146,15 @@ void Game::update(){
 /* ****************HANDLE EVENTS BEGIN**************** */
 void Game::handleEvents()
 {
+    //update function
     TheInputHandler::Instance()->update();
-
+/*
+    //game states
+    if(TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_RETURN))
+    {
+        m_pGameStateMachine->changeState(new PlayState());
+    }
+*/
 }
 /* ****************HANDLE EVENTS END**************** */
 
