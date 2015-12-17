@@ -5,12 +5,22 @@
 
 
 
-class PlayState
+class PlayState : public GameState
 {
-    public:
+public:
 
-    protected:
-    private:
+        virtual bool onEnter();
+        virtual bool onExit();
+
+        virtual void update();
+        virtual void render();
+
+        virtual std::string getStateID() const {return s_playID;}
+
+
+private:
+
+        static const std::string s_playID;
 };
 
 #endif // PLAYSTATE_H
