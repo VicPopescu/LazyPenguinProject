@@ -27,6 +27,10 @@ public:
         //remove whichever state is currently being used, without adding another one
         void popState();
 
+        //check if there are any states, and if so, these functions update and render the current state
+        void update();
+        void render();
+
 private:
 
         //vector to store these states

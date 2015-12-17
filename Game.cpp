@@ -113,13 +113,17 @@ void Game::render(){
     // clear the renderer to the draw color
     SDL_RenderClear(m_pRenderer);
 
-    //////////////////////////////////
+
     // loop through our objects and draw them
     for(std::vector<GameObject*>::size_type i = 0; i != m_gameObjects.size(); i++)
 
     {
     m_gameObjects[i]->draw();
     }
+
+    //I will need this later, after I update the player and enemy classes to get their texture
+    //////////////////////////////////
+    //m_pGameStateMachine->render();
     //////////////////////////////////
 
     // draw to the screen
@@ -132,12 +136,16 @@ void Game::render(){
 void Game::update(){
 
         // loop through and update our objects
-
         for(std::vector<GameObject*>::size_type i = 0; i != m_gameObjects.size(); i++)
 
         {
         m_gameObjects[i]->update();
         }
+
+        //I will need this later, after I update the player and enemy classes to get their texture
+        //////////////////////////////////
+        //m_pGameStateMachine->update();
+        //////////////////////////////////
 
 }
 /* ****************UPDATE END**************** */
@@ -149,7 +157,7 @@ void Game::handleEvents()
     //update function
     TheInputHandler::Instance()->update();
 /*
-    //game states
+    //game states (doesn't work yet)
     if(TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_RETURN))
     {
         m_pGameStateMachine->changeState(new PlayState());

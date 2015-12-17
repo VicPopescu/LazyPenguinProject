@@ -52,3 +52,22 @@ void FSM::changeState(GameState *pState)
     m_gameStates.back()->onEnter();
 
 }
+
+/* update */
+void FSM::update()
+{
+    if(!m_gameStates.empty())
+    {
+        m_gameStates.back()->update();
+    }
+}
+
+
+/* render */
+void FSM::render()
+{
+    if(!m_gameStates.empty())
+    {
+        m_gameStates.back()->render();
+    }
+}
