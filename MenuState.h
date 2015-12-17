@@ -2,13 +2,27 @@
 #define MENUSTATE_H
 
 
-class MenuState
+#include "GameState.h"
+
+
+
+class MenuState : public GameState
 {
-    public:
-        MenuState();
-        ~MenuState();
-    protected:
-    private:
+public:
+
+        virtual void onEnter();
+        virtual void onExit();
+
+        virtual void update();
+        virtual void render();
+
+        virtual std::string getStateID() const {return s_menuID;}
+
+
+
+private:
+
+        static const std::string s_menuID;
 };
 
 #endif // MENUSTATE_H
