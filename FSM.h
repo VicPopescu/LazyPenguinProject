@@ -1,6 +1,12 @@
 #ifndef FSM_H
 #define FSM_H
 
+#include <vector>
+
+#include "GameState.h"
+
+
+
 /*
 *   Game State Machine - Handle game states
 *   This class will handle:
@@ -12,11 +18,20 @@
 
 class FSM
 {
-    public:
-        FSM();
-        ~FSM();
-    protected:
-    private:
+public:
+
+        //add a state without removing the previous one
+        void pushState(GameState* pState);
+        //remove previous state before adding another
+        void changeState(GameState* pState);
+        //remove whichever state is currently being used, without adding another one
+        void popState();
+
+private:
+
+        //vector to store these states
+        std::vector<GameState*> m_gameStates;
+
 };
 
 #endif // FSM_H
