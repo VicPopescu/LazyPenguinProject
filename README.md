@@ -7,10 +7,10 @@ Started on Dec 6, 2015.
 1. Set up SDL (I use CodeBlocks)
 2. SDL drawing
 3. Game Objects
-4. Movement and Input Handling
-
-Next:    
+4. Movement and Input Handling   
 5. Game States
+6. ...
+
 
 
 
