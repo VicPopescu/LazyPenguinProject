@@ -5,12 +5,19 @@ Started on Dec 6, 2015.
 
 #Project phases:
 1. Set up SDL (I use CodeBlocks)
-2. SDL drawing
-3. Game Objects
-4. Movement and Input Handling
+2. SDL drawing   
+    +Loading Texture   
+    +Rendering
+3. Game Objects   
+4. Movement and Input Handling    
+    +Input Handler   
+    +Mouse buttons and motion support   
+    +Keyboard support   
+    +Xbox 360 Wireless Controller support      
+5. Game States   
+    +Game State Machine implementation   
+6. ...
 
-Next:    
-5. Game States
 
 
 
