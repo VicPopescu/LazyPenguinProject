@@ -13,8 +13,8 @@ Started on Dec 6, 2015.
     +Input Handler   
     +Mouse buttons and motion support   
     +Keyboard support   
-    +Xbox 360 Wireless Controller support   
-5. Game States
+    +Xbox 360 Wireless Controller support      
+5. Game States   
     +Game State Machine implementation   
 6. ...
 
