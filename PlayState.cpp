@@ -5,24 +5,24 @@
 const std::string PlayState::s_playID = "PLAY";
 
 
-bool onEnter()
+bool PlayState::onEnter()
 {
     std::cout << "Entering PlayState \n";
     return true;
 }
 
-bool onExit()
+bool PlayState::onExit()
 {
     std::cout << "Exiting PlayState \n";
     return true;
 }
 
-void update()
+void PlayState::update()
 {
     //nothing here yet
 }
 
-void render()
+void PlayState::render()
 {
     //nothing here yet
 }

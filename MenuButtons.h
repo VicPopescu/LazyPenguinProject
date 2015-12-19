@@ -2,13 +2,14 @@
 #define MENUBUTTONS_H
 
 #include "SDLGameObject.h"
+#include "MenuState.h"
 
 
 class MenuButtons: public SDLGameObject
 {
 public:
 
-        MenuButtons(const LoaderParams* pParams);
+        MenuButtons(const LoaderParams* pParams, void (*callback)());
 
         virtual void draw();
         virtual void update();
@@ -23,6 +24,9 @@ private:
             MOUSE_OVER = 1,
             CLICKED = 2
         };
+
+        void (*m_callback)();
+        bool m_bReleased;
 };
 
 #endif // MENUBUTTONS_H

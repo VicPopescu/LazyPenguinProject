@@ -70,3 +70,13 @@ void TextureManager::drawFrame(std::string id, int x, int y, int width, int heig
 
 }
 
+
+
+/* CLEAR TEXTURE */
+void TextureManager::clearFromTextureMap(std::string id)
+{
+    m_textureMap.erase(id);//enable to clear only texture from current state
+}
+
+
+

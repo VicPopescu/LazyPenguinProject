@@ -4,6 +4,7 @@
 #include <string>
 #include <iostream> //need for derived classes
 
+
 /*
 *   Handling game states.
 *   This abstract base class is used to implement a blueprint

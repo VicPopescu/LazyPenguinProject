@@ -79,7 +79,7 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
     /* ====================================== */
 
     // Load file source
-    if(!TheTextureManager::Instance()->load("Resources/baby_penguin_alpha2.png", "animate", m_pRenderer)){
+/*    if(!TheTextureManager::Instance()->load("Resources/baby_penguin_alpha2.png", "animate", m_pRenderer)){
 
         return false;
     }
@@ -88,16 +88,16 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 
         return false;
     }
-
+*/
     /* Pushing objects to the m_gameObjects array */
-    //players
+/*    //players
     m_gameObjects.push_back(new Player(new LoaderParams(10, 100, 64, 64, "animate")));
 
     //enemies
     m_gameObjects.push_back(new Enemy(new LoaderParams(530, 300, 64, 64, "animate2")));
 
 
-
+*/
     /* ====================================== */
 
     m_bRunning = true; // everything initialized successfully, start the main loop
@@ -113,18 +113,7 @@ void Game::render(){
     // clear the renderer to the draw color
     SDL_RenderClear(m_pRenderer);
 
-
-    // loop through our objects and draw them
-    for(std::vector<GameObject*>::size_type i = 0; i != m_gameObjects.size(); i++)
-
-    {
-    m_gameObjects[i]->draw();
-    }
-
-    //I will need this later, after I update the player and enemy classes to get their texture
-    //////////////////////////////////
-    //m_pGameStateMachine->render();
-    //////////////////////////////////
+    m_pGameStateMachine->render();
 
     // draw to the screen
     SDL_RenderPresent(m_pRenderer);
@@ -135,16 +124,10 @@ void Game::render(){
 /* ****************UPDATE BEGIN**************** */
 void Game::update(){
 
-        // loop through and update our objects
-        for(std::vector<GameObject*>::size_type i = 0; i != m_gameObjects.size(); i++)
-
-        {
-        m_gameObjects[i]->update();
-        }
 
         //I will need this later, after I update the player and enemy classes to get their texture
         //////////////////////////////////
-        //m_pGameStateMachine->update();
+        m_pGameStateMachine->update();
         //////////////////////////////////
 
 }
@@ -156,13 +139,13 @@ void Game::handleEvents()
 {
     //update function
     TheInputHandler::Instance()->update();
-/*
+
     //game states (doesn't work yet)
     if(TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_RETURN))
     {
         m_pGameStateMachine->changeState(new PlayState());
     }
-*/
+
 }
 /* ****************HANDLE EVENTS END**************** */
 
