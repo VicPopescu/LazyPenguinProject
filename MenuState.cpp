@@ -6,6 +6,11 @@
 #include "PlayState.h"
 #include "InputHandler.h"
 #include "LoaderParams.h"
+#include "SDL_image.h"
+#include <iostream>
+#include "SDL.h"
+
+//need to clean up those includes
 
 
 
@@ -87,6 +92,7 @@ void MenuState::render()
 
 void MenuState::s_menuToPlay()
 {
+    TheGame::Instance()->getStateMachine()->changeState(new PlayState());
     std::cout << "Play button clicked\n";
 }
 
