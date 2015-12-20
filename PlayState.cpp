@@ -9,12 +9,12 @@ const std::string PlayState::s_playID = "PLAY";
 
 bool PlayState::onEnter()
 {
-    std::cout << "Entering PlayState 1 \n";
+
     if(!TheTextureManager::Instance()->load("Resources/baby_penguin_alpha2.png", "penguin_player", TheGame::Instance()->getRenderer()))
     {
         return false;
     }
-    std::cout << "Entering PlayState 2 \n";
+
 
     GameObject* player = new Player(new LoaderParams(10, 100, 64, 64, "penguin_player"));
 
