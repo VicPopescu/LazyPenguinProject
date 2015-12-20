@@ -16,7 +16,7 @@ bool PlayState::onEnter()
     }
 
 
-    GameObject* player = new Player(new LoaderParams(10, 100, 64, 64, "penguin_player"));
+    GameObject* player = new Player(new LoaderParams(300, 200, 64, 64, "penguin_player"));
 
     m_gameObjects.push_back(player);
 
