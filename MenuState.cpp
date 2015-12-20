@@ -5,8 +5,7 @@
 #include <iostream>
 #include "PlayState.h"
 #include "InputHandler.h"
-#include "LoaderParams.h"
-#include "SDL_image.h"
+
 
 
 
@@ -23,18 +22,18 @@ const std::string MenuState::s_menuID = "MENU";
 
 bool MenuState::onEnter()
 {
-    if(!TheTextureManager::Instance()->load("Resources/play-menu.png", "playbutton", TheGame::Instance()->getRenderer()))
+    if(!TheTextureManager::Instance()->load("Resources/play-button.png", "playbutton", TheGame::Instance()->getRenderer()))
     {
         return false;
     }
 
-    if(!TheTextureManager::Instance()->load("Resources/play-menu.png", "exitbutton", TheGame::Instance()->getRenderer()))
+    if(!TheTextureManager::Instance()->load("Resources/exit-button.png", "exitbutton", TheGame::Instance()->getRenderer()))
     {
         return false;
     }
 
     GameObject* button1 = new MenuButtons(new LoaderParams(100, 100, 350, 90, "playbutton"), s_menuToPlay);
-    GameObject* button2 = new MenuButtons(new LoaderParams(100, 300, 400, 90, "exitbutton"), s_exitFromMenu);
+    GameObject* button2 = new MenuButtons(new LoaderParams(100, 300, 350, 90, "exitbutton"), s_exitFromMenu);
 
 
     m_gameObjects.push_back(button1);
