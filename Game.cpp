@@ -76,35 +76,15 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 
 
 
-    /* ====================================== */
-
-    // Load file source
-/*    if(!TheTextureManager::Instance()->load("Resources/baby_penguin_alpha2.png", "animate", m_pRenderer)){
-
-        return false;
-    }
-
-     if(!TheTextureManager::Instance()->load("Resources/baby_penguin_alpha3.png", "animate2", m_pRenderer)){
-
-        return false;
-    }
-*/
-    /* Pushing objects to the m_gameObjects array */
-/*    //players
-    m_gameObjects.push_back(new Player(new LoaderParams(10, 100, 64, 64, "animate")));
-
-    //enemies
-    m_gameObjects.push_back(new Enemy(new LoaderParams(530, 300, 64, 64, "animate2")));
-
-
-*/
-    /* ====================================== */
 
     m_bRunning = true; // everything initialized successfully, start the main loop
     return true;
 
 }
 /* ****************INIT END**************** */
+
+
+
 
 
 /* ****************RENDER BEGIN**************** */
@@ -121,14 +101,13 @@ void Game::render(){
 /* ****************RENDER END**************** */
 
 
+
+
+
 /* ****************UPDATE BEGIN**************** */
 void Game::update(){
 
-
-        //I will need this later, after I update the player and enemy classes to get their texture
-        //////////////////////////////////
         m_pGameStateMachine->update();
-        //////////////////////////////////
 
 }
 /* ****************UPDATE END**************** */
@@ -140,11 +119,6 @@ void Game::handleEvents()
     //update function
     TheInputHandler::Instance()->update();
 
-    //game states (doesn't work yet)
-    if(TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_RETURN))
-    {
-        m_pGameStateMachine->changeState(new PlayState());
-    }
 
 }
 /* ****************HANDLE EVENTS END**************** */

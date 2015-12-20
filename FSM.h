@@ -30,6 +30,9 @@ public:
         //check if there are any states, and if so, these functions update and render the current state
         void update();
         void render();
+        void clean();
+
+        std::vector<GameState*>& getGameStates() { return m_gameStates; }
 
 private:
 

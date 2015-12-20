@@ -1,5 +1,7 @@
 #include "PlayState.h"
-
+#include "TextureManager.h"
+#include "Player.h"
+#include "Game.h"
 
 
 const std::string PlayState::s_playID = "PLAY";
@@ -7,8 +9,16 @@ const std::string PlayState::s_playID = "PLAY";
 
 bool PlayState::onEnter()
 {
+    std::cout << "Entering PlayState 1 \n";
+    if(!TheTextureManager::Instance()->load("Resources/baby_penguin_alpha2.png", "penguin_player", TheGame::Instance()->getRenderer()))
+    {
+        return false;
+    }
+    std::cout << "Entering PlayState 2 \n";
 
+    GameObject* player = new Player(new LoaderParams(10, 100, 64, 64, "penguin_player"));
 
+    m_gameObjects.push_back(player);
 
 
     std::cout << "Entering PlayState \n";
@@ -17,6 +27,14 @@ bool PlayState::onEnter()
 
 bool PlayState::onExit()
 {
+    for(int i = 0; i < m_gameObjects.size(); i++)
+    {
+        m_gameObjects[i]->clean();
+    }
+
+    m_gameObjects.clear();
+    TheTextureManager::Instance()->clearFromTextureMap("penguin_player");
+
     std::cout << "Exiting PlayState \n";
     return true;
 }
