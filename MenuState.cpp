@@ -23,18 +23,18 @@ const std::string MenuState::s_menuID = "MENU";
 
 bool MenuState::onEnter()
 {
-    if(!TheTextureManager::Instance()->load("Resources/a-play.png", "playbutton", TheGame::Instance()->getRenderer()))
+    if(!TheTextureManager::Instance()->load("Resources/Menu-merged1.png", "menu", TheGame::Instance()->getRenderer()))
     {
         return false;
     }
 
-    if(!TheTextureManager::Instance()->load("Resources/a-exit.png", "exitbutton", TheGame::Instance()->getRenderer()))
+    if(!TheTextureManager::Instance()->load("Resources/Menu-merged1.png", "menu", TheGame::Instance()->getRenderer()))
     {
         return false;
     }
 
-    GameObject* button1 = new MenuButtons(new LoaderParams(100, 100, 400, 100, "playbutton"), s_menuToPlay);
-    GameObject* button2 = new MenuButtons(new LoaderParams(100, 300, 400, 100, "exitbutton"), s_exitFromMenu);
+    GameObject* button1 = new MenuButtons(new LoaderParams(100, 100, 350, 80, "menu"), s_menuToPlay);
+    GameObject* button2 = new MenuButtons(new LoaderParams(100, 300, 350, 80, "menu"), s_exitFromMenu);
 
 
     m_gameObjects.push_back(button1);

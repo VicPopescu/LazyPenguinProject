@@ -40,7 +40,7 @@
 	"SDL.h"
 	"LoaderParams.h"
 
-1450263990 source:c:\users\greedy\documents\github\lazypenguinproject\player.cpp
+1450569964 source:c:\users\greedy\documents\github\lazypenguinproject\player.cpp
 	"Player.h"
 
 1450202550 c:\users\greedy\documents\github\lazypenguinproject\player.h
@@ -83,7 +83,7 @@
 	<iostream>
 	"Vector2D.h"
 
-1450569356 source:c:\users\greedy\documents\github\lazypenguinproject\menustate.cpp
+1450570236 source:c:\users\greedy\documents\github\lazypenguinproject\menustate.cpp
 	"MenuState.h"
 	"TextureManager.h"
 	"Game.h"
