@@ -18,11 +18,15 @@ int main(int argc, char* argv[]){
     //fps calculation variables
     Uint32 frameStart, frameTime;
 
-    std::cout << "game init attempt...\n";
+    std::cout << "\nAttempting Game Initialization...\n";
+    std::cout << ".................................\n";
 
     if(TheGame::Instance()->init("Main window", 100, 100, 640, 480, false)){
 
-        std::cout << "game init success!\n";
+        std::cout << "................................\n";
+        std::cout << "Game Initialized Successfully\n";
+        std::cout << "................................\n";
+
 
         while(TheGame::Instance()->running()){
 
