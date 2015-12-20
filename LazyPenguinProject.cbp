@@ -39,13 +39,13 @@
 		<Unit filename="FSM.h" />
 		<Unit filename="Game.cpp" />
 		<Unit filename="Game.h" />
-		<Unit filename="GameObject.cpp" />
 		<Unit filename="GameObject.h" />
 		<Unit filename="GameState.h" />
 		<Unit filename="InputHandler.cpp" />
 		<Unit filename="InputHandler.h" />
-		<Unit filename="LoaderParams.cpp" />
 		<Unit filename="LoaderParams.h" />
+		<Unit filename="MenuButtons.cpp" />
+		<Unit filename="MenuButtons.h" />
 		<Unit filename="MenuState.cpp" />
 		<Unit filename="MenuState.h" />
 		<Unit filename="PlayState.cpp" />
@@ -56,7 +56,6 @@
 		<Unit filename="SDLGameObject.h" />
 		<Unit filename="TextureManager.cpp" />
 		<Unit filename="TextureManager.h" />
-		<Unit filename="Vector2D.cpp" />
 		<Unit filename="Vector2D.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>

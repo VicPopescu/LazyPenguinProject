@@ -2,7 +2,12 @@
 #define MENUSTATE_H
 
 
+#include <vector>
+
+
 #include "GameState.h"
+#include "GameObject.h"
+
 
 
 
@@ -23,6 +28,15 @@ public:
 private:
 
         static const std::string s_menuID;
+
+        //store menu items:
+        std::vector<GameObject*> m_gameObjects;
+
+        // call back functions for menu items
+        static void s_menuToPlay();
+        static void s_exitFromMenu();
+
+
 };
 
 #endif // MENUSTATE_H

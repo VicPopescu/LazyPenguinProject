@@ -1,73 +1,74 @@
 #include "FSM.h"
+#include <iostream>
 
 
-/* pushState */
-void FSM::pushState(GameState *pState)
+
+void FSM::clean()
 {
-    m_gameStates.push_back(pState);
-    m_gameStates.back()->onEnter();
-
-}
-
-/* popState */
-void FSM::popState()
-{
-    //check if there are any states available to remove
     if(!m_gameStates.empty())
     {
-        //if there are, call onExit of the current state and remove it
-        if(m_gameStates.back()->onExit())
-        {
-            delete m_gameStates.back();
-            m_gameStates.pop_back();
-        }
-    }
+        m_gameStates.back()->onExit();
 
+        delete m_gameStates.back();
+
+        m_gameStates.clear();
+    }
 }
 
-/* changeState */
-void FSM::changeState(GameState *pState)
-{
-    //check if there are already any states in the array
-    if(!m_gameStates.empty())
-    {
-        //if there are, check whether their state ID is the same as the current one
-        if(m_gameStates.back()->getStateID() == pState->getStateID())
-        {
-            //if it is:
-            return; //don't do anything
-        }
-        //if the state ID doesn't match
-        if(m_gameStates.back()->onExit())
-        {
-            //remove current state
-            delete m_gameStates.back();
-            m_gameStates.pop_back();
-        }
-    }
-
-    //then push back our new state
-    m_gameStates.push_back(pState);
-    //initialize it
-    m_gameStates.back()->onEnter();
-
-}
-
-/* update */
 void FSM::update()
 {
     if(!m_gameStates.empty())
     {
         m_gameStates.back()->update();
-    }
+	}
 }
 
-
-/* render */
 void FSM::render()
 {
     if(!m_gameStates.empty())
     {
         m_gameStates.back()->render();
     }
+}
+
+void FSM::pushState(GameState *pState)
+{
+    m_gameStates.push_back(pState);
+    m_gameStates.back()->onEnter();
+}
+
+void FSM::popState()
+{
+    if(!m_gameStates.empty())
+    {
+        m_gameStates.back()->onExit();
+        m_gameStates.pop_back();
+    }
+
+    m_gameStates.back()->resume();
+}
+
+void FSM::changeState(GameState *pState)
+{
+    if(!m_gameStates.empty())
+    {
+
+        if(m_gameStates.back()->getStateID() == pState->getStateID())
+        {
+
+            return; // do nothing
+        }
+
+		m_gameStates.back()->onExit();
+		m_gameStates.pop_back();
+
+    }
+
+	// initialize it
+    pState->onEnter();
+
+
+    // push back our new state
+    m_gameStates.push_back(pState);
+
 }

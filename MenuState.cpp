@@ -1,30 +1,105 @@
-
-
 #include "MenuState.h"
+#include "TextureManager.h"
+#include "Game.h"
+#include "MenuButtons.h"
+#include <iostream>
+#include "PlayState.h"
+#include "InputHandler.h"
+
+
+
+
+//need to clean up those includes
+
 
 
 
 
 const std::string MenuState::s_menuID = "MENU";
 
+
+
+
 bool MenuState::onEnter()
 {
-    std::cout << "Entering MenuState \n";
+    if(!TheTextureManager::Instance()->load("Resources/play-button.png", "playbutton", TheGame::Instance()->getRenderer()))
+    {
+        return false;
+    }
+
+    if(!TheTextureManager::Instance()->load("Resources/exit-button.png", "exitbutton", TheGame::Instance()->getRenderer()))
+    {
+        return false;
+    }
+
+    GameObject* button1 = new MenuButtons(new LoaderParams(100, 100, 350, 90, "playbutton"), s_menuToPlay);
+    GameObject* button2 = new MenuButtons(new LoaderParams(100, 300, 350, 90, "exitbutton"), s_exitFromMenu);
+
+
+    m_gameObjects.push_back(button1);
+    m_gameObjects.push_back(button2);
+
+    std::cout << "Entering MenuState\n";
     return true;
+
 }
+
+
+
 
 bool MenuState::onExit()
 {
+    for(int i = 0; i < m_gameObjects.size(); i++)
+    {
+        m_gameObjects[i]->clean();
+    }
+
+    m_gameObjects.clear();
+    TheTextureManager::Instance()->clearFromTextureMap("playbutton");
+    TheTextureManager::Instance()->clearFromTextureMap("exitbutton");
+
+
     std::cout << "Exiting MenuState \n";
     return true;
 }
 
+
+
+
 void MenuState::update()
 {
-    //nothing yet
+    for(int i = 0; i < m_gameObjects.size(); i++)
+    {
+        m_gameObjects[i]->update();
+    }
+
 }
+
+
+
 
 void MenuState::render()
 {
-    //nothing here either, yet
+    for(int i = 0; i < m_gameObjects.size(); i++)
+    {
+        m_gameObjects[i]->draw();
+    }
+}
+
+
+
+
+void MenuState::s_menuToPlay()
+{
+    std::cout << "Play button clicked\n";
+    TheGame::Instance()->getStateMachine()->changeState(new PlayState());
+
+}
+
+
+
+void MenuState::s_exitFromMenu()
+{
+    std::cout << "Exit button clicked\n";
+    TheGame::Instance()->quit();
 }

@@ -57,6 +57,10 @@ public:
         void quit() { m_bRunning = false; }
 
 
+        //getter to allow us to access the state machine
+        FSM* getStateMachine(){ return m_pGameStateMachine; }
+
+
 
 
 
@@ -81,6 +85,7 @@ private:
 
         //singleton
         static Game* s_pInstance;
+
 
 };
 
