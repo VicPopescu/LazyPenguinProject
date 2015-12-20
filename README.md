@@ -13,7 +13,7 @@ Started on Dec 6, 2015.
     +Input Handler   
     +Mouse buttons and motion support   
     +Keyboard support   
-    +Xbox 360 Wireless Controller support      
+    +Xbox 360 Wireless Controller support(need fix for corresponding buttons)      
 5. Game States   
     +Game State Machine implementation   
     +Menu State   
