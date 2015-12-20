@@ -17,6 +17,7 @@ Started on Dec 6, 2015.
 5. Game States   
     +Game State Machine implementation   
     +Game Menu
+    +Play State
 6. ...
 
 
