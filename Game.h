@@ -11,6 +11,9 @@
 #include "InputHandler.h"
 #include "Player.h"
 #include "Enemy.h"
+#include "FSM.h"
+#include "MenuState.h"
+#include "PlayState.h"
 
 
 
@@ -54,17 +57,16 @@ public:
         void quit() { m_bRunning = false; }
 
 
+        //getter to allow us to access the state machine
+        FSM* getStateMachine(){ return m_pGameStateMachine; }
+
+
 
 
 
 private:
         Game();
         ~Game();
-
-        // create the s_pInstance member variable
-        static Game* s_pInstance;
-
-
 
         //pointer to an SDL_Window function, which will be set using the SDL_CreateWindow function
         SDL_Window* m_pWindow;
@@ -76,11 +78,17 @@ private:
         bool m_bRunning;
 
 
-
         std::vector<GameObject*> m_gameObjects;
-        ///////////////////////
+
+        //Game State Machine (FSM)
+        FSM* m_pGameStateMachine;
+
+        //singleton
+        static Game* s_pInstance;
+
 
 };
+
 // create the typedef
 typedef Game TheGame;
 

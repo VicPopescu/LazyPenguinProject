@@ -66,41 +66,25 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 
     std::cout << "init success\n";
 
-    m_bRunning = true; // everything initialized successfully, start the main loop
 
-
-    //Initialize controllers
+    /* Initialize controllers */
     TheInputHandler::Instance()->initialiseJoysticks();
 
-
-    /* ====================================== */
-
-    // Load file source
-    if(!TheTextureManager::Instance()->load("Resources/baby_penguin_alpha2.png", "animate", m_pRenderer)){
-
-        return false;
-    }
-
-     if(!TheTextureManager::Instance()->load("Resources/baby_penguin_alpha3.png", "animate2", m_pRenderer)){
-
-        return false;
-    }
-
-    /* Pushing objects to the m_gameObjects array */
-    //players
-    m_gameObjects.push_back(new Player(new LoaderParams(10, 100, 64, 64, "animate")));
-
-    //enemies
-    m_gameObjects.push_back(new Enemy(new LoaderParams(530, 300, 64, 64, "animate2")));
+    /* Create Game State Machine and add first state */
+    m_pGameStateMachine = new FSM();
+    m_pGameStateMachine->changeState(new MenuState());
 
 
 
-    /* ====================================== */
 
+    m_bRunning = true; // everything initialized successfully, start the main loop
     return true;
 
 }
 /* ****************INIT END**************** */
+
+
+
 
 
 /* ****************RENDER BEGIN**************** */
@@ -109,14 +93,7 @@ void Game::render(){
     // clear the renderer to the draw color
     SDL_RenderClear(m_pRenderer);
 
-    //////////////////////////////////
-    // loop through our objects and draw them
-    for(std::vector<GameObject*>::size_type i = 0; i != m_gameObjects.size(); i++)
-
-    {
-    m_gameObjects[i]->draw();
-    }
-    //////////////////////////////////
+    m_pGameStateMachine->render();
 
     // draw to the screen
     SDL_RenderPresent(m_pRenderer);
@@ -124,16 +101,13 @@ void Game::render(){
 /* ****************RENDER END**************** */
 
 
+
+
+
 /* ****************UPDATE BEGIN**************** */
 void Game::update(){
 
-        // loop through and update our objects
-
-        for(std::vector<GameObject*>::size_type i = 0; i != m_gameObjects.size(); i++)
-
-        {
-        m_gameObjects[i]->update();
-        }
+        m_pGameStateMachine->update();
 
 }
 /* ****************UPDATE END**************** */
@@ -142,7 +116,9 @@ void Game::update(){
 /* ****************HANDLE EVENTS BEGIN**************** */
 void Game::handleEvents()
 {
+    //update function
     TheInputHandler::Instance()->update();
+
 
 }
 /* ****************HANDLE EVENTS END**************** */
