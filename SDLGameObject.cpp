@@ -11,7 +11,7 @@ GameObject(pParams), m_position(pParams->getX(), pParams->getY()), m_velocity(0,
     m_height = pParams->getHeight();
     m_textureID = pParams->getTextureID();
 
-    m_currentRow = 2;
+    m_currentRow = 1;
     m_currentFrame = 1;
 }
 
