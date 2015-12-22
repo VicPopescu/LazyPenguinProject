@@ -37,7 +37,7 @@ void Enemy::handleInput()
 void Enemy::update(){
 
     //set up the starting frame and how many frames
-    m_currentFrame = int((3 +(SDL_GetTicks() / 100) % 3));
+    m_currentFrame = int(((SDL_GetTicks() / 100) % 3));
 
 
     if(m_position.getY() < 0)
