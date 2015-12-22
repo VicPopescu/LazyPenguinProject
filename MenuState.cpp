@@ -1,10 +1,6 @@
 #include "MenuState.h"
-#include "TextureManager.h"
 #include "Game.h"
 #include "MenuButtons.h"
-#include <iostream>
-#include "PlayState.h"
-#include "InputHandler.h"
 
 
 

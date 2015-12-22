@@ -84,14 +84,10 @@
 	<iostream>
 	"Vector2D.h"
 
-1450574473 source:c:\users\greedy\documents\github\lazypenguinproject\menustate.cpp
+1450748692 source:c:\users\greedy\documents\github\lazypenguinproject\menustate.cpp
 	"MenuState.h"
-	"TextureManager.h"
 	"Game.h"
 	"MenuButtons.h"
-	<iostream>
-	"PlayState.h"
-	"InputHandler.h"
 
 1450574473 c:\users\greedy\documents\github\lazypenguinproject\menustate.h
 	<vector>
@@ -127,4 +123,14 @@
 1450574473 c:\users\greedy\documents\github\lazypenguinproject\menubuttons.h
 	"SDLGameObject.h"
 	"MenuState.h"
+
+1450748596 source:c:\users\greedy\documents\github\lazypenguinproject\pausestate.cpp
+	"PauseState.h"
+	"MenuButtons.h"
+	"Game.h"
+
+1450748596 c:\users\greedy\documents\github\lazypenguinproject\pausestate.h
+	<vector>
+	"GameObject.h"
+	"GameState.h"
 
