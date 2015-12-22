@@ -7,10 +7,14 @@ Started on Dec 6, 2015.
 1. Set up SDL (I use CodeBlocks)
 2. SDL drawing   
     +Loading Texture   
-    +Rendering
-3. Game Objects   
+    +Rendering   
+3. Game Objects    
+    +Inheritance, Polymorphism and Abstract Base Classes   
+    +Setting Object Properties    
 4. Movement and Input Handling    
     +Input Handler   
+    +Vectors   
+    +Velocity & Acceleration   
     +Mouse buttons and motion support   
     +Keyboard support   
     +Xbox 360 Wireless Controller support(need fix for corresponding buttons)      
