@@ -92,7 +92,7 @@ void Player::handleInput()
 void Player::update(){
 
     //override currentRow
-    m_currentRow = 1;
+    m_currentRow = 2;
 
     //set up velocity
     m_velocity.setX(0);
