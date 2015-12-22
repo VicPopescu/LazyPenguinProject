@@ -12,9 +12,9 @@ Started on Dec 6, 2015.
     +Inheritance, Polymorphism and Abstract Base Classes   
     +Setting Object Properties    
 4. Movement and Input Handling    
-    +Input Handler   
     +Vectors   
     +Velocity & Acceleration   
+    +Input Handler  
     +Mouse buttons and motion support   
     +Keyboard support   
     +Xbox 360 Wireless Controller support(need fix for corresponding buttons)      
