@@ -8,15 +8,25 @@ Player::Player(const LoaderParams* pParams) : SDLGameObject(pParams){}
 
 void Player::draw()
 {
-    //override SDLGameObject draw function so we can
-    //flip the image corresponding to X incrementation
-    if(m_velocity.getX() < 0)
+    //override SDLGameObject draw function so we can flip the image corresponding to X incrementation
+    //if the player is moving
+    if(m_velocity.getX() != 0)
     {
-        TextureManager::Instance()->drawFrame(m_textureID, (Uint32)m_position.getX(), (Uint32)m_position.getY(), m_width, m_height, m_currentRow, m_currentFrame, TheGame::Instance()->getRenderer(),SDL_FLIP_HORIZONTAL);
+        //if the player is moving to the left, flip the image
+        if(m_velocity.getX() < 0)
+        {
+            TextureManager::Instance()->drawFrame(m_textureID, (Uint32)m_position.getX(), (Uint32)m_position.getY(), m_width, m_height, m_currentRow, m_currentFrame, TheGame::Instance()->getRenderer(),SDL_FLIP_HORIZONTAL);
+        }
+        //if the player is moving to the right, use the normal "right facing" sprite row
+        else
+        {
+            TextureManager::Instance()->drawFrame(m_textureID, (Uint32)m_position.getX(), (Uint32)m_position.getY(), m_width, m_height, m_currentRow, m_currentFrame, TheGame::Instance()->getRenderer());
+        }
     }
+    //if the player is not moving, use the first sprite row images, so he will face us now
     else
     {
-        TextureManager::Instance()->drawFrame(m_textureID, (Uint32)m_position.getX(), (Uint32)m_position.getY(), m_width, m_height, m_currentRow, m_currentFrame, TheGame::Instance()->getRenderer());
+        TextureManager::Instance()->drawFrame(m_textureID, (Uint32)m_position.getX(), (Uint32)m_position.getY(), m_width, m_height, m_currentRow - 1, m_currentFrame, TheGame::Instance()->getRenderer());
     }
 }
 
