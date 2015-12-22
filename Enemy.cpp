@@ -1,4 +1,5 @@
 #include "Enemy.h"
+#include "Game.h"
 
 
 
@@ -14,7 +15,20 @@ Enemy::Enemy(const LoaderParams* pParams) : SDLGameObject(pParams)
 
 void Enemy::draw(){
 
-    SDLGameObject::draw(); // we use SDLGameObject drawing function
+    //SDLGameObject::draw(); // we can use SDLGameObject drawing function
+
+
+    //override SDLGameObject drawing function
+    //we want enemy player to turn his back to us when running up
+    if(m_velocity.getY() < 0)
+    {
+        TextureManager::Instance()->drawFrame(m_textureID, (Uint32)m_position.getX(), (Uint32)m_position.getY(), m_width, m_height, m_currentRow, m_currentFrame + 3, TheGame::Instance()->getRenderer());
+    }
+    else
+    {
+        TextureManager::Instance()->drawFrame(m_textureID, (Uint32)m_position.getX(), (Uint32)m_position.getY(), m_width, m_height, m_currentRow, m_currentFrame, TheGame::Instance()->getRenderer());
+    }
+
 }
 
 
