@@ -1,4 +1,5 @@
 #include "Player.h"
+#include "Game.h"
 
 Player::Player(const LoaderParams* pParams) : SDLGameObject(pParams){}
 
@@ -7,8 +8,47 @@ Player::Player(const LoaderParams* pParams) : SDLGameObject(pParams){}
 
 void Player::draw()
 {
-SDLGameObject::draw(); // we now use SDLGameObject
+    //override SDLGameObject draw function so we can
+    //flip the image corresponding to X incrementation
+    if(m_velocity.getX() < 0)
+    {
+        TextureManager::Instance()->drawFrame(m_textureID, (Uint32)m_position.getX(), (Uint32)m_position.getY(), m_width, m_height, m_currentRow, m_currentFrame, TheGame::Instance()->getRenderer(),SDL_FLIP_HORIZONTAL);
+    }
+    else
+    {
+        TextureManager::Instance()->drawFrame(m_textureID, (Uint32)m_position.getX(), (Uint32)m_position.getY(), m_width, m_height, m_currentRow, m_currentFrame, TheGame::Instance()->getRenderer());
+    }
 }
+
+
+
+
+void Player::update(){
+
+    //set up velocity
+    m_velocity.setX(0);
+    m_velocity.setY(0);
+
+
+
+
+    //override currentRow
+    m_currentRow = 2;
+
+    handleInput(); // add our function
+
+    //start: frame 1, continue 3 more frames:
+    m_currentFrame = int(((SDL_GetTicks() / 100) % 3));
+
+    //update
+    SDLGameObject::update();
+}
+
+
+
+
+
+
 
 
 void Player::handleInput()
@@ -87,27 +127,6 @@ void Player::handleInput()
 
 }
 
-
-
-void Player::update(){
-
-    //override currentRow
-    m_currentRow = 2;
-
-    //set up velocity
-    m_velocity.setX(0);
-    m_velocity.setY(0);
-
-
-
-    handleInput(); // add our function
-
-    //start: frame 1, continue 3 more frames:
-    m_currentFrame = int(((SDL_GetTicks() / 100) % 3));
-
-    //update
-    SDLGameObject::update();
-}
 
 
 
