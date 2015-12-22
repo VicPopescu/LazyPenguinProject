@@ -68,10 +68,10 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
     std::cout << "................................\n";
 
 
-    /* Initialize controllers */
+    //Initialize controllers
     TheInputHandler::Instance()->initialiseJoysticks();
 
-    /* Create Game State Machine and add first state */
+    // Create Game State Machine and add first state
     m_pGameStateMachine = new FSM();
     m_pGameStateMachine->changeState(new MenuState());
 
@@ -94,6 +94,7 @@ void Game::render(){
     // clear the renderer to the draw color
     SDL_RenderClear(m_pRenderer);
 
+    // FSM render() function
     m_pGameStateMachine->render();
 
     // draw to the screen
@@ -108,6 +109,7 @@ void Game::render(){
 /* ****************UPDATE BEGIN**************** */
 void Game::update(){
 
+        //FSM update() function
         m_pGameStateMachine->update();
 
 }
@@ -117,7 +119,7 @@ void Game::update(){
 /* ****************HANDLE EVENTS BEGIN**************** */
 void Game::handleEvents()
 {
-    //update function
+    //update inputs function
     TheInputHandler::Instance()->update();
 
 

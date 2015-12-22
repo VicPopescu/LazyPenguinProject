@@ -40,8 +40,9 @@
 	"SDL.h"
 	"LoaderParams.h"
 
-1450744398 source:c:\users\greedy\documents\github\lazypenguinproject\player.cpp
+1450746348 source:c:\users\greedy\documents\github\lazypenguinproject\player.cpp
 	"Player.h"
+	"Game.h"
 
 1450202550 c:\users\greedy\documents\github\lazypenguinproject\player.h
 	"SDLGameObject.h"
