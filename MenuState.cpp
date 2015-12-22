@@ -1,6 +1,7 @@
 #include "MenuState.h"
 #include "Game.h"
 #include "MenuButtons.h"
+#include "PlayState.h"
 
 
 
@@ -28,8 +29,8 @@ bool MenuState::onEnter()
         return false;
     }
 
-    GameObject* button1 = new MenuButtons(new LoaderParams(100, 100, 350, 90, "playbutton"), s_menuToPlay);
-    GameObject* button2 = new MenuButtons(new LoaderParams(100, 300, 350, 90, "exitbutton"), s_exitFromMenu);
+    GameObject* button1 = new MenuButtons(new LoaderParams(150, 100, 350, 90, "playbutton"), s_menuToPlay);
+    GameObject* button2 = new MenuButtons(new LoaderParams(150, 300, 350, 90, "exitbutton"), s_exitFromMenu);
 
 
     m_gameObjects.push_back(button1);
@@ -51,6 +52,7 @@ bool MenuState::onExit()
     }
 
     m_gameObjects.clear();
+
     TheTextureManager::Instance()->clearFromTextureMap("playbutton");
     TheTextureManager::Instance()->clearFromTextureMap("exitbutton");
 
