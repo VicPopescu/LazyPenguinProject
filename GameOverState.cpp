@@ -67,7 +67,14 @@ bool GameOverState::onEnter()
 
 bool GameOverState::onExit()
 {
+    for(int i = 0; i < m_gameObjects.size(); i++)
+    {
+        m_gameObjects[i]->clean();
+    }
 
+    m_gameObjects.clear();
+    std::cout << "Exiting GameOverState \n";
+    return true;
 }
 
 
@@ -79,5 +86,8 @@ void GameOverState::update()
 
 void GameOverState::render()
 {
-
+    for(int i = 0; i < m_gameObjects.size(); i++)
+    {
+        m_gameObjects[i]->draw();
+    }
 }
