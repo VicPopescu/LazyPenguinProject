@@ -35,7 +35,7 @@ void GameOverState::s_restartPlay()
 
 bool GameOverState::onEnter()
 {
-    if(!TheTextureManager::Instance()->load("Resources/gameover.png", "gameovertext", TheGame::Instance()->getRenderer()))
+    if(!TheTextureManager::Instance()->load("Resources/game-over.png", "gameovertext", TheGame::Instance()->getRenderer()))
     {
         return false;
     }
@@ -45,7 +45,7 @@ bool GameOverState::onEnter()
         return false;
     }
 
-    if(!TheTextureManager::Instance()->load("Resources/restart.png", "restartbutton", TheGame::Instance()->getRenderer()))
+    if(!TheTextureManager::Instance()->load("Resources/restart-button.png", "restartbutton", TheGame::Instance()->getRenderer()))
     {
         return false;
     }
