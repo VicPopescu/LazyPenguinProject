@@ -4,6 +4,7 @@
 #include "GameState.h"
 #include <vector>
 #include "GameObject.h"
+#include "SDLGameObject.h"
 
 
 
@@ -22,6 +23,9 @@ public:
         virtual void render();
 
         virtual std::string getStateID() const {return s_playID;}
+
+        //check for collisions
+        bool checkCollision(SDLGameObject* p1, SDLGameObject* p2);
 
 
 private:
