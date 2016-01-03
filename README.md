@@ -13,7 +13,8 @@ Started on Dec 6, 2015.
     +Setting Object Properties    
     +Player Object Type   
     +Enemy Object Type   
-    +Animated Text Object Type   
+    +Animated Text Object Type  
+    +Menu Buttons Object Type    
 4. **Movement and Input Handling**       
     +Vectors   
     +Velocity & Acceleration   
