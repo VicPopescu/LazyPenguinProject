@@ -11,6 +11,9 @@ Started on Dec 6, 2015.
 3. **Game Objects**    
     +Inheritance, Polymorphism and Abstract Base Classes   
     +Setting Object Properties    
+    +Player Object Type   
+    +Enemy Object Type   
+    +Animated Text Object Type   
 4. **Movement and Input Handling**       
     +Vectors   
     +Velocity & Acceleration   
@@ -25,6 +28,7 @@ Started on Dec 6, 2015.
     +Pause State  
     +Game Over State   
 6. **Basic Collision Handling**   
+    +
 7. ...
 
 
