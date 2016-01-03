@@ -16,7 +16,8 @@ void AnimatedGraphic::draw()
 
 void AnimatedGraphic::update()
 {
-    m_currentFrame = int(((SDL_GetTicks() / (1000 / m_animSpeed)) % m_frameNum));
+    m_currentFrame = int(((SDL_GetTicks() / (1000 / m_animSpeed)) % 2));
+    SDLGameObject::update();
 
 }
 

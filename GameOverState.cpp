@@ -4,7 +4,7 @@
 #include "PlayState.h"
 #include "MenuButtons.h"
 #include "AnimatedGraphic.h"
-#include <iostream>
+
 
 
 
@@ -38,7 +38,6 @@ bool GameOverState::onEnter()
 {
     if(!TheTextureManager::Instance()->load("Resources/game-over.png", "gameovertext", TheGame::Instance()->getRenderer()))
     {
-        std::cout << "Is not loading!";
         return false;
     }
 
@@ -52,8 +51,8 @@ bool GameOverState::onEnter()
         return false;
     }
 
-
-    GameObject* gameOverText = new AnimatedGraphic(new LoaderParams(150, 100, 190, 30, "gameovertext"), 2);
+    //                                                             (           pParams,             animSpeed)
+    GameObject* gameOverText = new AnimatedGraphic(new LoaderParams(230, 100, 190, 30, "gameovertext"), 4);
     GameObject* button1 = new MenuButtons(new LoaderParams(150, 200, 350, 90, "mainbutton"), s_gameOverToMain);
     GameObject* button2 = new MenuButtons(new LoaderParams(150, 300, 350, 90, "restartbutton"), s_restartPlay);
 
