@@ -65,7 +65,7 @@
 1449638043 source:c:\users\greedy\documents\github\lazypenguinproject\loaderparams.cpp
 	"LoaderParams.h"
 
-1450745407 source:c:\users\greedy\documents\github\lazypenguinproject\sdlgameobject.cpp
+1451816239 source:c:\users\greedy\documents\github\lazypenguinproject\sdlgameobject.cpp
 	"SDLGameObject.h"
 	"Game.h"
 
@@ -100,11 +100,12 @@
 	<string>
 	<iostream>
 
-1451814296 source:c:\users\greedy\documents\github\lazypenguinproject\playstate.cpp
+1451816293 source:c:\users\greedy\documents\github\lazypenguinproject\playstate.cpp
 	"PlayState.h"
 	"Player.h"
 	"Game.h"
 	"PauseState.h"
+	"GameOverState.h"
 
 1451816321 c:\users\greedy\documents\github\lazypenguinproject\playstate.h
 	"GameState.h"
@@ -143,7 +144,7 @@
 1451815627 c:\users\greedy\documents\github\lazypenguinproject\animatedgraphic.h
 	"SDLGameObject.h"
 
-1451815627 source:c:\users\greedy\documents\github\lazypenguinproject\gameoverstate.cpp
+1451816542 source:c:\users\greedy\documents\github\lazypenguinproject\gameoverstate.cpp
 	"GameOverState.h"
 	"Game.h"
 	"MenuState.h"
