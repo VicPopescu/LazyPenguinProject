@@ -33,6 +33,8 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="AnimatedGraphic.cpp" />
+		<Unit filename="AnimatedGraphic.h" />
 		<Unit filename="Enemy.cpp" />
 		<Unit filename="Enemy.h" />
 		<Unit filename="FSM.cpp" />
@@ -40,6 +42,8 @@
 		<Unit filename="Game.cpp" />
 		<Unit filename="Game.h" />
 		<Unit filename="GameObject.h" />
+		<Unit filename="GameOverState.cpp" />
+		<Unit filename="GameOverState.h" />
 		<Unit filename="GameState.h" />
 		<Unit filename="InputHandler.cpp" />
 		<Unit filename="InputHandler.h" />

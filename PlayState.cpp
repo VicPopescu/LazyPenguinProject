@@ -8,21 +8,33 @@ const std::string PlayState::s_playID = "PLAY";
 
 bool PlayState::onEnter()
 {
-
+    //loading player sprite
     if(!TheTextureManager::Instance()->load("Resources/baby_penguin_alpha2.png", "penguin_player", TheGame::Instance()->getRenderer()))
     {
         return false;
     }
 
+    //loading enemy sprite
+    if(!TheTextureManager::Instance()->load("Resources/baby_penguin_alpha3.png", "enemy_player", TheGame::Instance()->getRenderer()))
+    {
+        return false;
+    }
 
-    GameObject* player = new Player(new LoaderParams(300, 200, 64, 64, "penguin_player"));
+
+    //creating objects from sprites
+    GameObject* player = new Player(new LoaderParams(200, 200, 64, 64, "penguin_player"));
+    GameObject* enemy  = new Enemy(new LoaderParams(500, 100, 64, 64, "enemy_player"));
 
     m_gameObjects.push_back(player);
+    m_gameObjects.push_back(enemy);
 
 
     std::cout << "Entering PlayState \n";
     return true;
 }
+
+
+
 
 bool PlayState::onExit()
 {
@@ -38,6 +50,10 @@ bool PlayState::onExit()
     return true;
 }
 
+
+
+
+
 void PlayState::update()
 {
     if(TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_ESCAPE))
@@ -50,6 +66,11 @@ void PlayState::update()
         m_gameObjects[i]->update();
     }
 }
+
+
+
+
+
 
 void PlayState::render()
 {
