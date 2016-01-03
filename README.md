@@ -11,20 +11,20 @@ Started on Dec 6, 2015.
 3. **Game Objects**    
     +Inheritance, Polymorphism and Abstract Base Classes   
     +Setting Object Properties    
-4. Movement and Input Handling    
+4. **Movement and Input Handling**       
     +Vectors   
     +Velocity & Acceleration   
     +Input Handler  
     +Mouse buttons and motion support   
     +Keyboard support   
     +Xbox 360 Wireless Controller support(need fix for corresponding buttons)      
-5. Game States   
+5. **Game States**   
     +Game State Machine implementation   
     +Menu State   
     +Play State   
     +Pause State  
     +Game Over State   
-6. Basic Collision Handling
+6. **Basic Collision Handling**   
 7. ...
 
 
