@@ -22,7 +22,8 @@ Started on Dec 6, 2015.
     +Game State Machine implementation   
     +Menu State   
     +Play State   
-    +Pause State   
+    +Pause State  
+    +Game Over State   
 6. ...
 
 
