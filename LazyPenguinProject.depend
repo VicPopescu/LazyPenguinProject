@@ -47,17 +47,17 @@
 1450202550 c:\users\greedy\documents\github\lazypenguinproject\player.h
 	"SDLGameObject.h"
 
-1450808912 source:c:\users\greedy\documents\github\lazypenguinproject\enemy.cpp
+1451815627 source:c:\users\greedy\documents\github\lazypenguinproject\enemy.cpp
 	"Enemy.h"
 	"Game.h"
 
 1450264344 c:\users\greedy\documents\github\lazypenguinproject\enemy.h
 	"SDLGameObject.h"
 
-1449638043 c:\users\greedy\documents\github\lazypenguinproject\loaderparams.h
+1451817425 c:\users\greedy\documents\github\lazypenguinproject\loaderparams.h
 	<string>
 
-1450108075 c:\users\greedy\documents\github\lazypenguinproject\sdlgameobject.h
+1451816239 c:\users\greedy\documents\github\lazypenguinproject\sdlgameobject.h
 	"GameObject.h"
 	"Vector2D.h"
 	"InputHandler.h"
@@ -65,7 +65,7 @@
 1449638043 source:c:\users\greedy\documents\github\lazypenguinproject\loaderparams.cpp
 	"LoaderParams.h"
 
-1450745407 source:c:\users\greedy\documents\github\lazypenguinproject\sdlgameobject.cpp
+1451816239 source:c:\users\greedy\documents\github\lazypenguinproject\sdlgameobject.cpp
 	"SDLGameObject.h"
 	"Game.h"
 
@@ -100,16 +100,18 @@
 	<string>
 	<iostream>
 
-1451814296 source:c:\users\greedy\documents\github\lazypenguinproject\playstate.cpp
+1451816293 source:c:\users\greedy\documents\github\lazypenguinproject\playstate.cpp
 	"PlayState.h"
 	"Player.h"
 	"Game.h"
 	"PauseState.h"
+	"GameOverState.h"
 
-1450574473 c:\users\greedy\documents\github\lazypenguinproject\playstate.h
+1451816321 c:\users\greedy\documents\github\lazypenguinproject\playstate.h
 	"GameState.h"
 	<vector>
 	"GameObject.h"
+	"SDLGameObject.h"
 
 1450574473 source:c:\users\greedy\documents\github\lazypenguinproject\fsm.cpp
 	"FSM.h"
@@ -136,13 +138,13 @@
 	"GameObject.h"
 	"GameState.h"
 
-1451811622 source:c:\users\greedy\documents\github\lazypenguinproject\animatedgraphic.cpp
+1451818460 source:c:\users\greedy\documents\github\lazypenguinproject\animatedgraphic.cpp
 	"AnimatedGraphic.h"
 
-1451811867 c:\users\greedy\documents\github\lazypenguinproject\animatedgraphic.h
+1451818455 c:\users\greedy\documents\github\lazypenguinproject\animatedgraphic.h
 	"SDLGameObject.h"
 
-1451814124 source:c:\users\greedy\documents\github\lazypenguinproject\gameoverstate.cpp
+1451818311 source:c:\users\greedy\documents\github\lazypenguinproject\gameoverstate.cpp
 	"GameOverState.h"
 	"Game.h"
 	"MenuState.h"
@@ -150,7 +152,7 @@
 	"MenuButtons.h"
 	"AnimatedGraphic.h"
 
-1451812541 c:\users\greedy\documents\github\lazypenguinproject\gameoverstate.h
+1451815627 c:\users\greedy\documents\github\lazypenguinproject\gameoverstate.h
 	<vector>
 	"GameState.h"
 

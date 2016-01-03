@@ -15,6 +15,13 @@ public:
         virtual void update();
         virtual void clean();
 
+
+        //need these for collision handling
+        Vector2D& getPosition() { return m_position; }
+        int getWidth() { return m_width; }
+        int getHeight() { return m_height; }
+
+
 protected:
         //initial frame position on window
         Vector2D m_position;

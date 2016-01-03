@@ -18,7 +18,6 @@ public:
 private:
 
         int m_animSpeed;
-        int m_frameNum;
 };
 
 #endif // ANIMATEDGRAPHIC_H

@@ -34,3 +34,11 @@ void SDLGameObject::update(){
 }
 
 void SDLGameObject::clean(){}
+
+
+
+
+
+//for collision handling in PlayState
+
+

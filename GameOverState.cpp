@@ -7,6 +7,7 @@
 
 
 
+
 //define static variable
 const std::string GameOverState::s_gameOverID = "GAMEOVER";
 
@@ -50,16 +51,16 @@ bool GameOverState::onEnter()
         return false;
     }
 
-
-    GameObject* gameOverText = new AnimatedGraphic(new LoaderParams(200, 100, 190, 30, "gameovertext"), 2);
-    GameObject* button1 = new MenuButtons(new LoaderParams(200, 200, 200, 80, "mainbutton"), s_gameOverToMain);
-    GameObject* button2 = new MenuButtons(new LoaderParams(200, 300, 200, 80, "restartbutton"), s_restartPlay);
+    //                                                             (           pParams,             animSpeed)
+    GameObject* gameOverText = new AnimatedGraphic(new LoaderParams(230, 100, 190, 30, "gameovertext"), 4);
+    GameObject* button1 = new MenuButtons(new LoaderParams(150, 200, 350, 90, "mainbutton"), s_gameOverToMain);
+    GameObject* button2 = new MenuButtons(new LoaderParams(150, 300, 350, 90, "restartbutton"), s_restartPlay);
 
     m_gameObjects.push_back(gameOverText);
     m_gameObjects.push_back(button1);
     m_gameObjects.push_back(button2);
 
-    std::cout << "Enter PauseState\n";
+    std::cout << "Enter GameOverState\n";
     return true;
 
 }
