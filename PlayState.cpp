@@ -33,6 +33,9 @@ bool PlayState::onEnter()
     return true;
 }
 
+
+
+
 bool PlayState::onExit()
 {
     for(int i = 0; i < m_gameObjects.size(); i++)
@@ -47,6 +50,10 @@ bool PlayState::onExit()
     return true;
 }
 
+
+
+
+
 void PlayState::update()
 {
     if(TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_ESCAPE))
@@ -59,6 +66,11 @@ void PlayState::update()
         m_gameObjects[i]->update();
     }
 }
+
+
+
+
+
 
 void PlayState::render()
 {
