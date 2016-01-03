@@ -47,8 +47,9 @@
 1450202550 c:\users\greedy\documents\github\lazypenguinproject\player.h
 	"SDLGameObject.h"
 
-1450808486 source:c:\users\greedy\documents\github\lazypenguinproject\enemy.cpp
+1450808912 source:c:\users\greedy\documents\github\lazypenguinproject\enemy.cpp
 	"Enemy.h"
+	"Game.h"
 
 1450264344 c:\users\greedy\documents\github\lazypenguinproject\enemy.h
 	"SDLGameObject.h"
