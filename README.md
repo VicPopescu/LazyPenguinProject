@@ -24,7 +24,8 @@ Started on Dec 6, 2015.
     +Play State   
     +Pause State  
     +Game Over State   
-6. ...
+6. Basic Collision Handling
+7. ...
 
 
 
