@@ -136,3 +136,16 @@
 	"GameObject.h"
 	"GameState.h"
 
+1451811622 source:c:\users\greedy\documents\github\lazypenguinproject\animatedgraphic.cpp
+	"AnimatedGraphic.h"
+
+1451811867 c:\users\greedy\documents\github\lazypenguinproject\animatedgraphic.h
+	"SDLGameObject.h"
+
+1451812485 source:c:\users\greedy\documents\github\lazypenguinproject\gameoverstate.cpp
+	"GameOverState.h"
+
+1451812541 c:\users\greedy\documents\github\lazypenguinproject\gameoverstate.h
+	<vector>
+	"GameState.h"
+
