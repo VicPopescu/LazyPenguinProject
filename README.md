@@ -29,7 +29,7 @@ Started on Dec 6, 2015.
     +Pause State  
     +Game Over State   
 6. **Basic Collision Handling**   
-    +
+    +Player - Enemy Collision Handling
 7. ...
 
 
