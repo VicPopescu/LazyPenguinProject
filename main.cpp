@@ -21,7 +21,7 @@ int main(int argc, char* argv[]){
     std::cout << "\nAttempting Game Initialization...\n";
     std::cout << ".................................\n";
 
-    if(TheGame::Instance()->init("Main window", 100, 100, 640, 480, false)){
+    if(TheGame::Instance()->init("Lazy Penguin Framework", 100, 100, 640, 480, false)){
 
         std::cout << "................................\n";
         std::cout << "Game Initialized Successfully\n";

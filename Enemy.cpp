@@ -58,11 +58,33 @@ void Enemy::update(){
     {
         m_velocity.setY(2);
     }
-    else if(m_position.getY() > 400)
+    if(m_position.getY() > 400)
     {
+        m_velocity.setY(0);
+        m_velocity.setX(-2);
+    }
+
+
+    if(m_position.getX() < 0)
+    {
+        m_velocity.setX(0);
         m_velocity.setY(-2);
     }
 
+    if(m_position.getY() == 0)
+    {
+        m_velocity.setX(2);
+        m_velocity.setY(0);
+    }
+/*
+
+    if(m_position.getX > 400)
+    {
+        m_velocity.setX(0);
+        m_velocity.setY(-2)
+    }
+
+*/
 
 
 
