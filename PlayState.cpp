@@ -24,7 +24,7 @@ bool PlayState::onEnter()
 
     //creating objects from sprites
     GameObject* player = new Player(new LoaderParams(200, 200, 64, 64, "penguin_player"));
-    GameObject* enemy  = new Enemy(new LoaderParams(500, 100, 64, 64, "enemy_player"));
+    GameObject* enemy  = new Enemy(new LoaderParams(0, 0, 64, 64, "enemy_player"));
 
     m_gameObjects.push_back(player);
     m_gameObjects.push_back(enemy);

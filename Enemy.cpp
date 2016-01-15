@@ -54,37 +54,29 @@ void Enemy::update(){
     m_currentFrame = int(((SDL_GetTicks() / 100) % 3));
 
 
-    if(m_position.getY() < 0)
+    if(m_position.getX() == 0 && m_position.getY() == 0)
     {
+        m_velocity.setX(2);
+        m_velocity.setY(0);
+    }
+
+    if(m_position.getX() == 570)
+    {
+        m_velocity.setX(0);
         m_velocity.setY(2);
     }
-    if(m_position.getY() > 400)
+    if(m_position.getY() == 410)
     {
-        m_velocity.setY(0);
         m_velocity.setX(-2);
+        m_velocity.setY(0);
     }
-
-
-    if(m_position.getX() < 0)
+    if(m_position.getX() == 0 && m_position.getY() == 410)
     {
         m_velocity.setX(0);
         m_velocity.setY(-2);
     }
 
-    if(m_position.getY() == 0)
-    {
-        m_velocity.setX(2);
-        m_velocity.setY(0);
-    }
-/*
 
-    if(m_position.getX > 400)
-    {
-        m_velocity.setX(0);
-        m_velocity.setY(-2)
-    }
-
-*/
 
 
 
