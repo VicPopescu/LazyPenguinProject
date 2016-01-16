@@ -8,8 +8,7 @@
 
 Enemy::Enemy(const LoaderParams* pParams) : SDLGameObject(pParams)
 {
-    m_velocity.setY(2);
-    m_velocity.setX(0.001);
+
 }
 
 
