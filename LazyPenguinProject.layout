@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Debug" />
-	<File name="MenuState.cpp" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="MenuState.cpp" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="144" topLine="24" />
 		</Cursor>
@@ -11,24 +11,34 @@
 			<Cursor1 position="380" topLine="5" />
 		</Cursor>
 	</File>
+	<File name="PauseState.cpp" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="277" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="PauseState.h" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="116" topLine="0" />
+		</Cursor>
+	</File>
 	<File name="InputHandler.h" open="0" top="0" tabpos="24" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="2269" topLine="43" />
 		</Cursor>
 	</File>
-	<File name="PauseState.cpp" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="PlayState.cpp" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="277" topLine="0" />
+			<Cursor1 position="900" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="InputHandler.cpp" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="InputHandler.cpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="8147" topLine="317" />
+			<Cursor1 position="8314" topLine="35" />
 		</Cursor>
 	</File>
-	<File name="PauseState.h" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="PlayState.h" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="116" topLine="0" />
+			<Cursor1 position="217" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="Enemy.h" open="0" top="0" tabpos="28" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -36,34 +46,14 @@
 			<Cursor1 position="38" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="PlayState.cpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="900" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="MenuButtons.cpp" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="320" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="PlayState.h" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="217" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="FSM.cpp" open="0" top="0" tabpos="27" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="759" topLine="15" />
-		</Cursor>
-	</File>
 	<File name="Player.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="42" topLine="0" />
+			<Cursor1 position="280" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="Enemy.cpp" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="MenuButtons.cpp" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="51" topLine="0" />
+			<Cursor1 position="320" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="Player.h" open="0" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -71,19 +61,19 @@
 			<Cursor1 position="286" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="GameOverState.h" open="0" top="0" tabpos="25" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="FSM.cpp" open="0" top="0" tabpos="27" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="394" topLine="0" />
+			<Cursor1 position="759" topLine="15" />
 		</Cursor>
 	</File>
-	<File name="SDLGameObject.cpp" open="1" top="0" tabpos="14" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="SDLGameObject.cpp" open="0" top="0" tabpos="14" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="395" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="GameState.h" open="0" top="0" tabpos="20" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="Enemy.cpp" open="1" top="1" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="297" topLine="0" />
+			<Cursor1 position="1950" topLine="31" />
 		</Cursor>
 	</File>
 	<File name="SDLGameObject.h" open="0" top="0" tabpos="15" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -91,9 +81,9 @@
 			<Cursor1 position="527" topLine="2" />
 		</Cursor>
 	</File>
-	<File name="Game.cpp" open="1" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
+	<File name="GameOverState.h" open="0" top="0" tabpos="25" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="3493" topLine="103" />
+			<Cursor1 position="394" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="TextureManager.cpp" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -101,9 +91,9 @@
 			<Cursor1 position="428" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="Game.h" open="1" top="0" tabpos="13" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="GameState.h" open="0" top="0" tabpos="20" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1576" topLine="22" />
+			<Cursor1 position="297" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="TextureManager.h" open="0" top="0" tabpos="14" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -111,9 +101,9 @@
 			<Cursor1 position="470" topLine="18" />
 		</Cursor>
 	</File>
-	<File name="GameOverState.cpp" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="Game.cpp" open="0" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1070" topLine="35" />
+			<Cursor1 position="3493" topLine="103" />
 		</Cursor>
 	</File>
 	<File name="Vector2D.h" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -121,17 +111,27 @@
 			<Cursor1 position="570" topLine="5" />
 		</Cursor>
 	</File>
+	<File name="Game.h" open="0" top="0" tabpos="13" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1576" topLine="22" />
+		</Cursor>
+	</File>
+	<File name="main.cpp" open="0" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1668" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="GameOverState.cpp" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1070" topLine="35" />
+		</Cursor>
+	</File>
 	<File name="MenuButtons.h" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="260" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="main.cpp" open="1" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1668" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="LoaderParams.h" open="1" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="LoaderParams.h" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="593" topLine="0" />
 		</Cursor>
@@ -141,7 +141,7 @@
 			<Cursor1 position="995" topLine="7" />
 		</Cursor>
 	</File>
-	<File name="AnimatedGraphic.cpp" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="AnimatedGraphic.cpp" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="34" topLine="0" />
 		</Cursor>
@@ -151,7 +151,7 @@
 			<Cursor1 position="353" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="GameObject.h" open="1" top="1" tabpos="15" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="GameObject.h" open="0" top="0" tabpos="15" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="143" topLine="0" />
 		</Cursor>
