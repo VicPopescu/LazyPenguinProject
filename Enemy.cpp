@@ -6,10 +6,8 @@
 
 
 
-Enemy::Enemy(const LoaderParams* pParams) : SDLGameObject(pParams)
-{
+Enemy::Enemy(const LoaderParams* pParams) : SDLGameObject(pParams){}
 
-}
 
 
 void Enemy::draw(){
