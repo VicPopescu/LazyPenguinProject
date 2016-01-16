@@ -49,7 +49,7 @@ void Enemy::handleInput()
 
 void Enemy::update(){
 
-    //set up the starting frame and how many frames
+    //set up the starting frame, how many frames, and the animation speed
     m_currentFrame = int(((SDL_GetTicks() / 100) % 3));
 
 
