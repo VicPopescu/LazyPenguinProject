@@ -12,6 +12,7 @@ void Player::draw()
     //if the player is moving
     if(m_velocity.getX() != 0 || m_velocity.getY() != 0)
     {
+
         //if the player is moving to the left, flip the image
         if(m_velocity.getX() < 0)
         {
