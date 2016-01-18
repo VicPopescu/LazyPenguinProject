@@ -90,8 +90,6 @@ void InputHandler::update()
                 break;
         }
     }
-
-
 }
 /* ****************UPDATE END**************** */
 
