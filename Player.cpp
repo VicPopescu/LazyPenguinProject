@@ -55,12 +55,13 @@ void Player::update(){
 
 
 
-    //override currentRow
+    //override currentRow (don't need this currently)
     //m_currentRow = 1;
 
-    handleInput(); // add our function
+    handleInput(); // update movement
 
     //start: frame 1, continue 3 more frames:
+    //animation speed: 100
     m_currentFrame = int(((SDL_GetTicks() / 100) % 3));
 
     //update
