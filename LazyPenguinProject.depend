@@ -57,7 +57,7 @@
 1451817425 c:\users\greedy\documents\github\lazypenguinproject\loaderparams.h
 	<string>
 
-1451818797 c:\users\greedy\documents\github\lazypenguinproject\sdlgameobject.h
+1453652125 c:\users\greedy\documents\github\lazypenguinproject\sdlgameobject.h
 	"GameObject.h"
 	"Vector2D.h"
 	"InputHandler.h"
@@ -100,7 +100,7 @@
 	<string>
 	<iostream>
 
-1453649358 source:c:\users\greedy\documents\github\lazypenguinproject\playstate.cpp
+1453652744 source:c:\users\greedy\documents\github\lazypenguinproject\playstate.cpp
 	"PlayState.h"
 	"Player.h"
 	"Game.h"
@@ -157,9 +157,8 @@
 	<vector>
 	"GameState.h"
 
-1453649329 source:c:\users\greedy\documents\github\lazypenguinproject\background.cpp
+1453652170 source:c:\users\greedy\documents\github\lazypenguinproject\background.cpp
 	"Background.h"
-	"Game.h"
 
 1453648729 c:\users\greedy\documents\github\lazypenguinproject\background.h
 	"SDLGameObject.h"

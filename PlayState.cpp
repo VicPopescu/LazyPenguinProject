@@ -23,19 +23,19 @@ bool PlayState::onEnter()
     }
 
     //loading background test
-    if(!TheTextureManager::Instance()->load("Resources/bg.jpg", "play_bg", TheGame::Instance()->getRenderer()))
+    if(!TheTextureManager::Instance()->load("Resources/bg15.jpg", "play_bg", TheGame::Instance()->getRenderer()))
     {
         return false;
     }
 
 
     //creating objects from sprites
-    GameObject* bg  = new Background(new LoaderParams(0, 0, 640, 480, "play_bg"));
+    GameObject* backg  = new Background(new LoaderParams(0, 0, 640, 480, "play_bg"));
     GameObject* player = new Player(new LoaderParams(200, 200, 64, 64, "penguin_player"));
     GameObject* enemy  = new Enemy(new LoaderParams(0, 0, 64, 64, "enemy_player"));
 
 
-    m_gameObjects.push_back(bg);
+    m_gameObjects.push_back(backg);
     m_gameObjects.push_back(player);
     m_gameObjects.push_back(enemy);
 
