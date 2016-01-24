@@ -3,6 +3,7 @@
 #include "Game.h"
 #include "PauseState.h"
 #include "GameOverState.h"
+#include "Background.h"
 
 const std::string PlayState::s_playID = "PLAY";
 
@@ -21,13 +22,23 @@ bool PlayState::onEnter()
         return false;
     }
 
+    //loading background test
+    if(!TheTextureManager::Instance()->load("Resources/bg.jpg", "play_bg", TheGame::Instance()->getRenderer()))
+    {
+        return false;
+    }
+
 
     //creating objects from sprites
+    GameObject* bg  = new Background(new LoaderParams(0, 0, 640, 480, "play_bg"));
     GameObject* player = new Player(new LoaderParams(200, 200, 64, 64, "penguin_player"));
     GameObject* enemy  = new Enemy(new LoaderParams(0, 0, 64, 64, "enemy_player"));
 
+
+    m_gameObjects.push_back(bg);
     m_gameObjects.push_back(player);
     m_gameObjects.push_back(enemy);
+
 
 
     std::cout << "Entering PlayState \n";
@@ -45,7 +56,9 @@ bool PlayState::onExit()
     }
 
     m_gameObjects.clear();
+    TheTextureManager::Instance()->clearFromTextureMap("play_bg");
     TheTextureManager::Instance()->clearFromTextureMap("penguin_player");
+    TheTextureManager::Instance()->clearFromTextureMap("enemy_player");
 
     std::cout << "Exiting PlayState \n";
     return true;
@@ -68,7 +81,7 @@ void PlayState::update()
     }
 
     //handling collision
-    if(checkCollision(dynamic_cast<SDLGameObject*>(m_gameObjects[0]), dynamic_cast<SDLGameObject*>(m_gameObjects[1])))
+    if(checkCollision(dynamic_cast<SDLGameObject*>(m_gameObjects[1]), dynamic_cast<SDLGameObject*>(m_gameObjects[2])))
     {
         TheGame::Instance()->getStateMachine()->pushState(new GameOverState());
     }

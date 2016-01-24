@@ -100,12 +100,13 @@
 	<string>
 	<iostream>
 
-1452854067 source:c:\users\greedy\documents\github\lazypenguinproject\playstate.cpp
+1453649295 source:c:\users\greedy\documents\github\lazypenguinproject\playstate.cpp
 	"PlayState.h"
 	"Player.h"
 	"Game.h"
 	"PauseState.h"
 	"GameOverState.h"
+	"Background.h"
 
 1451818797 c:\users\greedy\documents\github\lazypenguinproject\playstate.h
 	"GameState.h"
@@ -155,4 +156,11 @@
 1451815627 c:\users\greedy\documents\github\lazypenguinproject\gameoverstate.h
 	<vector>
 	"GameState.h"
+
+1453649329 source:c:\users\greedy\documents\github\lazypenguinproject\background.cpp
+	"Background.h"
+	"Game.h"
+
+1453648729 c:\users\greedy\documents\github\lazypenguinproject\background.h
+	"SDLGameObject.h"
 
