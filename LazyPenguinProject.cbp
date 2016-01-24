@@ -35,6 +35,8 @@
 		</Compiler>
 		<Unit filename="AnimatedGraphic.cpp" />
 		<Unit filename="AnimatedGraphic.h" />
+		<Unit filename="Background.cpp" />
+		<Unit filename="Background.h" />
 		<Unit filename="Enemy.cpp" />
 		<Unit filename="Enemy.h" />
 		<Unit filename="FSM.cpp" />
