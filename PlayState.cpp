@@ -128,8 +128,8 @@ bool PlayState::checkCollision(SDLGameObject* p1, SDLGameObject* p2)
 
     //If any of the sides from A are outside of B
     if( bottomA <= topB ){return false;}
-    if( topA >= bottomB ){return false; }
-    if( rightA <= leftB ){return false; }
+    if( topA >= bottomB ){return false;}
+    if( rightA <= leftB ){return false;}
     if( leftA >= rightB ){return false;}
 
     return true;
