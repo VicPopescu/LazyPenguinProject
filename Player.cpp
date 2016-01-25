@@ -48,7 +48,7 @@ void Player::draw()
 
 void Player::update(){
 
-    //set up velocity
+    //set up starting velocity
     m_velocity.setX(0);
     m_velocity.setY(0);
 
