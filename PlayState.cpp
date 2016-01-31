@@ -23,7 +23,7 @@ bool PlayState::onEnter()
     }
 
     //loading background test
-    if(!TheTextureManager::Instance()->load("Resources/bg15.jpg", "play_bg", TheGame::Instance()->getRenderer()))
+    if(!TheTextureManager::Instance()->load("Resources/bg14.jpg", "play_bg", TheGame::Instance()->getRenderer()))
     {
         return false;
     }
