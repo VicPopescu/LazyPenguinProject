@@ -1,6 +1,5 @@
 # LazyPenguinProject
-2D Platformer. 
-This is a personal project!   
+2D Platformer. Check the end of the list for references.
 Started on Dec 6, 2015.
 
 #Project phases:
@@ -37,11 +36,11 @@ Started on Dec 6, 2015.
 
 #What I used for this project:    
 
-Tutorials from:   
-http://lazyfoo.net/tutorials/SDL/index.php
-
 Books:   
 SDL Game Development - Shaun Mitchell (you can buy it on http://www.amazon.com/ or https://www.packtpub.com/)   
+
+Tutorials from:   
+http://lazyfoo.net/tutorials/SDL/index.php   
 
 SDL 2.0 Development Libraries:   
 https://www.libsdl.org/   
